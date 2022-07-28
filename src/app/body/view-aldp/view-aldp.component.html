@@ -1,0 +1,183 @@
+<div id="body">
+    <mat-card class="content">
+      <div class="titlebox">
+        <div class="title">
+          <span>Annual Learning and Development Plan</span>
+        </div>
+        <div class="logo">
+          <img src="./assets/mirdclogo.png">
+          <h1>MIRDC</h1>
+        </div>    
+      </div> 
+      <mat-divider></mat-divider>
+        <div id="print-content">
+            <div id="header">
+                    <span>Metals Industry Research and Development Center</span>
+                    <span>FAD-Administrative and General Service Section</span>
+                    <span><strong>PROPOSED ANNUAL LEARNING AND DEVELOPMENT, CY 2022</strong></span>
+            </div>
+        </div>
+        <div id="tables">
+            <div >
+                <mat-card id="technical-container">
+                <mat-card-title>Technical</mat-card-title>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+                    <!-- Header row first group -->
+                    <ng-container matColumnDef="no">
+                        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> No </th>
+                        <td mat-cell *matCellDef="let element"> {{element.no || "Row Number"}} </td>
+                    </ng-container>
+  
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Program Description </th>
+                        <td mat-cell *matCellDef="let element"> {{element.description || "Program Description"}} </td>
+                    </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.type || "Program Type"}} </td>
+                    </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="no_of_program">
+                    <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Number of Program </th>
+                    <td mat-cell *matCellDef="let element"> {{element.no_of_program || "Number of Program"}} </td>
+                    </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="no_of_pax">
+                    <th mat-header-cell *matHeaderCellDef
+                    [attr.colspan]="2"> No. of Pax </th>
+                    </ng-container>
+
+                        <!-- Header row second group -->
+                        <ng-container matColumnDef="per_session">
+                        <th mat-header-cell *matHeaderCellDef> Per Session </th>
+                        <td mat-cell *matCellDef="let element"> {{element.per_session || "Per Session"}} </td>
+                        </ng-container>
+
+                                                                <!-- Header row second group -->
+                        <ng-container matColumnDef="total_pax">
+                        <th mat-header-cell *matHeaderCellDef> Total Pax </th>
+                        <td mat-cell *matCellDef="let element"> {{element.total_pax || "Total Pax"}} </td>
+                        </ng-container>
+                        
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="estimated_cost">
+                    <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Estimated Cost </th>
+                    <td mat-cell *matCellDef="let element"> {{element.estimated_cost || "Estimated Cost"}} </td>
+                    </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="participants_office_div">
+                        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Participants Office/Div </th>
+                        <td mat-cell *matCellDef="let element"> {{element.participants_office_div || "Participants Office/Div"}} </td>
+                        </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="possible_provider">
+                        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Possible Provider </th>
+                        <td mat-cell *matCellDef="let element"> {{element.possible_provider || "Possible Provider"}} </td>
+                        </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="tentative_schedule">
+                        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Tentative Schedule </th>
+                        <td mat-cell *matCellDef="let element"> {{element.tentative_schedule || "Tentative Schedule"}} </td>
+                        </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="headers"></tr>
+                    <tr mat-header-row *matHeaderRowDef="subHeaders"></tr>
+                    <tr mat-row>try</tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedData;"></tr>
+
+                  </table>
+                </mat-card>
+            </div>
+
+            <div>
+                <mat-card id="non-technical-container">
+                <mat-card-title>Non-Technical</mat-card-title>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+
+
+                    <!-- Header row first group -->
+                    <ng-container matColumnDef="no">
+                        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> No </th>
+                        <td mat-cell *matCellDef="let element"> {{element.no || "Row Number"}} </td>
+                    </ng-container>
+  
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Program Description </th>
+                        <td mat-cell *matCellDef="let element"> {{element.description || "Program Description"}} </td>
+                    </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.type || "Program Type"}} </td>
+                    </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="no_of_program">
+                    <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Number of Program </th>
+                    <td mat-cell *matCellDef="let element"> {{element.no_of_program || "Number of Program"}} </td>
+                    </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="no_of_pax">
+                    <th mat-header-cell *matHeaderCellDef
+                    [attr.colspan]="2"> No. of Pax </th>
+                    </ng-container>
+
+                        <!-- Header row second group -->
+                        <ng-container matColumnDef="per_session">
+                        <th mat-header-cell *matHeaderCellDef> Per Session </th>
+                        <td mat-cell *matCellDef="let element"> {{element.per_session || "Per Session"}} </td>
+                        </ng-container>
+
+                                                                <!-- Header row second group -->
+                        <ng-container matColumnDef="total_pax">
+                        <th mat-header-cell *matHeaderCellDef> Total Pax </th>
+                        <td mat-cell *matCellDef="let element"> {{element.total_pax || "Total Pax"}} </td>
+                        </ng-container>
+                        
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="estimated_cost">
+                    <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Estimated Cost </th>
+                    <td mat-cell *matCellDef="let element"> {{element.estimated_cost || "Estimated Cost"}} </td>
+                    </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="participants_office_div">
+                        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Participants Office/Div </th>
+                        <td mat-cell *matCellDef="let element"> {{element.participants_office_div || "Participants Office/Div"}} </td>
+                        </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="possible_provider">
+                        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Possible Provider </th>
+                        <td mat-cell *matCellDef="let element"> {{element.possible_provider || "Possible Provider"}} </td>
+                        </ng-container>
+
+                    <!-- Header row second group -->
+                    <ng-container matColumnDef="tentative_schedule">
+                        <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2"> Tentative Schedule </th>
+                        <td mat-cell *matCellDef="let element"> {{element.tentative_schedule || "Tentative Schedule"}} </td>
+                        </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="headers"></tr>
+                    <tr mat-header-row *matHeaderRowDef="subHeaders"></tr>
+                    <tr mat-row>try</tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedData;"></tr>
+
+                  </table>
+                </mat-card>
+            </div>
+        </div>
+
+    </mat-card>
+</div>

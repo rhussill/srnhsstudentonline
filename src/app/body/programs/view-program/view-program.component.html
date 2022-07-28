@@ -1,0 +1,86 @@
+<div id="body">
+    <table id="top-side">
+        <tr>
+            <td style="width:70%">
+                <span>{{data.providerName || 'Training Program Name'}}</span>
+            </td>
+            <td>
+                <div id="controls">
+                    <button mat-fab (click)="editClicked()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+
+                    <button mat-fab color="warn" (click)="deleteClicked()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+
+    <div id="details">
+        <span>Program Details</span>
+        <mat-divider></mat-divider>
+        <table>
+            <tr>
+                <td class="labels">
+                    <strong>
+                        Description:
+                    </strong>
+                </td>
+                <td>
+                    {{data.description}}
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <strong>
+                        Training Fee
+                    </strong>
+                </td>
+                <td>
+                    {{data.cost}}
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <!-- <table id="schedules" mat-table [dataSource]="programsOfferedData" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="programs_offered">
+        <th mat-header-cell *matHeaderCellDef> Programs Offered </th>
+        <td mat-cell *matCellDef="let element"> {{element.programs_name || "Program Name"}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="training_schedule">
+        <th mat-header-cell *matHeaderCellDef> Training Schedule </th>
+        <td mat-cell *matCellDef="let element"> {{element.training_schedule || "Training Schedule"}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="training_fee">
+            <th mat-header-cell *matHeaderCellDef> Training Fee </th>
+            <td mat-cell *matCellDef="let element"> {{element.training_fee || "Training Fee"}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowClicked()"></tr>
+    </table>
+
+            
+    <ng-container matColumnDef="training_schedule">
+        <th mat-header-cell *matHeaderCellDef> Training Schedule </th>
+        <td mat-cell *matCellDef="let element"> {{element.training_schedule || "Training Schedule"}} </td>
+    </ng-container>
+    
+        <mat-paginator
+        [length]="total"
+        [pageSize]="pageSize"
+        [pageIndex]="pageNo -1"
+        [pageSizeOptions]="[5,10,25,100]"
+        aria-label="Select page"
+        (page)= "onPaginate($event)">
+        </mat-paginator> -->
+</div> 

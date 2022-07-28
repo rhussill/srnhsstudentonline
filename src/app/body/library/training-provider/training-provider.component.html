@@ -1,0 +1,76 @@
+<div *ngIf="isLoading" id="loader">
+  <mat-spinner></mat-spinner>
+</div>
+<mat-card class="content">
+  <div class="titlebox">
+    <div class="title">
+      <span>TRAINING PROVIDER</span>
+    </div>
+    <div class="logo">
+      <img src="./assets/mirdclogo.png">
+      <h1>MIRDC</h1>
+    </div>    
+  </div> 
+  <mat-divider></mat-divider>
+     <div id="controls">  
+        <div>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-icon matSuffix>search</mat-icon>
+            <input matInput placeholder="Search">
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-button (click)="addClicked()" class="mat-elevation-z2">
+            Add Training Provider
+          </button>
+      </div>
+  </div>
+    <table mat-table [dataSource]="data" class="mat-elevation-z1" >
+
+      <ng-container matColumnDef="training_provider">
+        <th mat-header-cell *matHeaderCellDef> Training Provider </th>
+        <td mat-cell *matCellDef="let element"> {{element.providerName}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="contact_person">
+        <th mat-header-cell *matHeaderCellDef> Contact Person </th>
+        <td mat-cell *matCellDef="let element"> {{element.pointofContact}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="email_address">
+        <th mat-header-cell *matHeaderCellDef> Email Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.email_address}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="number">
+        <th mat-header-cell *matHeaderCellDef> Contact Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="rating">
+        <th mat-header-cell *matHeaderCellDef> Rating </th>
+        <td mat-cell *matCellDef="let element"> {{element.rating}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-chip-list>
+            <mat-chip> {{element.status}}</mat-chip>
+          </mat-chip-list></td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr [ngClass]="{'inactive': row.status == 'Inactive', 'active': row.status == 'Active'}" mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowClicked(row.provID)"></tr>
+    </table>
+
+      <mat-paginator 
+      [length]="total"
+      [pageSize]="pageSize"
+      [pageIndex]="pageNo -1"
+      [pageSizeOptions]="[5,10,25,100]"
+      aria-label="Select page"
+      (page)= "onPaginate($event)"
+      >
+      </mat-paginator>
+</mat-card>

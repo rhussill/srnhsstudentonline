@@ -1,0 +1,57 @@
+/* Adding Data to the Data Source Table */
+#form {
+    margin-left: auto;
+    margin-right: auto;
+    height: 30%!important;
+    background-color:white ;
+  }
+  mat-card-title{
+      padding-bottom: 20px !important;
+  }
+  span{
+    padding-top: 16px;
+    font-size: small;
+    font-weight: 500;
+  }
+  .dropdown{
+    display: flex;
+    justify-content: space-between;
+  }
+  .dropdown mat-form-field{
+    width: 30%!important;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #dataform{
+    display: flex;
+    flex-direction:row;
+  }
+  .data{
+    display: flex;
+    flex-direction:column;
+    justify-content:flex-start;
+  }
+  .inputdata{
+    display: flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    padding-right:20px;
+  }
+  .inputdata mat-form-field{
+    width:100%;
+  }
+  .save{
+    background-color: rgb(85, 183, 85);
+    color: white ;
+  }
+  #payment-controls button{
+    margin-left: 16px;
+    margin-bottom: 16px;
+}
+#controls{
+    display: flex;
+    justify-content: end;
+}
+#controls button{
+    margin: 5px;
+}

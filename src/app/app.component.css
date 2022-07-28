@@ -1,0 +1,50 @@
+#header{
+  height: 90px;
+  width: 100%;
+}
+#topheader{
+  padding-top: 80px;
+  position: fixed;
+  z-index: 5;
+
+}
+.body {
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+  background-color: rgb(237, 237, 237);
+}
+mat-drawer-container{
+  background-color: rgb(237, 237, 237);
+}
+mat-drawer-content{
+  box-sizing: border-box;
+  padding:0 16px;
+}
+mat-drawer{
+  width: 320px;
+  margin-top: 20px;
+  background-color: #f7f7f7;
+  position: fixed;
+  overflow: hidden;
+}
+
+@keyframes slidein{
+  from {
+    /* position: relative; */
+    display: none;
+  }
+  to{
+    /* top: -10; */
+    background-color: blue;
+  }
+}
+
+.top-nav{
+  visibility: visible;
+}
+
+.bottom-nav{
+  visibility: collapse;
+}
+

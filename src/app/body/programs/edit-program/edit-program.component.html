@@ -1,0 +1,90 @@
+<div id="body">
+
+    <form #form="ngForm" (ngSubmit)="submit(form.value)">
+        <h3>Edit Program</h3>
+        <mat-divider></mat-divider>
+        
+        <br>
+
+        <table>
+            <tr>
+                <td class="labels">
+                    <span>Program Name</span>
+                </td>
+                <td>
+                    <mat-form-field appearance="legacy">
+                        <input 
+                        matInput
+                        [(ngModel)]="program_name" 
+                        name="programName"
+                        required
+                        pattern="^[a-zA-Z ]+$"
+                        maxlength="100"
+                        minlength="2"
+                        >
+                    </mat-form-field>
+                </td> 
+            </tr>
+
+            <tr>
+                <td class="labels">
+                    <span>Program Description</span>
+                </td>
+                <td>
+                    <mat-form-field appearance="legacy">
+                        <textarea 
+                        matInput
+                        [(ngModel)]="program_description" 
+                        name="description"
+                        required
+                        pattern="^[a-zA-Z ]+$"
+                        maxlength="100"
+                        minlength="2"
+                        ></textarea>
+                    </mat-form-field>
+                </td> 
+            </tr>
+
+        <tr>
+            <td>
+                <span>Training Provider</span>
+            </td>
+            <td class="labels">
+                <mat-form-field appearance="legacy">
+                    <mat-select [(ngModel)]="program_provider" name="providerID" >
+                        <mat-option *ngFor="let option of training_providers" [value]="option.provID">{{option.providerName}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="labels">
+                <span>Training Fee</span>
+            </td>
+            <td>
+                <mat-form-field appearance="legacy">
+                    <input 
+                    matInput 
+                    [(ngModel)]="program_cost" 
+                    name="cost"
+                    required
+                    pattern="^[0-9]{1,100}$"
+                    maxlength="100"
+                    minlength="1"
+                    >
+                </mat-form-field>
+            </td>
+        </tr>
+
+        </table>
+
+        <br>
+
+        <div id="controls">
+            <button mat-button type="button" (click)="cancelClicked()">Cancel</button>
+            <button mat-raised-button type="submit" color="primary" [disabled]="form.invalid">Save</button>
+        </div>
+    </form>
+</div>
+

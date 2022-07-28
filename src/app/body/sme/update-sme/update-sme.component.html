@@ -1,0 +1,221 @@
+<div id="body">
+    <form #form="ngForm" (ngSubmit)="submit(form.value)">
+        <div id="header">
+            <h3 mat-dialog-title>Update Subject Matter Expert</h3>
+            <mat-divider></mat-divider>
+        </div>
+        <table>
+            <tr>
+                <td class="labels">
+                    <span>Name</span>
+                </td>
+                <td class="labels">
+                    <mat-form-field appearance="legacy">
+                        <input 
+                        matInput 
+                        name="name"
+                        required
+                        pattern="^[a-zA-Z ]+$"
+                        maxlength="100"
+                        minlength="2"
+                        >
+                    </mat-form-field>
+                </td> 
+            </tr>
+
+            <tr>
+                <td class="labels">
+                    <span>Source</span>
+                </td>
+                <td class="labels">
+                    <mat-form-field appearance="legacy">
+                        <textarea 
+                        matInput
+                        name="source"
+                        required
+                        pattern="^[a-zA-Z ]+$"
+                        maxlength="100"
+                        minlength="2"
+                        ></textarea>
+                    </mat-form-field>
+                </td> 
+            </tr>
+
+            <tr>
+                <td class="labels">
+                    <span>Company</span>
+                </td>
+                <td class="labels">
+                    <mat-form-field appearance="legacy">
+                        <mat-select  name="providerID">
+                            <mat-option *ngFor="let option of training_providers" [value]="option.provID">{{option.providerName}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+            <td class="labels">
+                <span>Other Affiliations</span>
+            </td>
+            <td class="labels">
+                <mat-form-field appearance="legacy">
+                    <textarea 
+                    matInput 
+                    name="affiliations"
+                    required
+                    pattern="^[a-zA-Z ]+$"
+                    maxlength="100"
+                    minlength="2"
+                    ></textarea>
+                </mat-form-field>
+            </td> 
+            </tr>
+
+            <tr>
+                <td class="labels">
+                    <span>Contact Number</span>
+                </td>
+                <td class="labels">
+                    <mat-form-field appearance="legacy">
+                        <input 
+                        matInput 
+                        name="number"
+                        required
+                        pattern="^[a-zA-Z ]+$"
+                        maxlength="100"
+                        minlength="2"
+                        >
+                    </mat-form-field>
+                </td> 
+            </tr>
+            <tr>
+            <td class="labels">
+                <span>Website</span>
+            </td>
+            <td class="labels">
+                <mat-form-field appearance="legacy">
+                    <input 
+                    matInput
+                    name="website"
+                    required
+                    pattern="^[a-zA-Z ]+$"
+                    maxlength="100"
+                    minlength="2"
+                    >
+                </mat-form-field>
+            </td> 
+            </tr>
+            <tr>
+                <td class="labels">
+                    <span>Email</span>
+                </td>
+                <td class="labels">
+                    <mat-form-field appearance="legacy">
+                        <input 
+                        matInput 
+                        name="email"
+                        required
+                        pattern="^[a-zA-Z ]+$"
+                        maxlength="100"
+                        minlength="2"
+                        >
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <span>FB Messenger/Viber Account</span>
+                </td>
+                <td class="labels">
+                    <mat-form-field appearance="legacy">
+                        <input 
+                        matInput 
+                        name="socials"
+                        required
+                        pattern="^[a-zA-Z ]+$"
+                        maxlength="100"
+                        minlength="2"
+                        >
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <span>Educational Background</span>
+                </td>
+                <td class="labels">
+                    <mat-form-field appearance="legacy">
+                        <input 
+                    matInput
+                    name="educational_background"
+                    required
+                    pattern="^[a-zA-Z ]+$"
+                    maxlength="100"
+                    minlength="2"
+                    >
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <span>Area of Expertise</span>
+                </td>
+                <td class="labels">
+                    <mat-form-field appearance="legacy">
+                        <textarea 
+                    matInput 
+                    name="email"
+                    required
+                    pattern="^[a-zA-Z ]+$"
+                    maxlength="100"
+                    minlength="2"
+                    ></textarea>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <span>Specific Programs Conducted</span>
+                </td>
+                <td class="labels">
+                    <mat-form-field appearance="legacy">
+                        <input 
+                        matInput 
+                        name="programs"
+                        required
+                        pattern="^[a-zA-Z ]+$"
+                        maxlength="100"
+                        minlength="2"
+                        >
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <span>Honoraria Rate per man-hour</span>
+                </td>
+                <td class="labels">
+                    <mat-form-field appearance="legacy">
+                        <input 
+                        matInput
+                        name="rate"
+                        required
+                        pattern="^[a-zA-Z ]+$"
+                        maxlength="100"
+                        minlength="2"
+                        >
+                    </mat-form-field>
+                </td>
+            </tr>
+
+        </table>
+
+        <br>
+
+        <div id="controls">
+            <button mat-button type="button" (click)="cancelClicked()">Cancel</button>
+            <button mat-raised-button type="submit" color="primary" [disabled]="form.invalid">Save</button>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,50 @@
+<div>
+    <img id="background" src="assets/bg.jpeg" alt="MIRDC"> 
+    <div>
+        <mat-card id="login" class="mat-elevation-z8">
+            <h1>Metals Industry Research and Development Center</h1>
+                <mat-card-content id="content">
+                    
+                    <mat-form-field appearance="legacy" class="credentials">
+                        <mat-label>Username</mat-label>
+                        <input matInput>
+                        <mat-icon matSuffix>account_circle</mat-icon>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="legacy" class="credentials">
+                        <mat-label>password</mat-label>
+                        <input matInput>
+                        <mat-icon matSuffix>lock</mat-icon>
+                    </mat-form-field>
+                    <div class="loginbtn">
+                        <mat-chip-list>
+                            <mat-chip>Login</mat-chip>
+                        </mat-chip-list>
+                    </div>
+                    <div id="forgot">
+                        <span><mat-checkbox class="example-margin">Remember Me</mat-checkbox></span>
+                        <span><i>Forgot password?</i></span>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+    </div>
+    <div>
+        <mat-card id="login2" class="mat-elevation-z8">
+            <div id="time">
+                <p class="time">
+                    <span>Philippine Standard Time:</span>
+                    <br>
+                    {{ today | date:'EEEE , MMMM d , y , h:mm a' }}
+                </p>
+            </div>
+            <div class="logo">
+                <img src="./assets/mirdclogo.png">
+            </div>
+            <div id="title">
+                    <span> Republic of the Philippines</span>
+                    <h1>Metals Industry Research and Development Center</h1>
+                    <span>Department of Science and Technology</span>  
+            </div>
+        </mat-card>
+    </div>
+</div>
