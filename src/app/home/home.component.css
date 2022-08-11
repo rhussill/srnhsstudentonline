@@ -1,0 +1,123 @@
+
+.img{
+  
+    height: 659px;
+    width:100%;
+    overflow: hidden;
+    /* height: 647px;
+    padding: none;
+    width: 150%; */
+    
+}
+.text{
+    margin-top: 350px;
+    margin-left: 100px;
+}
+.container{
+    position: relative;
+    text-align: center;
+    background-color: #f2ede2;
+    overflow: hidden;
+    
+
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    font-weight: bold;
+  }
+.about{
+    position: absolute;
+    top: 55%;
+    left: 19.9%;
+    transform: translate(-50%, -50%);
+    font-size:20px;
+    font-weight: 100;
+}
+#getstart-bttn{
+    position: absolute;
+    top: 75%;
+    left:18%;
+    transform: translate(-50%, -50%);
+    font-size:13px;
+    font-weight: 400;
+    color: white;
+    background-color: #1792b4;
+    
+}
+
+
+/* test */
+#header{
+    height: 90px;
+    width: 100%;
+  }
+  #topheader{
+    padding-top: 80px;
+    position: fixed;
+    z-index: 5;
+  
+  }
+  .body {
+    /* width: 100%;
+    height: 100%;
+    padding-top: 80px; */
+    background-color: #f2ede2;
+    padding: none;
+  }
+  mat-drawer-container{
+    background-color: #f2ede2;
+  }
+  mat-drawer-content{
+    box-sizing: border-box;
+  }
+  mat-drawer{
+    width: 220px;
+    margin-top: 20px;
+    background-color: #f7f7f7;
+    position: fixed;
+    overflow: hidden;
+    
+  }
+  
+  @keyframes slidein{
+    from {
+      /* position: relative; */
+      display: none;
+    }
+    to{
+      /* top: -10; */
+      background-color: blue;
+    }
+  }
+  
+  .top-nav{
+    visibility: visible;
+  }
+  
+  .bottom-nav{
+    visibility: collapse;
+  }
+  
+
+  @media only screen and (max-width:700px){
+
+    .centered {
+      margin-left: 50px;
+        width: 100%;
+        top: 280px;
+    }
+    .about{
+      margin-left: 50px;
+        width: 100%;
+        
+    }
+   
+    
+}
+ 
+  
+  

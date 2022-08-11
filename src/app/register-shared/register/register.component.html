@@ -1,0 +1,51 @@
+<mat-toolbar class="header">
+    <div id="title">  
+        <div class="logo" (click)="home()">
+            <img src="./assets/aionco.png" class="aio">
+         </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li class="log"><button mat-icon-button  (click)="log()">Login</button></li>
+            <li><button mat-raised-button id="save-btn" >Sign Up</button></li>
+        </ul>
+    </nav>
+</mat-toolbar>
+
+<div class='bgs'>
+
+    <div class='login-form-flex'>
+        <mat-card style="border-radius:0px;" class="card">
+            <mat-card-header class="sign">Register</mat-card-header>
+
+            <form (ngSubmit)="logins(loginForm.value)" #loginForm='ngForm'>
+                <div class="emailinput">Email Address</div>
+                <input 
+                class="username"
+                placeholder="Email Address"
+                >
+                <br> <br>
+        <div >
+            <tr >
+                <td>
+                <mat-checkbox class="check" ></mat-checkbox>
+                </td>
+                <td><div id="terms">Creating an account means you're okay with<br>
+                    out <p> Terms of Service </p> and <p>Privacy Policy </p></div></td>
+            </tr>
+            </div>
+                <button mat-button id='button-style-create' (click)="createacc()">Create Account</button>
+                <button mat-raised-button id='button-style-signin-google'> <img src="assets/google.png" class="googles">Sign Up with Google</button>
+          
+           
+               
+                
+                <div id="signup">Already have an account? <p (click)="log()">Sign In</p></div>
+            </form>
+        </mat-card>
+    </div>
+
+</div>
+
+<!-- <div id='snackbar'>Password changed</div> -->

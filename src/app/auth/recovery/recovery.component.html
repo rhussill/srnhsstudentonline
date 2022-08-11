@@ -1,0 +1,68 @@
+
+<div class='bg'>
+
+    <img src="./assets/aionco.png" class="createimg" (click)="home()">
+
+    <div class='login-form-flex'>
+        <mat-card style="border-radius:0px;">
+            <mat-card-header class="verification">Verification</mat-card-header>
+
+            <form>
+                <div class="checkem">Check your email.We sent you the verification code 
+                    at firstname.secondname@domain.com </div>
+                
+
+                <input 
+                class="input1"
+                maxlength="1"
+                (keypress)="numberOnly($event)"
+                #input1
+                (keyup)="move(input1, input2)"
+                >
+                <input 
+                class="input2"
+                maxlength="1"
+                (keypress)="numberOnly($event)"
+                #input2
+                (keyup)="move(input2, input3)"
+                >
+                <input 
+                class="input3"
+                maxlength="1"
+                (keypress)="numberOnly($event)"
+                #input3
+                (keyup)="move(input3, input4)"
+                >
+                <input 
+                class="input4"
+                maxlength="1"
+                (keypress)="numberOnly($event)"
+                #input4
+                (keyup)="move(input4, input5)"
+                >
+                <input 
+                class="input5"
+                maxlength="1"
+                (keypress)="numberOnly($event)"
+                #input5
+                (keyup)="move(input5, input6)"
+                >
+                <input 
+                class="input6"
+                maxlength="1"
+                (keypress)="numberOnly($event)"
+                #input6
+                >
+            
+                <br> <br> <br>
+                <button mat-button id='button-style-verify' (click)="next()">Next</button>
+                <br> <br> 
+                <div id="resend">Didn't receive any code?<br>
+                    <p>Re-send code</p></div>
+            </form>
+        </mat-card>
+    </div>
+
+</div>
+
+<!-- <div id='snackbar'>Password changed</div> -->

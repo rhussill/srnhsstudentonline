@@ -1,0 +1,33 @@
+
+
+<mat-toolbar class="header">
+
+    <div class="menu">
+        
+        <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="menuClicked()">
+            <mat-icon>list</mat-icon>
+        </button>
+    </div>  
+
+    <div id="title">  
+        <div class="logo">
+            <img src="./assets/aionco.png">
+        </div>
+      
+    </div>
+
+    <nav>
+        <ul>
+            <li><button mat-icon-button  (click)="home()">Home</button></li>
+            <li><button mat-icon-button >Service </button></li>
+            <li> <button mat-icon-button >Something </button></li>
+            <li><button mat-icon-button >About </button></li>
+            <li><button mat-icon-button >Contact Us</button></li>
+            <li><button mat-icon-button (click)="login()">Login</button></li>
+            <li><button mat-raised-button id="save-btn" (click)="signup()">Sign Up</button></li>
+        </ul>
+    </nav>
+
+    
+</mat-toolbar>
+

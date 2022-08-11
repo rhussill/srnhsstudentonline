@@ -1,17 +1,16 @@
-//Component
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { dataSourceComponent } from './body/dataSource/dataSource.component';
-import { LibraryComponent } from './body/library/library.component';
-import { SidecardsComponent } from './sidecards/sidecards.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { competencyDataSourceComponent} from './body/dataSource/competencyDataSource/competencyDataSource.component';
-import { CompentencyDataSourceFormComponent } from './body/dataSource/competencyDataSource/compentency-data-source-form/compentency-data-source-form.component';
-import { DashboardComponent } from './body/dashboard/dashboard.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './auth/login/login.component';
-//Modules
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+//component
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './body/header/header.component';
+import { SidecardsComponent } from './body/sidecards/sidecards.component';
+
+import { HomeComponent } from './home/home.component';
+
+
+
+//Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule} from '@angular/material/icon';
 import { MatListModule} from '@angular/material/list';
@@ -40,68 +39,29 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatRippleModule } from '@angular/material/core';
+import { AuthModule } from './auth/auth.module';
 
-//Routes
+
+
+//routing
+import { AuthRoutingModule } from './auth/auth-routing.module';
 import { AppRoutingModule } from './app-routing.module';
-import { ReportsComponent } from './body/reports/reports.component';
+import { RegisterRoutingModule } from './register-shared/register-routing.module';
+import { RegisterModuleModule } from './register-shared/register-module.module';
+import {  RouterModule } from '@angular/router';
 
-//Training Provider Components
-import { TrainingProviderComponent } from './body/library/training-provider/training-provider.component';
-import { ViewTrainingProviderComponent } from './body/library/training-provider/view-training-provider/view-training-provider.component';
-import { EditTrainingProviderComponent } from './body/library/training-provider/edit-training-provider/edit-training-provider.component';
-import { CreateTrainingProviderComponent } from './body/library/training-provider/create-training-provider/create-training-provider.component';
-
-//Dialog Components
-import { DeleteDialogComponent } from './shared/delete-dialog/delete-dialog.component';
-import { DialogComponent } from './shared/dialog/dialog.component';
-
-//Program Components
-import { ViewAllProgramsComponent } from './body/programs/view-all-programs/view-all-programs.component';
-import { CreateProgramComponent } from './body/programs/create-program/create-program.component';
-import { ViewProgramComponent } from './body/programs/view-program/view-program.component';
-import { EditProgramComponent } from './body/programs/edit-program/edit-program.component';
-import { ViewAllSMEComponent } from './body/sme/view-all-sme/view-all-sme.component';
-import { CreateSMEComponent } from './body/sme/create-sme/create-sme.component';
-import { UpdateSMEComponent } from './body/sme/update-sme/update-sme.component';
-import { ViewSMEComponent } from './body/sme/view-sme/view-sme.component';
-import { ViewALDPComponent } from './body/view-aldp/view-aldp.component';
-import { CompetencyViewComponent } from './body/dataSource/competencyDataSource/competency-view/competency-view.component';
-import { CompetencyEditComponent } from './body/dataSource/competencyDataSource/competency-edit/competency-edit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    dataSourceComponent,
-    LibraryComponent,
     SidecardsComponent,
-    SidenavComponent,
-    competencyDataSourceComponent,
-    CompentencyDataSourceFormComponent,
-    DashboardComponent,
-    NavbarComponent,
-    ReportsComponent,
-    TrainingProviderComponent,
-    ViewTrainingProviderComponent,
-    EditTrainingProviderComponent,
-    CreateTrainingProviderComponent,
-    DeleteDialogComponent,
-    DialogComponent,
-    ViewAllProgramsComponent,
-    CreateProgramComponent,
-    ViewProgramComponent,
-    EditProgramComponent,
-    ViewAllSMEComponent,
-    CreateSMEComponent,
-    UpdateSMEComponent,
-    ViewSMEComponent,
-    LoginComponent,
-    ViewALDPComponent,
-    CompetencyViewComponent,
-    CompetencyEditComponent,
+    HomeComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     MatIconModule,
     MatListModule,
@@ -126,12 +86,22 @@ import { CompetencyEditComponent } from './body/dataSource/competencyDataSource/
     MatDividerModule,
     MatButtonModule,
     MatButtonToggleModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
     MatCheckboxModule,
+    RegisterModuleModule,
+    AuthModule,
+    MatCheckboxModule,
+    MatRippleModule,
+    
+    
+    //routing
+    AppRoutingModule,
+    AuthRoutingModule,
+    RouterModule,
+    RegisterRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

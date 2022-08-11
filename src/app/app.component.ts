@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
-import { SidenavComponent } from './sidenav/sidenav.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

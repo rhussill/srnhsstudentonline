@@ -1,0 +1,52 @@
+
+<div class='bg'>
+
+    <img src="./assets/aionco.png" (click)="home()" class="profimg">
+
+    <div class='login-form-flex'>
+        <mat-card style="border-radius:0px;">
+            <mat-card-header class="profilehead">Profile</mat-card-header>
+
+            <form (ngSubmit)="login(loginForm.value)" #loginForm ='ngForm'>
+                <div class="firstnameuser">First Name </div>
+                <div class="textusers">Last Name</div>
+                <div class="phonenumber">Phone Number</div>
+                <div class="dateofbirth">Date of Birth</div>
+                <input 
+                class="firstname"
+                placeholder="First Name"
+                >
+                
+                <input 
+                class="lastname"
+                placeholder="Last Name"
+                >
+
+                <input 
+                class="number"
+                placeholder="Phone Number"
+                >
+                
+                <input
+                class="inputdate"
+                name="date_of_birth"
+                ngModel
+                [matDatepicker]="pickerc"
+                [max]="maxDate"
+                required
+                placeholder="MM / DD / YYYY"
+                >
+                
+                
+                <mat-datepicker-toggle matSuffix [for]="pickerc"></mat-datepicker-toggle>
+                <mat-datepicker #pickerc></mat-datepicker>
+            
+                <br> <br>
+                <button mat-button id='button-style-savecontinue' (click)="save()">Save and Continue</button>
+            </form>
+        </mat-card>
+    </div>
+
+</div>
+
+<!-- <div id='snackbar'>Password changed</div> -->

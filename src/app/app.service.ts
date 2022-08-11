@@ -27,6 +27,7 @@ export class AppService {
   smeURL = environment.apiURL + 'sme';
   aldpURL = environment.apiURL;
   competencyURL = environment.apiURL; 
+  
 
   constructor(private http: HttpClient) { }
 
