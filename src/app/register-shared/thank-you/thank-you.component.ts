@@ -14,6 +14,7 @@ export class ThankYouComponent implements OnInit {
   }
  
   home(){
-    this.router.navigate(['create-pass'])
+    localStorage.clear();
+    this.router.navigate(['home'])
   }
 }

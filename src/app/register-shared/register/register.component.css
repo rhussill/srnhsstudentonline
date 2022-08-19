@@ -191,6 +191,19 @@ body{
         line-height: 1px;
        margin: 1px;
     }
+    #button-style-create-error{
+      background-color: #ded7d7;
+      color: white;
+      margin: 15px;
+      justify-content: center;
+      width: 304px;
+      height: 30px;
+      border-radius: 5px;
+      padding:none;
+      line-height: 1px;
+     margin: 1px;
+
+    }
     #terms{
         font-weight: 500;
         padding-bottom: 20px;

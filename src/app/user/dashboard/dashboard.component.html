@@ -1,0 +1,45 @@
+
+<mat-toolbar id='header'>
+    <mat-toolbar-row>
+       
+      <div id='mobile-controls'>
+        <button mat-icon-button aria-label="Example icon-button with menu icon"  (click)="opensidenav()"><mat-icon>list</mat-icon></button>
+      </div>
+      <div id='header-div'>
+        <!-- <h2>AIONCO</h2> -->
+            <img  class="logo" src="./assets/aionco.png">
+      </div>
+    </mat-toolbar-row>
+   
+  </mat-toolbar>
+ 
+ 
+
+
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened *ngIf='leftSideIsVisible'>
+
+        <a mat-button class="sideList"><mat-icon>username</mat-icon>Name</a>
+        <mat-divider></mat-divider>
+        <a mat-button class="sideList" (click)="aionco()"><mat-icon>dashboard</mat-icon>Aionco</a>
+        <mat-divider></mat-divider>
+        <a mat-button class="sideList" (click)="apollo()"><mat-icon>create</mat-icon>Apollo</a>
+        <mat-divider></mat-divider>
+        <a mat-button class="sideList" (click)="apolloregistration()"><mat-icon>Specimen</mat-icon>Apollo Survey</a>
+        <mat-divider></mat-divider>
+        <a mat-button class="sideList" (click)="logout()"><mat-icon>logout</mat-icon>Logout</a>
+        <mat-divider></mat-divider>
+
+    </mat-sidenav>
+   
+
+
+
+    <mat-sidenav-content>  
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    
+  </mat-sidenav-container>
+
+
+

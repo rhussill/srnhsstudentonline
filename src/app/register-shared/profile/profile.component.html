@@ -12,12 +12,16 @@
                 <div class="textusers">Last Name</div>
                 <div class="phonenumber">Phone Number</div>
                 <div class="dateofbirth">Date of Birth</div>
-                <input 
+                <input
+                [(ngModel)]="firstname"
+                name="firstname"
                 class="firstname"
                 placeholder="First Name"
                 >
                 
                 <input 
+                [(ngModel)]="lastname"
+                name="lastname"
                 class="lastname"
                 placeholder="Last Name"
                 >
@@ -25,12 +29,15 @@
                 <input 
                 class="number"
                 placeholder="Phone Number"
+                [(ngModel)]="phonenumber"
+                name="phonenumber"
+                
                 >
                 
                 <input
                 class="inputdate"
-                name="date_of_birth"
-                ngModel
+                name="dateofbirth"
+                [(ngModel)]="dateofbirth"
                 [matDatepicker]="pickerc"
                 [max]="maxDate"
                 required

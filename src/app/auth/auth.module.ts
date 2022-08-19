@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 
 
 
@@ -16,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { DialogboxComponent } from './dialogbox/dialogbox.component';
 
 
 
@@ -23,7 +26,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
   declarations: [
     LoginComponent,
     RecoveryComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    DialogboxComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +36,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     FormsModule,
     MatCardModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    PdfViewerModule
   ]
 })
 export class AuthModule { }

@@ -41,6 +41,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatRippleModule } from '@angular/material/core';
 import { AuthModule } from './auth/auth.module';
+import { NgxMaskModule } from 'ngx-mask';
+
+
 
 
 
@@ -50,6 +53,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegisterRoutingModule } from './register-shared/register-routing.module';
 import { RegisterModuleModule } from './register-shared/register-module.module';
 import {  RouterModule } from '@angular/router';
+import { DashboardComponent } from './user/dashboard/dashboard.component';
+import { AioncoComponent } from './user/aionco/aionco.component';
+import { ApolloComponent } from './user/apollo/apollo.component';
+import { ApolloRegistrationComponent } from './user/apollo-registration/apollo-registration.component';
 
 
 
@@ -59,6 +66,10 @@ import {  RouterModule } from '@angular/router';
     HeaderComponent,
     SidecardsComponent,
     HomeComponent,
+    DashboardComponent,
+    AioncoComponent,
+    ApolloComponent,
+    ApolloRegistrationComponent,
   ],
   imports: [
     CommonModule,
@@ -95,6 +106,9 @@ import {  RouterModule } from '@angular/router';
     AuthModule,
     MatCheckboxModule,
     MatRippleModule,
+    MatIconModule,
+
+
     
     
     //routing

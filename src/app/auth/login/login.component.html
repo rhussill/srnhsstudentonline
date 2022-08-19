@@ -22,14 +22,18 @@
             <form (ngSubmit)="login(loginForm.value)" #loginForm='ngForm'>
                 <div class="textemail">Email Address</div>
                 <input 
+                [(ngModel)]="email"
+                name="email"
                 class="usernameeinput"
                 placeholder="Email Address"
-                
+               
                 >
                 <br> <br>
                 <div class="textpasss">Password</div>
                 
                 <input 
+                [(ngModel)]="password"
+                name="password"
                 class="pasworddinput"
                 placeholder="Password"
                 
@@ -45,7 +49,14 @@
                 <div id="signup">Don't have an account? <p (click)="signup()">Sign Up</p></div>
             </form>
         </mat-card>
+
     </div>
+    <!-- <pdf-viewer
+     [src]="service.pdfFile"
+    [render-text]="true"
+    [show-all]="true"
+    style="display: block; height:75vh;"
+    ></pdf-viewer> -->
 
 </div>
 

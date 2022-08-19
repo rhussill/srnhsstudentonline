@@ -1,0 +1,113 @@
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+ 
+    #mobile-controls{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    #dropdown-controls{
+        position:relative;
+        visibility: visible;
+        background-color: #333333;
+        color:white;
+        height: 100%;
+    }
+    #header{
+        width: auto;
+        height: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {
+    #mobile-controls{
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    #dropdown-controls{
+        position: relative;
+        display: block;
+        background-color: #333333;
+        color:white;
+        height: 100%;
+    }
+} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {
+    #mobile-controls{
+        display: none;
+    }
+    #dropdown-controls{
+        display: none;
+    }
+} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {} */
+
+mat-toolbar{
+    background-color:#f2ede2;
+    width:auto;
+}
+
+.sideList{
+    padding: 10px;
+    color: rgb(3, 3, 3);
+    width: 100%;
+    text-align: left;
+}
+.mat-sidenav{
+    background-color:#faf7f5;
+    width: 250px;
+
+}
+
+
+
+.sample{
+    height: auto;
+}
+
+#header{
+    color: white;
+}
+
+#dropdown-controls mat-list-item{
+    position: relative;
+    color: black;
+    z-index: 0;
+}
+
+
+.example-container {
+    position: absolute;
+    margin-top: 63px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+    
+
+  }
+
+  .logo{
+   
+    height: 50px;
+    padding: none;
+ }
+ .buttonside{
+    color:black;
+ }
+
+
+
+
+
+

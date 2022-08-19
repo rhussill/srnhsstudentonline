@@ -4,6 +4,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RegisterComponent } from './register/register.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
+import { CreatePasswordComponent } from './create-password/create-password.component';
 
 //module
 
@@ -14,8 +16,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 import { MatListModule } from '@angular/material/list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { ThankYouComponent } from './thank-you/thank-you.component';
-import { CreatePasswordComponent } from './create-password/create-password.component';
+
+
+//phone
+
 
 
 
@@ -39,7 +43,8 @@ import { CreatePasswordComponent } from './create-password/create-password.compo
     MatIconModule,
     MatRippleModule,
     MatListModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    
   ]
 })
 export class RegisterModuleModule { }

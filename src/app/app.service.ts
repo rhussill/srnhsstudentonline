@@ -27,10 +27,68 @@ export class AppService {
   smeURL = environment.apiURL + 'sme';
   aldpURL = environment.apiURL;
   competencyURL = environment.apiURL; 
+
+  pdfFile= environment.apiURL + 'e/pdf';
+
+  ///register
+  emailUrl=environment.apiURL + 'register/email'
+  createpassUrl= environment.apiURL + 'register/password'
+  createprofileUrl=environment.apiURL + 'register/profile'
+
+  ///login
+
+  loginUrl=environment.apiURL + 'sign/login'
   
+
+  pdf:any;
 
   constructor(private http: HttpClient) { }
 
+  login(form:any){
+
+    let options =  { headers: new HttpHeaders({'Content-Type':'application/json'})};
+    return this.http.post<any>(this.loginUrl,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+  createprofile(form:any,_id:any){
+
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.patch<any>(`${this.createprofileUrl}/${_id}`,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+  createpassword(form:any,_id:any){
+
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.patch<any>(`${this.createpassUrl}/${_id}`,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+  postEmail(form:any){
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    
+
+    return this.http.post<any>(this.emailUrl,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+  }
 
   //Training Provider functions
   getAllTrainingProvider(pageNo:number,pageSize:number){
@@ -42,6 +100,24 @@ export class AppService {
       retry(3),
       catchError(this.handleError)
     )
+  }
+  getpdf(){
+
+    // const url =`${this.pdfFile}`;
+
+    // const httpOptions = {
+    //   'responseType'  : 'arraybuffer' as 'json'
+       //'responseType'  : 'blob' as 'json'        //This also worked
+       let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    
+
+    return this.http.get<any>(this.pdfFile,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
   }
 
   getTrainingProvider(id:any){
@@ -356,6 +432,9 @@ export class AppService {
 
     // return an observable with a user-facing error message
     return throwError(
-      'Something bad happened; please try again later.');
+      'Email not found');
   }
+//   return throwError(
+//     'Something bad happened; please try again later.');
+// }
 }
