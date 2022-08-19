@@ -14,7 +14,7 @@ export class ThankYouComponent implements OnInit {
   }
  
   home(){
-    localStorage.clear();
+   
     this.router.navigate(['home'])
   }
 }

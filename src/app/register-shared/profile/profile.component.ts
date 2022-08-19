@@ -28,6 +28,7 @@ export class ProfileComponent implements OnInit {
   }
 
   login(form:any){
+    localStorage.clear();
     let dobformat = this.pipe.transform(form.dateofbirth, 'MM/dd/yyyy'); //date format
     let dateofbirth = this.pipe.transform(form.dateofbirth, 'MM/dd/yyyy'); //date format
     form.dateofbirth = dobformat;

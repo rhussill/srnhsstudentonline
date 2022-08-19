@@ -41,7 +41,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatRippleModule } from '@angular/material/core';
 import { AuthModule } from './auth/auth.module';
-import { NgxMaskModule } from 'ngx-mask';
+
 
 
 
