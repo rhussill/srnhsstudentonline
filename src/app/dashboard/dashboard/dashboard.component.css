@@ -1,0 +1,104 @@
+.header{
+    background-color: white;
+    height: 11%;
+    border-bottom: 1px solid;
+    border-color: black;
+}
+
+
+.upload-title{
+    position: relative;
+    left: 2%;
+    top:30%
+
+
+}
+
+.box{
+    font-size: 15px;
+    border-radius: 4px;
+    top: -33%;
+    position: relative;
+    width: 292px;
+    left: 37%;
+    height: 35px;
+    border-style: unset;
+    background: #f6f6f7;
+    text-indent: 29px;
+}
+
+.usercontainer{
+    bottom: 82%;
+    position: relative;
+    width: 120px;
+    background-color: #ededed;
+    height: 44px;
+    border-radius: 5px;
+    position: relative;
+    left: 90%;
+}
+
+.usertext{
+    top: 9%;
+    left: 26%;
+    position: relative;
+    font-size: 15px;
+    color: black;
+    margin: 0px;
+}
+.jobtext{
+    top: 5%;
+    left: 26%;
+    position: relative;
+    font-size: 13px;
+    color: #bababf;
+}
+
+
+h3{
+    position: relative;
+    margin: -4px;
+    right: -3.5px;
+    font-weight: 600;
+}
+
+.iconsearch{
+    color: grey;
+    transform: scale(0.7);
+    position: relative;
+    left: 39%;
+    z-index: 1;
+    bottom: 25%;
+}
+
+#body{
+    width:100%;
+    height:100%;
+    margin: 0 20px;
+}
+#add-button{
+    background-color: #f58220;
+    color: white; 
+    transform: scale(1.2);
+}
+#uploadcont{
+    top: 36px;
+    /* top: 15%; */
+    position: relative;
+    width: 87%;
+    left: 6%;
+}
+.tables {
+    width: 97%;
+  }
+
+  .containeredit{
+    top: 63px;
+    display: flex;
+    position: relative;
+    justify-content: right;
+    margin-right: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #31c5f4;
+  }

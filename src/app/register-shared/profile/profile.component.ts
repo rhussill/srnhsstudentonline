@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit {
   }
 
   login(form:any){
-    localStorage.clear();
+   
     let dobformat = this.pipe.transform(form.dateofbirth, 'MM/dd/yyyy'); //date format
     let dateofbirth = this.pipe.transform(form.dateofbirth, 'MM/dd/yyyy'); //date format
     form.dateofbirth = dobformat;
@@ -46,7 +46,7 @@ export class ProfileComponent implements OnInit {
 
     }else{
 
-    this.service.createprofile(form ,localStorage.getItem('_id')).subscribe(data=>{
+    this.service.createprofile(form,localStorage.getItem('_id')).subscribe(data=>{
       console.log(data)
       alert("successfully register")
       this.router.navigate(['home']);

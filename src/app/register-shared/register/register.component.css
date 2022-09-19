@@ -43,10 +43,10 @@ body{
 /* login */
    
 
-.card{
+.regcard{
 
     width: 350px;
-    height: 315px;
+    height: 376px;
     align-items: center;
     text-align: center;
     margin: 3vh;
@@ -159,7 +159,7 @@ body{
         border-radius: 5px;
     }
     .emailinput{
-        margin-right: 228px;
+        margin-right: 221px;
         padding-bottom: 5px;
         font-weight: 450;
     }
@@ -209,7 +209,7 @@ body{
         padding-bottom: 20px;
         font-size: 14px;
         border: black;
-        margin-left: 5px;
+        margin-left: -18px;
         
     }
     #button-style-signin-google{
@@ -257,6 +257,10 @@ body{
       }
       .check{
         padding-left: 10px;
+        position: relative;
+       right: 21px;
+       top: -2px;
+
       }
       .mat-checkbox{
         margin-left:19px;

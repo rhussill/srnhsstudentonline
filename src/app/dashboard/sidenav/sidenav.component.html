@@ -1,0 +1,47 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''" >
+
+    
+    <div class="logo-container">
+      
+                        
+        <button class="close" mat-mini-fab [ngClass]="collapsed ? 'sidenav-collapsed': ''" *ngIf="rightclose" (click)="toggleCollapse()" @fadeInOut>
+            <mat-icon class="bttnicon">chevron_right</mat-icon>
+            </button>
+
+            <button class="open" mat-mini-fab *ngIf="leftclose" (click)="closeSidenav()" @fadeInOut>
+                <mat-icon class="bttnicon">chevron_left</mat-icon>
+                </button>
+       
+        <button class="logo" (click)="toggleCollapse()"> <img class="alogo" src="assets/aioncologo.png" alt="aioncologo"></button>
+        
+        <div class="logo-text" @fadeInOut *ngIf="collapsed"><img class="textaionco" src="assets/aioncotext.png" alt="aionco"></div>
+        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" 
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+            >
+                <i class="sidenav-link-icon" [class]="data.icon"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    {{data.label}}    
+                </span>
+                
+            </a>
+            
+        </li>
+
+      <mat-icon (click)="logout()" *ngIf="leftclose" class="logouticon">logout</mat-icon>  <span (click)="logout()"  *ngIf="leftclose" class="logout">Logout</span>
+      
+    </ul>
+
+   
+</div>
+
+
+
+
+

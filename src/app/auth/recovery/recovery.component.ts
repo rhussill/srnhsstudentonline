@@ -1,5 +1,7 @@
+import { animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-recovery',
@@ -8,7 +10,15 @@ import { Router } from '@angular/router';
 })
 export class RecoveryComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  code:any;
+  code2:any;
+  code3:any;
+  code4:any;
+  code5:any;
+  code6:any;
+
+ 
+  constructor(private router:Router , private service:AppService) { }
 
   ngOnInit(): void {
   }
@@ -18,7 +28,7 @@ export class RecoveryComponent implements OnInit {
   }
 
   next(){
-    this.router.navigate(['login'])
+    // this.router.navigate(['login'])
   }
 
   numberOnly(evt:any){
@@ -37,6 +47,25 @@ export class RecoveryComponent implements OnInit {
     if(length==maxlength){
       toinput.focus();
     }
+  }
+
+  codesend(form:any){
+ 
+    form = { 
+      "_id":localStorage.getItem("_id"),
+      "code":`${form.code}${form.code2}${form.code3}${form.code4}${form.code5}${form.code6}`
+    }
+
+    console.log('test')
+    console.log(form)
+    this.service.sendcode(form).subscribe(data=>{
+      //console.log(data)
+      if(data.result=="Succesful"){
+        this.router.navigate(['createpassrecovery'])
+      }else if (data.result=="Failure"){
+        alert(data.result)
+      }
+    })
   }
   
 

@@ -1,0 +1,82 @@
+<table style="display:contents;">
+    <tr>
+        <td style="width:50px">
+            <div id="left-div">
+                <ul>
+                    <img  class="logo" src ="assets/aioncologo.png">
+                    <br> <br> <br> 
+                    
+                        
+                          <mat-icon  (click)="dashboard()"
+                          class="menu-item" >dashboard</mat-icon>
+                          <br><br>
+                          <mat-icon  (click)="dashboard()"
+                          class="menu-item" >science</mat-icon>
+                          <br><br>
+                          <mat-icon  (click)="dashboard()"
+                          class="menu-item" >storage</mat-icon>
+                          <br><br>
+                          <mat-icon  (click)="dashboard()"
+                          class="menu-item" >list_alt</mat-icon>
+                          <br><br>
+                          <mat-icon  (click)="dashboard()"
+                          class="menu-item" >person</mat-icon>
+                          <br><br>
+                          <mat-icon  (click)="dashboard()"
+                          class="menu-item" >settings_application</mat-icon>
+                          <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br><br>
+                          <mat-icon  (click)="logout()"
+                          class="menu-item" >logout</mat-icon>
+                        
+                      
+                </ul>
+            </div>
+        </td>
+        <td>
+            <mat-drawer-container class="opencontainer" >
+                <mat-drawer mode="side" [opened]="isOpen"style="width:130px ;">
+                    <ul style="overflow: hidden; ">
+                        <img  class="logotext" src="assets/aioncotext.png">
+
+                        <div class="text">Dashboard</div>
+                       
+                      <div class="textscience">Science</div>
+                      
+                      <div class="textresult">Results</div>
+                      
+                      <div class="textpatient">Patient</div>
+                      
+                      <div class="textprofile">Profile</div>
+                      
+                      <div class="textsetting">Setting</div>
+                      <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>
+                      <div class="textlogout" (click)="logout()">Logout</div>
+                      <div class="textsetting">Setting</div>
+
+                      <div class="textsetting" >Logout</div>
+                   
+                      
+                      
+                    </ul>
+                </mat-drawer>
+                 
+                <mat-drawer-content >
+                <router-outlet></router-outlet>
+                </mat-drawer-content>
+            </mat-drawer-container>
+        </td>
+    </tr>
+    
+
+
+<button *ngIf="iconright" [ngClass]="isOpen?'open':'close'" mat-mini-fab (click)="expand()">
+<mat-icon *ngIf="iconright" id="chev" class="righticon">chevron_right</mat-icon>
+
+</button>
+
+<button *ngIf="iconleft" [ngClass]="isOpen?'open':'close'" mat-mini-fab (click)="expand()">
+    <mat-icon id="chev" class="lefticon">chevron_left</mat-icon>
+    
+    </button>
+    </table>
+    <!--  -->

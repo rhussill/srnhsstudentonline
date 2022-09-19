@@ -53,10 +53,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegisterRoutingModule } from './register-shared/register-routing.module';
 import { RegisterModuleModule } from './register-shared/register-module.module';
 import {  RouterModule } from '@angular/router';
-import { DashboardComponent } from './user/dashboard/dashboard.component';
+
 import { AioncoComponent } from './user/aionco/aionco.component';
 import { ApolloComponent } from './user/apollo/apollo.component';
 import { ApolloRegistrationComponent } from './user/apollo-registration/apollo-registration.component';
+import { DashboardUserComponent } from './user/dashboard-user/dashboard-user.component';
+import { DashboardMainComponent } from './user/dashboard-main/dashboard-main.component';
+import { CreatepasswordRecoveryComponent } from './auth/createpassword-recovery/createpassword-recovery.component';
+import { DashboardTestComponent } from './user/dashboard-test/dashboard-test.component';
+import { BodyComponent } from './dashboard/body/body.component';
+import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
+import { ScienceComponent } from './dashboard/science/science.component';
+import { ResultComponent } from './dashboard/result/result.component';
+import { PatientComponent } from './dashboard/patient/patient.component';
+import { ProfileComponent } from './dashboard/profile/profile.component';
+import { SettingComponent } from './dashboard/setting/setting.component';
+import { AppCompomentComponent } from './dashboard/app-compoment/app-compoment.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 
 
 
@@ -66,10 +79,22 @@ import { ApolloRegistrationComponent } from './user/apollo-registration/apollo-r
     HeaderComponent,
     SidecardsComponent,
     HomeComponent,
-    DashboardComponent,
     AioncoComponent,
     ApolloComponent,
     ApolloRegistrationComponent,
+    DashboardUserComponent,
+    DashboardMainComponent,
+    CreatepasswordRecoveryComponent,
+    DashboardTestComponent,
+    BodyComponent,
+    SidenavComponent,
+    ScienceComponent,
+    ResultComponent,
+    PatientComponent,
+    ProfileComponent,
+    SettingComponent,
+    AppCompomentComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,

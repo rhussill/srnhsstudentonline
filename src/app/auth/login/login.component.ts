@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   today = Date.now();
   email:any;
   password:any;
+  responsedata:any;
 
   constructor(private router:Router ,public service:AppService , private dialog:MatDialog) { }
 
@@ -38,12 +39,17 @@ export class LoginComponent implements OnInit {
 
     }
     this.service.login(form).subscribe(data=>{
-      console.log(data)
-      if(data.result=='Success'){
+      this.responsedata=data
+      console.log(this.responsedata.token)
+
+      if(this.responsedata.token==null){
         alert(data.message)
-       this.router.navigate(['dashboard'])
-      }else if(data.result=='Failure'){
-        alert(data.message)
+        console.log("error")
+      
+      }else if(this.responsedata.token==this.responsedata.token){
+        console.log("good")
+        this.router.navigate(['sidenav/dashboard'])
+       
       }
     })
    

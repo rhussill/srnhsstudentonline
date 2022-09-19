@@ -28,12 +28,16 @@ export class AppService {
   aldpURL = environment.apiURL;
   competencyURL = environment.apiURL; 
 
+  //forgotpass
+  fgtemailUrl=environment.apiURL + 'forgot/mail';
+
   pdfFile= environment.apiURL + 'e/pdf';
 
   ///register
   emailUrl=environment.apiURL + 'register/email'
   createpassUrl= environment.apiURL + 'register/password'
   createprofileUrl=environment.apiURL + 'register/profile'
+  sendcodeUrl = environment.apiURL + 'forgot/confirmcode'
 
   ///login
 
@@ -43,6 +47,32 @@ export class AppService {
   pdf:any;
 
   constructor(private http: HttpClient) { }
+
+
+  
+  sendcode(form:any){
+    console.log(form)
+    let options =  { headers: new HttpHeaders({'Content-Type': 'application/json'})};
+    return this.http.post<any>(this.sendcodeUrl,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+  fgtemail(form:any){
+
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.post<any>(this.fgtemailUrl,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
 
   login(form:any){
 

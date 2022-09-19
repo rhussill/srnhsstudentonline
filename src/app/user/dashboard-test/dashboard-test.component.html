@@ -1,0 +1,25 @@
+<table>
+    <tr>
+        <td style="width:50px">
+            <div id="left-div">
+                <ul>
+                    <li><mat-icon>people</mat-icon></li>
+                </ul>
+            </div>
+        </td>
+        <td>
+            <mat-drawer-container class="example-container">
+                <mat-drawer mode="side" [opened]="isOpen">
+                    <ul>
+                        <li>People</li>
+                    </ul>
+                </mat-drawer>
+                <mat-drawer-content>Main content</mat-drawer-content>
+              </mat-drawer-container>
+        </td>
+    </tr>
+</table>
+
+<button [ngClass]="isOpen?'open':'close'" mat-mini-fab (click)="expand()">
+<mat-icon id="chev">chevron_right</mat-icon>
+</button>

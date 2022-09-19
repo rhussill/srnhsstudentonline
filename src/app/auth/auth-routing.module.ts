@@ -4,7 +4,8 @@ import { RegisterComponent } from 'src/app/register-shared/register/register.com
 import { LoginComponent } from './login/login.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { DashboardComponent } from '../user/dashboard/dashboard.component';
+import { DashboardUserComponent } from '../user/dashboard-user/dashboard-user.component';
+import { CreatepasswordRecoveryComponent } from './createpassword-recovery/createpassword-recovery.component';
 
 
 
@@ -14,7 +15,9 @@ const routes: Routes = [
    {path: 'register',component:RegisterComponent},
    {path: 'recovery',component:RecoveryComponent},
    {path: 'forgotpass',component:ForgotPasswordComponent},
-   {path: 'dashboard',component:DashboardComponent},
+  //  {path: 'dashboard',component:DashboardComponent},
+  //  {path: 'dashboard-user',component:DashboardUserComponent},
+   {path: 'createpassrecovery',component:CreatepasswordRecoveryComponent}
 ]
 
 @NgModule({

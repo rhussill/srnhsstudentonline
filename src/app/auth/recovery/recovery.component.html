@@ -4,10 +4,10 @@
     <img src="./assets/aionco.png" class="createimg" (click)="home()">
 
     <div class='login-form-flex'>
-        <mat-card style="border-radius:0px;">
+        <mat-card style="border-radius:0px;height: 300px;">
             <mat-card-header class="verification">Verification</mat-card-header>
 
-            <form>
+            <form (ngSubmit)="codesend(sendcodeForm.value)" #sendcodeForm='ngForm'>
                 <div class="checkem">Check your email.We sent you the verification code 
                     at firstname.secondname@domain.com </div>
                 
@@ -15,7 +15,8 @@
                 <input 
                 class="input1"
                 maxlength="1"
-                (keypress)="numberOnly($event)"
+                [(ngModel)]="code"
+                name="code"
                 #input1
                 (keyup)="move(input1, input2)"
                 >
@@ -25,6 +26,9 @@
                 (keypress)="numberOnly($event)"
                 #input2
                 (keyup)="move(input2, input3)"
+                [(ngModel)]="code2"
+                name="code2"
+               
                 >
                 <input 
                 class="input3"
@@ -32,6 +36,9 @@
                 (keypress)="numberOnly($event)"
                 #input3
                 (keyup)="move(input3, input4)"
+                [(ngModel)]="code3"
+                name="code3"
+              
                 >
                 <input 
                 class="input4"
@@ -39,6 +46,9 @@
                 (keypress)="numberOnly($event)"
                 #input4
                 (keyup)="move(input4, input5)"
+                [(ngModel)]="code4"
+                name="code4"
+              
                 >
                 <input 
                 class="input5"
@@ -46,16 +56,22 @@
                 (keypress)="numberOnly($event)"
                 #input5
                 (keyup)="move(input5, input6)"
+                [(ngModel)]="code5"
+                name="code5"
+              
                 >
                 <input 
                 class="input6"
                 maxlength="1"
                 (keypress)="numberOnly($event)"
                 #input6
+                [(ngModel)]="code6"
+                name="code6"
+               
                 >
             
                 <br> <br> <br>
-                <button mat-button id='button-style-verify' (click)="next()">Next</button>
+                <button mat-button id='button-style-verify' type="submit">Next</button>
                 <br> <br> 
                 <div id="resend">Didn't receive any code?<br>
                     <p>Re-send code</p></div>

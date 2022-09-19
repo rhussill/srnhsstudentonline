@@ -1,0 +1,121 @@
+  
+    
+  <mat-sidenav-container
+    id="sidenavContainer"
+   fullscreen >
+   
+   
+    <mat-sidenav
+      mode="side"
+      #sidenav
+      id="sidenav"
+      [class.menu-open]="isMenuOpen"
+      [class.menu-close]="!isMenuOpen"
+      opened>
+      <mat-list id="menus">
+        <mat-card class="header" style="box-shadow:none ;">
+          <mat-card-header >
+
+            <div mat-card-avatar class="avatar">
+            <img  class="logo" src ="assets/aioncologo.png">
+            </div>
+            <!-- <div 
+              mat-card-avatar 
+              class="avatar"></div> -->
+              
+  
+            <mat-card-title> <img  class="logotext" src="assets/aioncotext.png">
+                
+                
+                <div class="button" *ngIf="leftbttn">
+                    <mat-icon class="iconleft"
+                    (click)="onToolbarMenuToggle()"
+                    id="toolbarMenu" *ngIf="iconleft">chevron_left</mat-icon>
+
+                   
+                    </div>
+
+                    <div id="buttons" *ngIf="rightbttn">
+                        
+                        <mat-icon (click)="onToolbarMenuToggle()" id="toolbarMenu" *ngIf="iconright"  class="icon1right">chevron_right</mat-icon>
+                        </div>
+            </mat-card-title>           
+          </mat-card-header>
+        </mat-card>
+        <br>
+        <mat-list-item>
+          <button (click)="dashboard()"
+          class="menu-item"
+            mat-flat-button>
+            <mat-icon>dashboard</mat-icon>
+          Dashboard</button>
+        </mat-list-item>
+  
+        <mat-list-item>
+            <button 
+            class="menu-item"
+              mat-flat-button>
+              <mat-icon>science</mat-icon>
+            Science</button>
+          </mat-list-item>
+  
+          <mat-list-item>
+              <button 
+              class="menu-item"
+                mat-flat-button>
+                <mat-icon>storage</mat-icon>
+              Result</button>
+            </mat-list-item>
+
+            
+          <mat-list-item>
+            <button 
+            class="menu-item"
+              mat-flat-button>
+              <mat-icon>list_alt</mat-icon>
+            Patient</button>
+          </mat-list-item>
+
+             
+          <mat-list-item>
+            <button 
+            class="menu-item"
+              mat-flat-button>
+              <mat-icon>person</mat-icon>
+            Profile</button>
+          </mat-list-item>
+
+             
+          <mat-list-item>
+            <button 
+            class="menu-item"
+              mat-flat-button>
+              <mat-icon>settings_application</mat-icon>
+            Setting</button>
+          </mat-list-item>
+          <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+          <mat-list-item>
+            <button 
+            class="menu-item"
+              mat-flat-button>
+              <mat-icon>logout</mat-icon>
+            Logout</button>
+          </mat-list-item>
+
+          
+
+      </mat-list>
+
+    
+
+
+    
+    </mat-sidenav>
+  
+    <mat-sidenav-content>  
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
