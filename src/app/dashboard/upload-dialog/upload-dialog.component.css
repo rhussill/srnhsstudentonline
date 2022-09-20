@@ -1,0 +1,83 @@
+mat-form-field{
+    width:100%;
+}
+
+#dragndrop{
+    width: 28vw;
+    height: 26vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed lightgrey;
+    border-radius: 2px;
+}
+
+mat-list{
+    width:30vw;
+}
+
+mat-icon{
+    padding: 0 8px;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+a{
+    color:cornflowerblue;
+}
+
+mat-list-item{
+    min-width: 25vw;
+}
+#td-content{
+    width:80%;
+}
+table{
+    width: 30vw;
+}
+
+#file_upload{
+    visibility:collapse;
+}
+
+#controls{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#iconfolder{
+    display: flex;
+    color: darkgrey;
+    position: relative;
+    left: 48%;
+    bottom:5%;
+    transform: scale(2.5);
+    justify-content: center;
+    cursor: pointer;
+}
+#textupload{
+    color: black;
+    width: 100%;
+    position: relative;
+    left: 23%;
+    top: 20%;
+    font-weight: bold;
+}
+#something{
+    width: 100%;
+    position: relative;
+    top: 28%;
+    right: 28%;
+    font-size: 13px;
+    color: black;
+}
+
+#closeicon{
+    top: 3px;
+    position: relative;
+    left: 70%;   
+    cursor: pointer;
+}

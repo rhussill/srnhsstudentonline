@@ -1,0 +1,118 @@
+#filter{
+    transform: scale(1.5);
+    top: 26px;
+    position: relative;
+    cursor: pointer;
+    left: 11%;
+  }
+
+  #filternavtext{
+    margin-left: 63px;
+    font-weight: 600;
+    font-family: sans-serif;
+    position: relative;
+    cursor: pointer;
+    font-size: 21px;
+ }
+
+ .samplebox{
+    text-indent: 10px;
+    border-style: double;
+    border-color: lightgrey;
+    width: 239px;
+    height: 27px;
+    border-radius: 5px;
+    background-color: #eaebeb;
+    position: relative;
+    margin-left: 25px;
+    top: 17px;
+ }
+ .datebox{
+    text-indent: 10px;
+    border-style: double;
+    border-color: lightgrey;
+    width: 100px;
+    height: 27px;
+    border-radius: 5px;
+    background-color: #eaebeb;
+    position: relative;
+    margin-left: 25px;
+    top: 17px;
+ }
+
+ .datebox1{
+    text-indent: 10px;
+    border-style: double;
+    border-color: lightgrey;
+    width: 100px;
+    height: 27px;
+    border-radius: 5px;
+    background-color: #eaebeb;
+    position: relative;
+    margin-left: 157px;
+    top: -10px;
+ }
+
+ #sampletext{
+    color: black;
+    position: relative;
+    margin-left: 15px;
+    top: 12px;
+    font-weight: 400;
+ }
+ .selectfilter{
+    text-indent: 10px;
+    border-style: double;
+    border-color: lightgrey;
+    width: 250px;
+    height: 27px;
+    border-radius: 5px;
+    background-color: #eaebeb;
+    position: relative;
+    margin-left: 15px;
+    top:17px;
+    color: gray;
+    font-size: 15px;
+ }
+ 
+
+ #boxdate{
+    width: 10px;
+    margin-left: 16px;
+    position: relative;
+    width: 120px;
+    height: 1px;
+    border: 1px solid rgb(44, 43, 43) !important;
+    
+ }
+ .calendaricon{
+    z-index: 6;
+    position: relative;
+    top: 73px;
+    left: 33%;
+    transform: scale(0.8);
+    cursor: pointer;
+ }
+ .calendaricon1{
+    z-index: 6;
+    position: relative;
+    top: 25px;
+    left: 35%;
+    transform: scale(0.8);
+    cursor: pointer;
+ }
+ #filter-button{
+    width: 89px;
+    position: relative;
+    background-color: #f58220;
+    color: white;
+    margin-left: 179px;
+    top: 34px;
+    height: 33px;
+ }
+
+ /* #try{
+    background-color: red;
+ } */
+
+

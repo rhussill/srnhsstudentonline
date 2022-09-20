@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Output ,EventEmitter } from '@angular/core';
 import {SelectionModel} from '@angular/cdk/collections';
 import {MatTableDataSource} from '@angular/material/table';
 import { defaultThrottleConfig } from 'rxjs/internal/operators/throttle';
-
+import { UploadDialogComponent } from '../upload-dialog/upload-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 export interface PeriodicElement {
   id:number;
   name: any;
@@ -32,7 +33,11 @@ export class DashboardComponent implements OnInit {
   displayedColumns: string[] = ['select', 'name', 'status', 'profile', 'timestamp'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
-  constructor() { }
+  sideNavVisible:boolean = false;
+
+  @Output() menuClickedEvent = new EventEmitter<void>();
+
+  constructor( private dialog:MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -105,5 +110,16 @@ export class DashboardComponent implements OnInit {
 
   delete(file){
     console.log("delete",file)
+  }
+
+
+  upload(){
+    this.dialog.open(UploadDialogComponent)
+  }
+
+  toggleSideNav(){
+    this.sideNavVisible = !this.sideNavVisible;
+    console.log("open")
+    
   }
 }

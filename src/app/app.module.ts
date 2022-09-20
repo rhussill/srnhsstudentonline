@@ -70,6 +70,8 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
 import { SettingComponent } from './dashboard/setting/setting.component';
 import { AppCompomentComponent } from './dashboard/app-compoment/app-compoment.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { UploadDialogComponent } from './dashboard/upload-dialog/upload-dialog.component';
+import { FilterNavComponent } from './dashboard/filter-nav/filter-nav.component';
 
 
 
@@ -94,7 +96,9 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
     ProfileComponent,
     SettingComponent,
     AppCompomentComponent,
-    DashboardComponent
+    DashboardComponent,
+    UploadDialogComponent,
+    FilterNavComponent
   ],
   imports: [
     CommonModule,

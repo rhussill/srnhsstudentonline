@@ -3,6 +3,7 @@ import {  RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { AppCompomentComponent } from './dashboard/app-compoment/app-compoment.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { FilterNavComponent } from './dashboard/filter-nav/filter-nav.component';
 
 import { PatientComponent } from './dashboard/patient/patient.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
@@ -28,6 +29,8 @@ const routes : Routes = [
   // {path:'dashboard',component:AioncoComponent},
 
   //test
+
+{path: 'sidecard',component:FilterNavComponent},
  
   
     {path: 'sidenav', component: AppCompomentComponent ,children:[

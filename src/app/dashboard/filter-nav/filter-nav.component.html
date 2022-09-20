@@ -1,0 +1,85 @@
+<div id="sidecard">
+    <mat-icon id="filter" (click)="menuClicked()">filter_list</mat-icon>
+    <p id="filternavtext">Filter</p>
+
+    <div id="sampletext">Sample ID</div>
+    <input 
+    appearance="fill"
+    placeholder="Sample ID"
+    class="samplebox"
+    >
+    <br><br>
+    <div id="sampletext">Capture Kit</div>
+    <input 
+    appearance="fill"
+    placeholder="Capture Kit"
+    class="samplebox"
+    >
+    <br><br>
+    <div id="sampletext">Regex</div>
+    <input 
+    appearance="fill"
+    placeholder="Regex"
+    class="samplebox"
+    >
+    
+    <mat-divider style="position:relative;top:30px;width:270px;margin-left: 10px;"></mat-divider>
+    <mat-divider style="position:relative;top:87px;width:20px;margin-left: 130px;"></mat-divider>
+
+
+    <mat-datepicker #pickerb ></mat-datepicker>
+    <mat-icon matSuffix class="calendaricon" (click)="print(pickerb)" #pickerb >calendar_month</mat-icon>
+    <div id="sampletext">Timestamp</div>
+    <input 
+    [matDatepicker]="pickerb"
+    appearance="fill"
+    class="datebox"
+    >
+  
+    <mat-datepicker #pickerbs ></mat-datepicker>
+    <mat-icon matSuffix class="calendaricon1" (click)="prints(pickerbs)" #pickerbs >calendar_month</mat-icon>
+    <input 
+    [matDatepicker]="pickerbs"
+    appearance="fill"
+    class="datebox1"
+    >
+
+    <div id="sampletext">Data Class</div>
+    <select class="selectfilter">
+        <option  value="none">None</option>
+    </select>
+    
+    <br><br>
+    <div id="sampletext">Specimen Type</div>
+    <select class="selectfilter">
+        <option  value="none">None</option>
+    </select>
+    
+    <br><br>
+    <div id="sampletext">Cancer Type</div>
+    <select class="selectfilter">
+        <option  value="none">None</option>
+    </select>
+    
+    <br><br>
+    <div id="sampletext">Sequence Type</div>
+    <select class="selectfilter">
+        <option  value="none">None</option>
+    </select>
+    
+    <br><br>
+    <div id="sampletext">Site</div>
+    <select class="selectfilter">
+        <option  value="none">None</option>
+    </select>
+
+
+
+    <button id="filter-button" mat-raised-button type='button' >Filter</button>
+    
+ </div>
+ 
+
+ 
+
+ 
