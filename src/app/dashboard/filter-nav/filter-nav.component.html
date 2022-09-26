@@ -46,25 +46,25 @@
 
     <div id="sampletext">Data Class</div>
     <select class="selectfilter">
-        <option  value="none">None</option>
+        <option  *ngFor='let dataclassType of dataclassTypes' [value]="dataclassType">{{dataclassType}}</option>
     </select>
     
     <br><br>
     <div id="sampletext">Specimen Type</div>
     <select class="selectfilter">
-        <option  value="none">None</option>
+        <option *ngFor='let specimenType of specimenTypes' [value]="specimenType">{{specimenType}}</option>
     </select>
     
     <br><br>
     <div id="sampletext">Cancer Type</div>
     <select class="selectfilter">
-        <option  value="none">None</option>
+        <option *ngFor='let cancerType of cancerTypes' [value]="cancerType">{{cancerType}}</option>
     </select>
     
     <br><br>
     <div id="sampletext">Sequence Type</div>
     <select class="selectfilter">
-        <option  value="none">None</option>
+        <option  *ngFor='let sequenceType of sequenceTypes'  [value] ="sequenceType">{{sequenceType}}</option>
     </select>
     
     <br><br>

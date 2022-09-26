@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { FilterFormComponent } from '../filter-form/filter-form.component';
 
 @Component({
   selector: 'app-upload-dialog',
@@ -14,8 +16,14 @@ export class UploadDialogComponent implements OnInit {
   form:FormData = new FormData();
   validName:boolean = false;
 
+  value:any = 0;
+  seconds_remaining:any = 0;
+  uploadform:boolean =true;
+  Loadingform:boolean=false;
+  filterform:boolean= false;
 
-  constructor( private dialogref :MatDialogRef<UploadDialogComponent>) { }
+
+  constructor( private dialogref :MatDialogRef<UploadDialogComponent> , private dialog:MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -23,8 +31,6 @@ export class UploadDialogComponent implements OnInit {
   uploadFile(evt){
     this.form = new FormData();
     this.form.append('file',evt[0]);
-
-    
     console.log(evt);
 
     this.form.forEach(element => {
@@ -50,6 +56,39 @@ export class UploadDialogComponent implements OnInit {
         this.has_file = false;
       }
   });
+
+  if(evt==null){
+    this.value=0;
+  }else {
+    this.Loadingform=true;
+    this.uploadform=false;
+    this.seconds_remaining = 100;
+    for (let i = 0; i < 100; i++) {
+      window.setTimeout(() => (this.value += 1), i * 30); 
+    }
+    
+    for (let i = 0; i < 100; i++) {
+      window.setTimeout(() => {
+        if(this.seconds_remaining == 1 ){
+          this.dialogref.close();
+         this.dialog.open(FilterFormComponent)
+        }
+        else{
+          
+          this.seconds_remaining -= 1
+        }
+      }
+        , i * 30);
+      console.log("eses",this.seconds_remaining)
+      
+    } 
+    
+  } 
+  
+  
+ 
+  
+
   }
 
   remove(){

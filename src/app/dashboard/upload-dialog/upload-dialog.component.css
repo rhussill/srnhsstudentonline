@@ -41,7 +41,24 @@ table{
 #file_upload{
     visibility:collapse;
 }
-
+.bar{
+   position: relative;
+   bottom:35px;
+}
+.filename{
+    font-weight: bolder;
+    font-size: 14px;
+}
+.time{
+    position: relative;
+    bottom:23px
+}
+.results{
+    border-radius: 9px;
+    overflow: hidden;
+    height: 162px;
+    transform: none;
+}
 #controls{
     display: flex;
     justify-content: flex-end;

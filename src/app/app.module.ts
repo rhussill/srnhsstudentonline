@@ -72,6 +72,8 @@ import { AppCompomentComponent } from './dashboard/app-compoment/app-compoment.c
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { UploadDialogComponent } from './dashboard/upload-dialog/upload-dialog.component';
 import { FilterNavComponent } from './dashboard/filter-nav/filter-nav.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FilterFormComponent } from './dashboard/filter-form/filter-form.component';
 
 
 
@@ -98,7 +100,8 @@ import { FilterNavComponent } from './dashboard/filter-nav/filter-nav.component'
     AppCompomentComponent,
     DashboardComponent,
     UploadDialogComponent,
-    FilterNavComponent
+    FilterNavComponent,
+    FilterFormComponent
   ],
   imports: [
     CommonModule,
@@ -136,6 +139,7 @@ import { FilterNavComponent } from './dashboard/filter-nav/filter-nav.component'
     MatCheckboxModule,
     MatRippleModule,
     MatIconModule,
+    MatProgressBarModule,
 
 
     

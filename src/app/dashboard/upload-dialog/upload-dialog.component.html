@@ -3,7 +3,7 @@
  <!-- <mat-icon>upload</mat-icon>  -->
 <mat-divider></mat-divider>
 <br>
-<form>
+<form *ngIf="uploadform">
     <!-- <input type='file' appUpload> -->
     <!-- <h3>Upload File</h3> -->
     
@@ -33,8 +33,8 @@
             </tr>
         </tbody>
     </table>
-<br>
-    <div id='controls'>
+
+    <!-- <div id='controls'>
         <button mat-raised-button color='primary' type='button' (click)='submit()' *ngIf='!isUploading'>
             <span *ngIf="has_file">Upload</span>
         </button>
@@ -42,5 +42,22 @@
         <button mat-raised-button color='primary' type='button' (click)='submit()' disabled *ngIf='isUploading'>
             <span>Uploading...</span>
         </button>
-    </div>
+    </div> -->
+
+
 </form>
+
+
+<div *ngIf="Loadingform" style="width:500px ; border-radius: 20px;">
+
+        <h2 class="filename">{{filename}}</h2>
+        <h5 class="time">{{value}}% - {{seconds_remaining}} seconds remaining</h5>
+          <mat-progress-bar 
+          class="bar"
+          [value]="value"
+          ></mat-progress-bar>
+
+     
+    </div>
+
+
