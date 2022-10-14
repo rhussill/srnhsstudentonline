@@ -2,13 +2,26 @@ import { Injectable } from '@angular/core';
 import { throwError,Observable } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { map, catchError, retry } from 'rxjs/operators';
+import { map, catchError, retry, toArray } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
+
+
+  ///user data
+  _id:any;
+  status:any;
+  email:any;
+  fname:any;
+  lname:any;
+  pnumber:any;
+  dob:any;
+  role:any;
+
+
 
   //variable to store training provider id
   id:any = null;
@@ -42,11 +55,139 @@ export class AppService {
   ///login
 
   loginUrl=environment.apiURL + 'sign/login'
+
+  adminloginUrl= environment.apiURL + 'admin/loginadmin'
+
+
+  //profile
+  postToken = environment.apiURL + 'profile/profile'
+  updateProfileURL = environment.apiURL + 'profile/updateprofile'
+
+
+
+  //admin
+  addUserURL = environment.apiURL + 'admin/newuser'
+  getalladminUrl =environment.apiURL + 'admin/page'
+  getalladmindataUrl =environment.apiURL + 'admin/pageadmin'
+  edituseradminURL =environment.apiURL + 'admin/edituser' 
+  searhAdminUrl =environment.apiURL + 'admin/search'
+  editadminuserURL = environment.apiURL + 'admin/editadmin'
   
 
   pdf:any;
 
+
+  imgFILE:File;
+
   constructor(private http: HttpClient) { }
+
+
+  //admin
+
+  searchAdminuser(keyword,pageno,total){
+
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.get<any>(`${this.searhAdminUrl}/${keyword}/${pageno}/${total}`,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  
+
+  }
+
+  addUsers(form:any){
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.post<any>(this.addUserURL,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+
+  editUser(form:any ,id:any ){
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.patch<any>(`${this.edituseradminURL}/${id}`,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+
+  editAdmin(form:any ,id:any ){
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.patch<any>(`${this.editadminuserURL}/${id}`,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+  getalladmin(pageNo,pageSize){
+    let options =  { headers: new HttpHeaders({'Content-Type': 'application/json'})};
+    return this.http.get<any>(this.getalladmindataUrl+`/${pageNo}/${pageSize}`,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+
+  getallUsers(pageNo,pageSize){
+    let options =  { headers: new HttpHeaders({'Content-Type': 'application/json'})};
+    return this.http.get<any>(this.getalladminUrl+`/${pageNo}/${pageSize}`,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+
+
+
+  editProfile(form:any){
+
+    let options =  { headers: new HttpHeaders({'Content-Type': 'application/json'})};
+    let bodytoken = localStorage.getItem('Token');
+    console.log("testset",bodytoken)
+    return this.http.patch<any>(this.updateProfileURL,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+
+
+  postProfile(form:any){
+
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    let bodytoken = localStorage.getItem('Token');
+    console.log("testset",bodytoken)
+    return this.http.post<any>(this.postToken,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
 
 
   
@@ -78,6 +219,18 @@ export class AppService {
 
     let options =  { headers: new HttpHeaders({'Content-Type':'application/json'})};
     return this.http.post<any>(this.loginUrl,form,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+  adminlogin(form:any){
+
+    let options =  { headers: new HttpHeaders({'Content-Type':'application/json'})};
+    return this.http.post<any>(this.adminloginUrl,form,options).
     pipe(
       map(data => data),
       retry(3),

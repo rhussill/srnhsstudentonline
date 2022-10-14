@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import {  RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
-import { AppCompomentComponent } from './dashboard/app-compoment/app-compoment.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { FilterNavComponent } from './dashboard/filter-nav/filter-nav.component';
 
 import { PatientComponent } from './dashboard/patient/patient.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
 import { ResultComponent } from './dashboard/result/result.component';
 import { ScienceComponent } from './dashboard/science/science.component';
@@ -18,6 +18,9 @@ import { ApolloComponent } from './user/apollo/apollo.component';
 import { DashboardMainComponent } from './user/dashboard-main/dashboard-main.component';
 import { DashboardTestComponent } from './user/dashboard-test/dashboard-test.component';
 import { DashboardUserComponent } from './user/dashboard-user/dashboard-user.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { SidecardsComponent } from './body/sidecards/sidecards.component';
+import { SideNavComponent } from './dashboard/body/side-nav/side-nav.component';
 
 
 const routes : Routes = [
@@ -25,6 +28,7 @@ const routes : Routes = [
 
   { path : 'home', component: HomeComponent },
   { path : 'register', component: RegisterComponent },
+
   // {path:'aionco',component:AioncoComponent},
   // {path:'dashboard',component:AioncoComponent},
 
@@ -33,10 +37,12 @@ const routes : Routes = [
 {path: 'sidecard',component:FilterNavComponent},
  
   
-    {path: 'sidenav', component: AppCompomentComponent ,children:[
+    {path: 'sidenav', component: SideNavComponent ,children:[
       {path: 'dashboard', component: DashboardComponent},
+      {path: 'admin', component: AdminDashboardComponent},
       {path: 'patient', component: PatientComponent},
       {path: 'profile', component: ProfileComponent},
+      {path : 'edit-profile',component:EditProfileComponent},
       {path: 'result', component: ResultComponent},
       {path: 'science', component: ScienceComponent},
       {path: 'settings', component: SettingComponent},

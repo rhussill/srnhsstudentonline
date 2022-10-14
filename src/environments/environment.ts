@@ -4,8 +4,12 @@
 
 export const environment = {
   production: false,
-  // apiURL : 'http://192.168.1.27:3000/'
-  apiURL : 'http://34.217.78.210:3001/'
+  apiURL : 'http://192.168.1.17:3001/',
+  // apiURL : 'http://172.20.10.2:3001/',
+  // apiURL : 'http://34.217.78.210:3001/'
+
+  AWS_ACCESS_KEY_ID:'AKIA4ZTU664SOLPDQ5W4',
+  AWS_SECRET_ACCESS_KEY : '55pPIeQsjIxyrHPsAonbUHI2rfVS5HlbaHiD3M',
 };
 
 /*

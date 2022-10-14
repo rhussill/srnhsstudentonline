@@ -1,1 +1,91 @@
-<p>profile works!</p>
+<div class="header">
+    
+    <div class="upload-title">
+        <h3 style="margin:none ;">Profile</h3>
+        <h6 style="color:grey ;">01 January, 2022</h6>
+    </div>
+
+    
+    <mat-icon class="iconsearch" >search</mat-icon>
+    <input 
+        type="text" 
+        class="box" 
+        apperance="fill"
+        placeholder="Search"
+        >
+
+        <div class="usercontainer">
+            <p class="usertext">{{hasData.fName}}</p>
+            <p class="jobtext">Jobtitle</p>
+        </div>
+</div>
+
+
+<div *ngIf="viewprofile">
+<div class="profileCont">
+    <h1 class="test">Header</h1>
+    <div id="avatar"></div>
+  </div>
+
+  <div>
+    <h3 style="position: relative;left: 180px;">{{hasData.email}}</h3>
+    <h5 style="position: relative;left:180px;color:grey;">Jobtitle</h5>
+  </div>
+
+  <button id="add-button" mat-raised-button type='button' (click)="editprofile()"><mat-icon class="editicon">edit</mat-icon>Edit Profile</button>
+
+</div>
+
+
+  <div *ngIf="editProfile" class="row">
+
+    <mat-icon class="iconProfile">person_outline</mat-icon> <h1 class="proftext">Profile</h1>
+    <form (ngSubmit)="login(loginForm.value)" #loginForm='ngForm'>
+    <mat-card class="editContainer">
+        <h3 class="texteditprof">Edit Profile</h3>
+        <div class="column">
+        <div id="editavatar"></div>
+        <button id="save-changes" mat-raised-button type='submit'>Save Changes</button>
+        <button id="backbttn" mat-raised-button type='button' (click)="back()">Back</button>
+        
+    </div>
+        <div class="column">
+            <mat-form-field class='inputfirstname' appearance='fill'>
+                <mat-label>First Name</mat-label>
+                <input matInput
+                pattern="^[a-zA-Z ]+$"
+                [(ngModel)]="fName"
+                name="fName"
+                >
+            </mat-form-field>
+
+
+            <mat-form-field class='inputlastname' appearance='fill'>
+                <mat-label>Last Name</mat-label>
+                <input matInput
+                pattern="^[a-zA-Z ]+$"
+                [(ngModel)]="lName"
+                name="lName"
+                >
+            </mat-form-field>
+
+            <mat-form-field class='inputlastname' appearance='fill'>
+                <mat-label>Position</mat-label>
+                <input matInput
+                pattern="^[a-zA-Z ]+$"
+                >
+            </mat-form-field>
+
+
+        </div>
+
+    
+        
+
+    </mat-card>
+    
+        </form>
+
+  </div>
+
+

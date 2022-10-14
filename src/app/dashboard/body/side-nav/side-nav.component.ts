@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 interface SideNavToggle {
   screenWidth: number;
   collapsed: boolean;
@@ -7,11 +8,11 @@ interface SideNavToggle {
 
 
 @Component({
-  selector: 'app-app-compoment',
-  templateUrl: './app-compoment.component.html',
-  styleUrls: ['./app-compoment.component.scss']
+  selector: 'app-side-nav',
+  templateUrl: './side-nav.component.html',
+  styleUrls: ['./side-nav.component.css']
 })
-export class AppCompomentComponent implements OnInit {
+export class SideNavComponent implements OnInit {
 
   isSideNavCollapsed = false;
   screenWidth = 0;
@@ -20,6 +21,7 @@ export class AppCompomentComponent implements OnInit {
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
   }
+
 
   constructor() { }
 

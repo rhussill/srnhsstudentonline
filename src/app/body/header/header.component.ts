@@ -36,5 +36,11 @@ home(){
   signup(){
     this.router.navigate(['register'])
   }
+
+  admin(){
+    this.router.navigate(['adminlogin'])
+
+
+  }
  
 }

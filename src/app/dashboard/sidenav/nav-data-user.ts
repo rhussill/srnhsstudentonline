@@ -1,12 +1,7 @@
 import { style } from "@angular/animations";
 
-export const navbarData = [
+export const navbarDatauser = [
 
-    {
-        routeLink: 'admin',
-        icon: 'fal fa-user',
-        label: 'Admin' ,style:"color:#7770a5;"
-    },
     {
         routeLink: 'dashboard',
         icon: 'fal fa-home',

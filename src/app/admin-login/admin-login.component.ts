@@ -1,22 +1,15 @@
-import { DatePipe } from '@angular/common';
-import { Component, OnInit ,ViewEncapsulation} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { AppService } from 'src/app/app.service';
-import { DialogboxComponent } from '../dialogbox/dialogbox.component';
-import { MatDialog,MatDialogRef } from '@angular/material/dialog';
-
-
-
-
+import { AppService } from '../app.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  providers: [DatePipe],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrls: ['./admin-login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class AdminLoginComponent implements OnInit {
+
   pdf:any;
   today = Date.now();
   email:any;
@@ -24,13 +17,11 @@ export class LoginComponent implements OnInit {
   responsedata:any;
   message='';
 
- 
-
   constructor(private router:Router ,public service:AppService , private dialog:MatDialog) { }
 
   ngOnInit(): void {
-    console.log('workimg');
   }
+
   home(){
     this.router.navigate(['home'])
 

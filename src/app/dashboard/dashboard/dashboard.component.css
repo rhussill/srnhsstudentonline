@@ -40,11 +40,11 @@
 
     .usertext{
         top: 9%;
-        left: 26%;
+        margin-left: 30px;
         position: relative;
         font-size: 15px;
         color: black;
-        margin: 0px;
+        margin-bottom: 0px;
     }
     .jobtext{
         top: 5%;
@@ -138,6 +138,10 @@
         cursor: pointer;
         padding-left: 10px;
 
+    }
+
+    .filterText{
+        position: relative;left: 94.5%;bottom: -1%;cursor: pointer;
     }
 
     

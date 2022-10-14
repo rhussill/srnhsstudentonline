@@ -2,6 +2,8 @@ import { animate, keyframes, style, transition, trigger } from '@angular/animati
 import { Component, Output, EventEmitter, OnInit, HostListener,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { navbarData } from './nav-data';
+import { navbarDatauser } from './nav-data-user';
+
 
 
 interface SideNavToggle {
@@ -43,7 +45,11 @@ interface SideNavToggle {
 export class SidenavComponent implements OnInit {
 
   rightclose:boolean=true;
-  leftclose:boolean=false
+  leftclose:boolean=false;
+
+  admin:boolean;
+  user:boolean;
+  roles= localStorage.getItem("role")
 
   @Input() collapsed = false;
   @Input() screenWidth = 0;
@@ -64,6 +70,7 @@ export class SidenavComponent implements OnInit {
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
 
   navData = navbarData;
+  navDataUser = navbarDatauser
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -79,6 +86,7 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
       this.screenWidth = window.innerWidth;
+      this.role();
   }
 
   toggleCollapse(): void {
@@ -100,5 +108,17 @@ export class SidenavComponent implements OnInit {
   logout(){
     this.router.navigate(['home'])
     console.log('logout')
+    localStorage.clear();
+  }
+
+
+  role(){
+    if(this.roles== "Admin"){
+      this.admin=true
+      this.user=false
+    }else if (this.roles=="User"){
+      this.admin=false
+      this.user=true
+    }
   }
 }

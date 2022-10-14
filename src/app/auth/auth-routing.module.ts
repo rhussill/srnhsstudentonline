@@ -6,12 +6,15 @@ import { RecoveryComponent } from './recovery/recovery.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { DashboardUserComponent } from '../user/dashboard-user/dashboard-user.component';
 import { CreatepasswordRecoveryComponent } from './createpassword-recovery/createpassword-recovery.component';
+import { adminLoginComponent } from './login copy/login.component';
 
 
 
 const routes: Routes = [
  
    { path : 'login' , component : LoginComponent },
+   { path : 'adminlogin' , component : adminLoginComponent },
+   
    {path: 'register',component:RegisterComponent},
    {path: 'recovery',component:RecoveryComponent},
    {path: 'forgotpass',component:ForgotPasswordComponent},

@@ -24,6 +24,7 @@ export class CreatePasswordComponent implements OnInit {
     form={
       "password":form.confirmpass,
     }
+    console.log(form)
     this.service.createpassword(form,localStorage.getItem('_id')).subscribe(data=>{
       if(data.result=='Failure'){
 

@@ -41,6 +41,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatRippleModule } from '@angular/material/core';
 import { AuthModule } from './auth/auth.module';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 
 
 
@@ -68,12 +70,20 @@ import { ResultComponent } from './dashboard/result/result.component';
 import { PatientComponent } from './dashboard/patient/patient.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
 import { SettingComponent } from './dashboard/setting/setting.component';
-import { AppCompomentComponent } from './dashboard/app-compoment/app-compoment.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { UploadDialogComponent } from './dashboard/upload-dialog/upload-dialog.component';
 import { FilterNavComponent } from './dashboard/filter-nav/filter-nav.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { FilterFormComponent } from './dashboard/filter-form/filter-form.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { DialogboxComponent } from './dialogbox/dialogbox.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminAdduserComponent } from './admin-dashboard/admin-adduser/admin-adduser.component';
+import { AdminEdituserComponent } from './admin-dashboard/admin-edituser/admin-edituser.component';
+import { SideNavComponent } from './dashboard/body/side-nav/side-nav.component';
+import { AdminAdmineditComponent } from './admin-dashboard/admin-edituser/admin-adminedit/admin-adminedit.component';
+
+
 
 
 
@@ -97,11 +107,17 @@ import { FilterFormComponent } from './dashboard/filter-form/filter-form.compone
     PatientComponent,
     ProfileComponent,
     SettingComponent,
-    AppCompomentComponent,
     DashboardComponent,
     UploadDialogComponent,
     FilterNavComponent,
-    FilterFormComponent
+    FilterFormComponent,
+    EditProfileComponent,
+    DialogboxComponent,
+    AdminDashboardComponent,
+    AdminAdduserComponent,
+    AdminEdituserComponent,
+    SideNavComponent,
+    AdminAdmineditComponent,
   ],
   imports: [
     CommonModule,
@@ -140,6 +156,7 @@ import { FilterFormComponent } from './dashboard/filter-form/filter-form.compone
     MatRippleModule,
     MatIconModule,
     MatProgressBarModule,
+    MatSlideToggleModule,
 
 
     

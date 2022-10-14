@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
+import { AppService } from 'src/app/app.service';
 import { FilterFormComponent } from '../filter-form/filter-form.component';
 
 @Component({
@@ -23,39 +24,28 @@ export class UploadDialogComponent implements OnInit {
   filterform:boolean= false;
 
 
-  constructor( private dialogref :MatDialogRef<UploadDialogComponent> , private dialog:MatDialog) { }
+  imageObj: File;
+  imageUrl: string;
+
+
+  constructor( private dialogref :MatDialogRef<UploadDialogComponent> , private dialog:MatDialog , private service:AppService) { }
 
   ngOnInit(): void {
   }
 
   uploadFile(evt){
-    this.form = new FormData();
-    this.form.append('file',evt[0]);
-    console.log(evt);
+   
 
-    this.form.forEach(element => {
-      console.log(1);
-      console.log(element);
-      if(element['name']!=undefined){
-         if(element['name'].match(/[a-zA-Z]+\.[a-zA-Z0-9]{3,4}/) != null){
-           this.validName = true;
-           console.log('Hello');
-           console.log(this.validName);
-         }else{
-          this.validName = false;
-           console.log('Hi');
-           console.log(this.validName);
-           
-         }
-        this.filename = element['name'];
-        console.log(this.filename);
-        this.has_file = true;
-      }else{
-        console.log(2);
-        this.filename = '';
-        this.has_file = false;
-      }
-  });
+    const FILE = (event.target as HTMLInputElement).files[0];
+    this.has_file=true;
+    this.imageObj = FILE;
+    this.filename =this.imageObj.name;
+    this.service.imgFILE =this.imageObj;
+    console.log("servicetesttt",this.service.imgFILE)
+    console.log("name",this.filename)
+    console.log(this.imageObj)
+
+
 
   if(evt==null){
     this.value=0;
@@ -84,12 +74,13 @@ export class UploadDialogComponent implements OnInit {
     } 
     
   } 
+}
   
   
  
-  
 
-  }
+
+  
 
   remove(){
 
@@ -100,7 +91,7 @@ export class UploadDialogComponent implements OnInit {
   }
 
   onFileSelected(event){
-
+    console.log("dotttt")
     this.uploadFile(event.target.files);
   }
 

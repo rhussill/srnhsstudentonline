@@ -16,7 +16,7 @@ import { MatDialog,MatDialogRef } from '@angular/material/dialog';
   providers: [DatePipe],
   encapsulation: ViewEncapsulation.None
 })
-export class LoginComponent implements OnInit {
+export class adminLoginComponent implements OnInit {
   pdf:any;
   today = Date.now();
   email:any;
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   }
   login(form){
   
-    this.service.login(form).subscribe(data=>{
+    this.service.adminlogin(form).subscribe(data=>{
       this.responsedata=data;
 
       if(this.responsedata.token == null){

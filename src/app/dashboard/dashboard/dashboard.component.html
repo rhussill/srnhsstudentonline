@@ -1,120 +1,119 @@
+<mat-drawer-container hasBackdrop="false">
+  <mat-drawer #sideNav mode="over" [opened]="sideNavVisible" position="end" style="width: 300px;">
+    <app-filter-nav (menuClickedEvent)="toggleSideNav()"></app-filter-nav>
+  </mat-drawer>
+  <mat-drawer-content style="height:100vh; overflow:hidden;">
+    <div id="grey" *ngIf="sideNavVisible">
 
+    </div>
+    <div class="header">
 
-  <mat-drawer-container hasBackdrop="false">
-    <mat-drawer #sideNav mode="over" [opened]="sideNavVisible" position="end" style="width: 300px;">
-     <app-filter-nav (menuClickedEvent)="toggleSideNav()"></app-filter-nav>
-    </mat-drawer>
-    <mat-drawer-content style="height:100vh; overflow:hidden;">
-      <div id="grey" *ngIf="sideNavVisible">
-    
+      <div class="upload-title">
+        <h3 style="margin:none ;">Upload</h3>
+        <h6 style="color:grey ;">01 January, 2022</h6>
       </div>
-      <div class="header">
-    
-        <div class="upload-title">
-            <h3 style="margin:none ;">Upload</h3>
-            <h6 style="color:grey ;">01 January, 2022</h6>
-        </div>
-    
-        
-        <mat-icon class="iconsearch" >search</mat-icon>
-        <input 
-            type="text" 
-            class="box" 
-            apperance="fill"
-            placeholder="Search"
-            >
-    
-            <div class="usercontainer">
-                <p class="usertext">Username</p>
-                <p class="jobtext">Jobtitle</p>
-            </div>
+
+
+      <mat-icon class="iconsearch">search</mat-icon>
+      <input type="text" class="box" apperance="fill" placeholder="Search">
+
+      <div class="usercontainer">
+        <p class="usertext">{{hasData.fName}}</p>
+        <p class="jobtext">Jobtitle</p>
+      </div>
     </div>
-    
-    
-    
+
+
+
     <div id="body">
-    <table>
+      <table>
         <tr>
-            <td style="width:70%;" id="uploadcont">
-              <button id="add-button" mat-raised-button type='button' (click)='upload()'><mat-icon style="margin-right:4px;" matPrefix>backup</mat-icon>Upload</button>
-            </td>
-    
+          <td style="width:70%;" id="uploadcont">
+            <button id="add-button" mat-raised-button type='button' (click)='uploads()'>
+              <mat-icon style="margin-right:4px;" matPrefix>backup</mat-icon>Upload
+            </button>
+          </td>
+
+
         </tr>
-    
-        
-    
-    </table>
-    
-    
-    
-    <div class="containeredit" *ngIf="checks">
-    <p style="margin-right:40px;">UnselectAll </p>  
-    <p style="margin-right:40px;" (click)="delete(file)">Delete </p> 
-    <p style="margin-right:40px;" (click)="edit(file)" *ngIf="edits">Edit </p>
-    <p style="margin-right:40px;">Cancel </p> 
-    </div>
-    
-    <br><br><br><br>
-    
-    <mat-icon style="position: relative;left: 92.5%;top: 4.6%;cursor: pointer;" (click)="toggleSideNav()">filter_list</mat-icon>
-    <p style="position: relative;left: 94.5%;bottom: -1%;cursor: pointer;">Filter</p>
-    
-    
-    
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="tables" >
-    
+        <br><br>
+        <!-- <div class="content">
+          <input (change)="onChangeFile($event)" type="file">
+          <br>
+          <br>
+          <button (click)="handleSendFile()" >Send file</button>
+        </div> -->
+
+        <!-- <input (change)="onImagePicked($event)" placeholder="Upload Image" type="file" />
+        <button (click)="onImageUpload()">Upload Image</button> -->
+
+        <!-- <div *ngIf="imageUrl">
+          Preview Image from AWS
+          <br />
+          <img width="200px" src="https://YOUR S3 BUCKET NAME.s3.amazonaws.com/{{ imageUrl }}" />
+        </div> -->
+
+      </table>
+
+
+
+      <div class="containeredit" *ngIf="checks">
+        <p style="margin-right:40px;">UnselectAll </p>
+        <p style="margin-right:40px;" (click)="delete(file)">Delete </p>
+        <p style="margin-right:40px;" (click)="edit(file)" *ngIf="edits">Edit </p>
+        <p style="margin-right:40px;">Cancel </p>
+      </div>
+
+      <br><br><br><br>
+
+      <mat-icon style="position: relative;left: 92.5%;top: 4.6%;cursor: pointer;" (click)="toggleSideNav()">filter_list
+      </mat-icon>
+      <p class="filterText" (click)="toggleSideNav()">Filter</p>
+
+
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="tables">
+
         <!-- Checkbox Column -->
-        <ng-container matColumnDef="select" >
+        <ng-container matColumnDef="select">
           <th mat-header-cell *matHeaderCellDef style="width:5%; background-color:#d3d3d3;">
-            <mat-checkbox
-            (change)='checkAll($event.checked)'
-            [checked]='allChecked'
-                        
-                         
-            ></mat-checkbox>
+            <mat-checkbox (change)='checkAll($event.checked)' [checked]='allChecked'></mat-checkbox>
           </th>
           <td mat-cell *matCellDef="let element">
-            <mat-checkbox 
-            (change)='check(element.id)'
-            [checked]='exist(element) || allChecked'
-            ></mat-checkbox>
+            <mat-checkbox (change)='check(element.id)' [checked]='exist(element) || allChecked'></mat-checkbox>
           </td>
         </ng-container>
-      
+
         <!-- Position Column -->
-        <ng-container matColumnDef="name"  >
-          <th mat-header-cell *matHeaderCellDef style="width:20%;background-color:#d3d3d3; color: black;" > Name </th>
-          <td mat-cell *matCellDef="let element"  class="nametable"> {{element.name}} </td>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef style="width:20%;background-color:#d3d3d3; color: black;"> Name </th>
+          <td mat-cell *matCellDef="let element" class="nametable"> {{element.name}} </td>
         </ng-container>
-      
+
         <!-- Name Column -->
-        <ng-container matColumnDef="status" >
+        <ng-container matColumnDef="status">
           <th mat-header-cell *matHeaderCellDef style="width:30%;background-color:#d3d3d3; color: black;"> Status </th>
-          <td mat-cell *matCellDef="let element"  class="nametable" > {{element.status}} </td>
+          <td mat-cell *matCellDef="let element" class="nametable"> {{element.status}} </td>
         </ng-container>
-      
+
         <!-- Weight Column -->
         <ng-container matColumnDef="profile">
           <th mat-header-cell *matHeaderCellDef style="width:30%;background-color:#d3d3d3; color: black;"> Profile </th>
           <td mat-cell *matCellDef="let element"> {{element.profile}} </td>
         </ng-container>
-      
+
         <!-- Symbol Column -->
         <ng-container matColumnDef="timestamp">
           <th mat-header-cell *matHeaderCellDef style="background-color:#d3d3d3; color: black;"> Time Stamp </th>
           <td mat-cell *matCellDef="let element"> {{element.timestamp}} </td>
         </ng-container>
-      
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-            >
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
         </tr>
       </table>
-    
-    
+
+
     </div>
-    </mat-drawer-content>
-  </mat-drawer-container>
-
-
-
+  </mat-drawer-content>
+</mat-drawer-container>

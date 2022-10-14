@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { AppService } from 'src/app/app.service';
+import { DialogboxComponent } from 'src/app/dialogbox/dialogbox.component';
+import { UploadService } from 'src/app/upload-service/upload.service';
 
 @Component({
   selector: 'app-filter-form',
@@ -15,6 +18,7 @@ export class FilterFormComponent implements OnInit {
   cancertype:any;
   specimentypes:any;
   dataclasses:any;
+  message:any;
   
 
   dataclassTypes=[
@@ -127,7 +131,9 @@ export class FilterFormComponent implements OnInit {
   ];
  
 
-  constructor( private dialogref: MatDialogRef<FilterFormComponent>) { }
+  imageUrl: string;
+
+  constructor( private dialogref: MatDialogRef<FilterFormComponent> ,private uploadService:UploadService ,private service:AppService ,private dialog:MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -149,4 +155,23 @@ export class FilterFormComponent implements OnInit {
 
   }
 
-}
+  upload(){
+
+    const imageForm = new FormData();
+    imageForm.append('image', this.service.imgFILE);
+    console.log("imgform",imageForm)
+    this.uploadService.imageUpload(imageForm).subscribe(res => {
+      console.log("testt",res)
+      this.imageUrl = res['image'];
+      this.dialogref.close();
+      this.dialog.open(DialogboxComponent,{
+        data : {
+          message : "Successfully Uploaded"
+        }
+      })
+    });
+  }
+
+  }
+
+
