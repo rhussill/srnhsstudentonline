@@ -8,8 +8,8 @@ export const environment = {
   // apiURL : 'http://172.20.10.2:3001/',
   // apiURL : 'http://34.217.78.210:3001/'
 
-  AWS_ACCESS_KEY_ID:'AKIA4ZTU664SOLPDQ5W4',
-  AWS_SECRET_ACCESS_KEY : '55pPIeQsjIxyrHPsAonbUHI2rfVS5HlbaHiD3M',
+  // AWS_ACCESS_KEY_ID:'AKIA4ZTU664SOLPDQ5W4',
+  // AWS_SECRET_ACCESS_KEY : '55pPIeQsjIxyrHPsAonbUHI2rfVS5HlbaHiD3M',
 };
 
 /*
