@@ -1,44 +1,67 @@
-    .header{
+    .header {
         background-color: white;
         height: 11%;
         border-bottom: 1px solid;
         border-color: black;
+        width: 100%;
+    }
+
+    .col-1 {
+        padding-left: 18px;
+        margin: none;
+    }
+
+    .col-2 {
+        padding-left: 16%;
+    }
+
+    .col-3 {
+
+        width: 130px;
+        padding-right: 10px;
+
+    }
+
+    .dash {
+        font-weight: 800;
+        font-size: 16px;
+        margin: 12px 0 -5px;
+
     }
 
 
-    .upload-title{
+    .upload-title {
         position: relative;
         left: 2%;
-        top:30%
-
-
+        top: 30%
     }
 
-    .box{
+    .box {
         font-size: 15px;
         border-radius: 4px;
-        top: -33%;
-        position: relative;
         width: 292px;
-        left: 37%;
         height: 35px;
         border-style: unset;
         background: #f6f6f7;
         text-indent: 29px;
     }
 
-    .usercontainer{
-        bottom: 82%;
+    .iconsearch {
+        color: grey;
+        transform: scale(0.7);
+        z-index: 1;
         position: relative;
-        width: 120px;
+        left: 28px;
+        top: 6px;
+    }
+
+    .usercontainer {
         background-color: #ededed;
         height: 44px;
         border-radius: 5px;
-        position: relative;
-        left: 90%;
     }
 
-    .usertext{
+    .usertext {
         top: 9%;
         margin-left: 30px;
         position: relative;
@@ -46,7 +69,8 @@
         color: black;
         margin-bottom: 0px;
     }
-    .jobtext{
+
+    .jobtext {
         top: 5%;
         left: 26%;
         position: relative;
@@ -55,45 +79,41 @@
     }
 
 
-    h3{
+    h3 {
         position: relative;
         margin: -4px;
         right: -3.5px;
         font-weight: 600;
     }
 
-    .iconsearch{
-        color: grey;
-        transform: scale(0.7);
-        position: relative;
-        left: 39%;
-        z-index: 1;
-        bottom: 25%;
-    }
 
-    #body{
-        width:100%;
-        height:100%;
+
+    #body {
+        width: 100%;
+        height: 100%;
         margin: 0 20px;
         overflow: hidden;
     }
-    #add-button{
+
+    #add-button {
         background-color: #f58220;
-        color: white; 
+        color: white;
         transform: scale(1.2);
     }
-    #uploadcont{
+
+    #uploadcont {
         top: 36px;
         /* top: 15%; */
         position: relative;
         width: 87%;
         left: 6%;
     }
+
     .tables {
         width: 97%;
     }
 
-    .containeredit{
+    .containeredit {
         top: 63px;
         display: flex;
         position: relative;
@@ -112,14 +132,15 @@
         z-index: 5;
     }
 
-    .bodys > mat-drawer-container {
+    .bodys>mat-drawer-container {
         height: 100% !important;
     }
-    .bodys > mat-drawer-container >mat-drawer-content{
+
+    .bodys>mat-drawer-container>mat-drawer-content {
         background-color: rgba(0, 0, 0, 0);
     }
 
-    #grey{
+    #grey {
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.185);
@@ -128,20 +149,246 @@
         left: 0;
         z-index: 6;
     }
-    #filter-button{
+
+    #filter-button {
         display: flex;
         justify-content: flex-end;
         align-items: center;
     }
 
-    .nametable:hover{
+    .nametable:hover {
         cursor: pointer;
         padding-left: 10px;
 
     }
 
-    .filterText{
-        position: relative;left: 94.5%;bottom: -1%;cursor: pointer;
+    .filterText {
+        position: relative;
+        left: 94.5%;
+        cursor: pointer;
     }
 
+    .filterIcon {
+        position: relative;
+        left: 92.5%;
+        top: 3.6%;
+        cursor: pointer;
+    }
+
+    #pagination{
+        width: 97%;
+    }
+
+    #send-multiple-div{
+        width: 96%;
+        padding: 1%;
+        border-left: 8px solid #17A2B8;
+    }
+
+    .deletebttn{
+        margin-left: 105px;
+    }
     
+
+
+    @media only screen and (max-width: 1075.20px) {
+
+        .filterIcon {
+            position: relative;
+            left: 91%;
+            top: 3.6%;
+            cursor: pointer;
+        }
+
+        .filterText {
+            position: relative;
+            left: 94%;
+            cursor: pointer;
+        }
+    }
+
+
+    @media only screen and (max-width: 940px) {
+
+        .filterIcon {
+            position: relative;
+            left: 90%;
+            top: 3.6%;
+            cursor: pointer;
+        }
+
+        .filterText {
+            position: relative;
+            left: 93%;
+            cursor: pointer;
+        }
+
+
+    }
+
+    /* for filter */
+
+    @media only screen and (max-width: 830px) {
+
+        .filterIcon {
+            position: relative;
+            left: 89%;
+            top: 3.6%;
+            cursor: pointer;
+        }
+
+        .filterText {
+            position: relative;
+            left: 92%;
+            cursor: pointer;
+        }
+
+
+    }
+
+    @media only screen and (max-width: 740px) {
+
+        .filterIcon {
+            position: relative;
+            left: 87%;
+            top: 3.6%;
+            cursor: pointer;
+        }
+
+        .filterText {
+            position: relative;
+            left: 91%;
+            cursor: pointer;
+        }
+
+
+    }
+
+
+    @media only screen and (max-width: 660px) {
+
+        .filterIcon {
+            position: relative;
+            left: 83%;
+            top: 3.6%;
+            cursor: pointer;
+        }
+
+        .filterText {
+            position: relative;
+            left: 87%;
+            cursor: pointer;
+        }
+
+
+    }
+
+    @media only screen and (max-width: 540px) {
+
+        .filterIcon {
+            position: relative;
+            left: 81%;
+            top: 3.6%;
+            cursor: pointer;
+        }
+
+        .filterText {
+            position: relative;
+            left: 87%;
+            cursor: pointer;
+        }
+
+
+    }
+
+
+
+    /* for header */
+
+    @media only screen and (max-width: 820px) {
+
+        .col-2 {
+            padding-left: 6%;
+
+        }
+
+        .box {
+            font-size: 15px;
+            border-radius: 4px;
+            width: 209px;
+            height: 35px;
+            border-style: unset;
+            background: #f6f6f7;
+            text-indent: 29px;
+        }
+
+    }
+
+    @media only screen and (max-width: 622px) {
+
+        .col-2 {
+            padding-left: 0%;
+
+        }
+
+        .box {
+            font-size: 15px;
+            border-radius: 4px;
+            width: 162px;
+            height: 35px;
+            border-style: unset;
+            background: #f6f6f7;
+            text-indent: 29px;
+        }
+
+    }
+
+    @media only screen and (max-width: 527px) {
+
+
+        .col-1 {
+            padding-left: 12px;
+            margin: none;
+        }
+
+        .col-2 {
+            padding-left: 0%;
+
+        }
+
+        .box {
+            font-size: 15px;
+            border-radius: 4px;
+            width: 102px;
+            height: 35px;
+            border-style: unset;
+            background: #f6f6f7;
+            text-indent: 29px;
+        }
+
+    }
+
+    @media only screen and (max-width: 460px) {
+
+
+        .col-1 {
+            padding-left: 12px;
+            margin: none;
+        }
+
+        .col-2 {
+            padding-left: 0%;
+
+        }
+
+        .box {
+            font-size: 15px;
+            border-radius: 4px;
+            width: 56px;
+            height: 35px;
+            border-style: unset;
+            background: #f6f6f7;
+            text-indent: 29px;
+        }
+
+    }

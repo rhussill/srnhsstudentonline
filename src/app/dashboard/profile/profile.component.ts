@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  hasData:any
-  form:any;
-  editProfile:boolean=false;
-  viewprofile:boolean=true
-  lName:any;
-  fName:any;
+  hasData: any
+  form: any;
+  editProfile: boolean = false;
+  viewprofile: boolean = true
+  lName: any;
+  fName: any;
 
-  constructor(private service:AppService , private router:Router) { }
+  constructor(private service: AppService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -24,40 +24,40 @@ export class ProfileComponent implements OnInit {
   }
 
 
-  getProfile(form){
+  getProfile(form) {
 
-    form={
-      "token":localStorage.getItem("Token")
+    form = {
+      "token": localStorage.getItem("Token")
     }
-    this.service.postProfile(form).subscribe(data=>{
-      this.hasData=data;
+    this.service.postProfile(form).subscribe(data => {
+      this.hasData = data;
       this.fName = data.fName;
-      this.lName =data.lName;
-      console.log("tnaginamolunchna",data)
+      this.lName = data.lName;
+      console.log("tnaginamolunchna", data)
     })
   }
 
 
-  editprofile(){
-    this.editProfile=true;
-    this.viewprofile=false
+  editprofile() {
+    this.editProfile = true;
+    this.viewprofile = false
   }
 
-  back(){
-    this.editProfile=false;
-    this.viewprofile=true;
+  back() {
+    this.editProfile = false;
+    this.viewprofile = true;
   }
 
-  login(form){
-    form={
-      "token":localStorage.getItem("Token"),
-      "fName":this.fName,
-      "lName":this.lName,
+  login(form) {
+    form = {
+      "token": localStorage.getItem("Token"),
+      "fName": this.fName,
+      "lName": this.lName,
     }
     console.log(form)
-    this.service.editProfile(form).subscribe(data=>{
-      this.hasData=data;
-      console.log("tnaginamolunchna",data)
+    this.service.editProfile(form).subscribe(data => {
+      this.hasData = data;
+      console.log("tnaginamolunchna", data)
     })
   }
 

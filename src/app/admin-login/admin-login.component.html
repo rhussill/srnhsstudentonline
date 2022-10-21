@@ -1,13 +1,13 @@
 <mat-toolbar class="header">
-    <div id="title">  
+    <div id="title">
         <div class="logo" (click)="home()">
             <img src="./assets/aionco.png" class="aio">
-         </div>
+        </div>
     </div>
 
     <nav>
         <ul>
-            <li class="log"><button mat-icon-button >Login</button></li>
+            <li class="log"><button mat-icon-button>Login</button></li>
             <li><button mat-raised-button id="save-btn" (click)="signup()">Sign Up</button></li>
         </ul>
     </nav>
@@ -20,37 +20,28 @@
             <mat-card-header class="loginhead">Sign In</mat-card-header>
 
             <form (ngSubmit)="login(loginForm.value)" #loginForm='ngForm'>
-                
+
                 <div class="textemail">Email Address</div>
-                <input 
-                [(ngModel)]="email"
-                name="email"
-                class="usernameeinput"
-                placeholder="Email Address"
-               
-                >
+                <input [(ngModel)]="email" name="email" class="usernameeinput" placeholder="Email Address">
                 <br> <br>
                 <div class="textpasss">Password</div>
-                
-                <input 
-                [(ngModel)]="password"
-                name="password"
-                class="pasworddinput"
-                placeholder="Password"
-                type="password"
-                
-                >
-             <br>
-                <div class="forg">Forgot your password? <p (click)="recovery()"> Click Here</p></div>
+
+                <input [(ngModel)]="password" name="password" class="pasworddinput" placeholder="Password"
+                    type="password">
+                <br>
+                <div class="forg">Forgot your password? <p (click)="recovery()"> Click Here</p>
+                </div>
 
                 <div>
                     <mat-error *ngIf="message!=''">{{message}}</mat-error>
                 </div>
                 <button mat-button id='button-style-signins'>Sign In</button>
-                
-                <button mat-raised-button id='button-style-signin-googles'> <img src="assets/google.png" class="google"> Sign In with Google</button>
 
-                <div id="signup">Don't have an account? <p (click)="signup()">Sign Up</p></div>
+                <button mat-raised-button id='button-style-signin-googles'> <img src="assets/google.png" class="google">
+                    Sign In with Google</button>
+
+                <div id="signup">Don't have an account? <p (click)="signup()">Sign Up</p>
+                </div>
             </form>
         </mat-card>
 

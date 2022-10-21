@@ -10,62 +10,62 @@ import { AppService } from '../app.service';
 })
 export class AdminLoginComponent implements OnInit {
 
-  pdf:any;
+  pdf: any;
   today = Date.now();
-  email:any;
-  password:any;
-  responsedata:any;
-  message='';
+  email: any;
+  password: any;
+  responsedata: any;
+  message = '';
 
-  constructor(private router:Router ,public service:AppService , private dialog:MatDialog) { }
+  constructor(private router: Router, public service: AppService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  home(){
+  home() {
     this.router.navigate(['home'])
 
   }
-  login(form){
-  
-    this.service.login(form).subscribe(data=>{
-      this.responsedata=data;
+  login(form) {
 
-      if(this.responsedata.token == null){
-        this.message=this.responsedata.message
+    this.service.login(form).subscribe(data => {
+      this.responsedata = data;
+
+      if (this.responsedata.token == null) {
+        this.message = this.responsedata.message
         console.log("error")
-      
-      }else if(this.responsedata.user.roles == "User"){
-        localStorage.setItem("Token",this.responsedata.token)
-        localStorage.setItem("role",this.responsedata.user.roles)
-        console.log("user",this.responsedata.user.roles)
+
+      } else if (this.responsedata.user.roles == "User") {
+        localStorage.setItem("Token", this.responsedata.token)
+        localStorage.setItem("role", this.responsedata.user.roles)
+        console.log("user", this.responsedata.user.roles)
         this.router.navigate(['sidenav/dashboard'])
-       
+
       }
-      else if(this.responsedata.user.roles == "Admin" ){
-        localStorage.setItem("Token",this.responsedata.token)
-        localStorage.setItem("role",this.responsedata.user.roles)
-        console.log("admin",this.responsedata.user.roles)
+      else if (this.responsedata.user.roles == "Admin") {
+        localStorage.setItem("Token", this.responsedata.token)
+        localStorage.setItem("role", this.responsedata.user.roles)
+        console.log("admin", this.responsedata.user.roles)
         this.router.navigate(['sidenav/admin'])
-       
+
       }
     });
-   
+
   }
-  signup(){
+  signup() {
     this.router.navigate(['register'])
   }
 
-  recovery(){
+  recovery() {
 
     this.router.navigate(['forgotpass'])
 
   }
-  test(){
-    this.service.getpdf().subscribe(data=>{
-    
+  test() {
+    this.service.getpdf().subscribe(data => {
+
       console.log(this.pdf)
-      
+
     })
   }
 

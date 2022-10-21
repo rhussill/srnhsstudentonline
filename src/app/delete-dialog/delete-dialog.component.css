@@ -1,0 +1,7 @@
+#controls{
+    display: flex;
+    justify-content: end;
+}
+#controls button{
+    margin: 5px;
+}

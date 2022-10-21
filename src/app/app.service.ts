@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular
 import { environment } from 'src/environments/environment';
 import { map, catchError, retry, toArray } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -67,11 +68,18 @@ export class AppService {
 
   //admin
   addUserURL = environment.apiURL + 'admin/newuser'
-  getalladminUrl =environment.apiURL + 'admin/page'
-  getalladmindataUrl =environment.apiURL + 'admin/pageadmin'
+  getalladminuserUrl =environment.apiURL + 'admin/page'
+  getalladminadminUrl =environment.apiURL + 'admin/pageadmin'
   edituseradminURL =environment.apiURL + 'admin/edituser' 
   searhAdminUrl =environment.apiURL + 'admin/search'
   editadminuserURL = environment.apiURL + 'admin/editadmin'
+
+
+
+  //user
+  getAlluploadurl = environment.apiURL + 'api/getall'
+  searchuserUrl = environment.apiURL + 'api/export'
+  deleteFileuserUrl = environment.apiURL + 'api/delete'
   
 
   pdf:any;
@@ -79,7 +87,50 @@ export class AppService {
 
   imgFILE:File;
 
+  filetodelete:any;
+
   constructor(private http: HttpClient) { }
+
+
+
+  //user
+
+  deletefile(file:any){
+    let options = { headers: new HttpHeaders({ 'Content-Type':  'application/json'}),body:file};
+    console.log(file);
+    return this.http.delete<any>(this.deleteFileuserUrl,options).pipe(
+      tap(data=>{console.log('heerre')}),
+      map(data=>data),
+      retry(3), 
+      catchError(this.handleError)
+    );
+      }
+
+  searchUser(keywordfile,page,limit){
+
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.get<any>(`${this.searchuserUrl}/${page}/${limit}/${keywordfile}`,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  
+
+  }
+
+
+  getallUpload(page){
+    let options =  { headers: new HttpHeaders({'Content-Type': 'application/json'})};
+    return this.http.get<any>(`${this.getAlluploadurl}/${page}`,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
 
 
   //admin
@@ -133,9 +184,9 @@ export class AppService {
 
   }
 
-  getalladmin(pageNo,pageSize){
+  getalladmin(adminpageNo,adminpageSize){
     let options =  { headers: new HttpHeaders({'Content-Type': 'application/json'})};
-    return this.http.get<any>(this.getalladmindataUrl+`/${pageNo}/${pageSize}`,options).
+    return this.http.get<any>(this.getalladminadminUrl+`/${adminpageNo}/${adminpageSize}`,options).
     pipe(
       map(data => data),
       retry(3),
@@ -147,7 +198,7 @@ export class AppService {
 
   getallUsers(pageNo,pageSize){
     let options =  { headers: new HttpHeaders({'Content-Type': 'application/json'})};
-    return this.http.get<any>(this.getalladminUrl+`/${pageNo}/${pageSize}`,options).
+    return this.http.get<any>(this.getalladminuserUrl+`/${pageNo}/${pageSize}`,options).
     pipe(
       map(data => data),
       retry(3),

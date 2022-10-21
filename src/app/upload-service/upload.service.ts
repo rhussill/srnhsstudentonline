@@ -15,10 +15,10 @@ export class UploadService {
 
 
 
-  imageUpload(imageForm: FormData) {
+  imageUpload(form:FormData) {
     console.log('image uploading');
-    console.log(imageForm)
-    return this.http.post(this.uploadUrl, imageForm);
+    console.log(form)
+    return this.http.post(this.uploadUrl,form);
     
   }
 

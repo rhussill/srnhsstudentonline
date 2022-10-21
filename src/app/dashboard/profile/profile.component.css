@@ -1,52 +1,76 @@
-.header{
+.header {
     background-color: white;
     height: 11%;
     border-bottom: 1px solid;
     border-color: black;
+    width: 100%;
+}
+
+.col-1 {
+    padding-left: 18px;
+    margin: none;
+}
+
+.col-2 {
+    padding-left: 16%;
+}
+
+.col-3 {
+
+    width: 130px;
+    padding-right: 10px;
+
+}
+
+.dash {
+    font-weight: 800;
+    font-size: 16px;
+    margin: 12px 0 -5px;
+
 }
 
 
-.upload-title{
+.upload-title {
     position: relative;
     left: 2%;
-    top:30%
-
-
+    top: 30%
 }
 
-.box{
+.box {
     font-size: 15px;
     border-radius: 4px;
-    top: -33%;
-    position: relative;
     width: 292px;
-    left: 37%;
     height: 35px;
     border-style: unset;
     background: #f6f6f7;
     text-indent: 29px;
 }
 
-.usercontainer{
-    bottom: 82%;
+.iconsearch {
+    color: grey;
+    transform: scale(0.7);
+    z-index: 1;
     position: relative;
-    width: 120px;
+    left: 28px;
+    top: 6px;
+}
+
+.usercontainer {
     background-color: #ededed;
     height: 44px;
     border-radius: 5px;
-    position: relative;
-    left: 90%;
 }
 
-.usertext{
+.usertext {
     top: 9%;
-    margin-left: 50px;
+    margin-left: 30px;
     position: relative;
     font-size: 15px;
     color: black;
     margin-bottom: 0px;
 }
-.jobtext{
+
+.jobtext {
     top: 5%;
     left: 26%;
     position: relative;
@@ -54,24 +78,15 @@
     color: #bababf;
 }
 
-
-h3{
+h3 {
     position: relative;
     margin: -4px;
     right: -3.5px;
     font-weight: 600;
 }
 
-.iconsearch{
-    color: grey;
-    transform: scale(0.7);
-    position: relative;
-    left: 39%;
-    z-index: 1;
-    bottom: 25%;
-}
 
-.profileCont{
+.profileCont {
     background-color: #61bcb9;
     width: 95%;
     margin-left: 2%;
@@ -80,7 +95,8 @@ h3{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
-.test{
+
+.test {
     font-size: 1px;
     color: #61bcb9;
 }
@@ -101,18 +117,18 @@ h3{
 
 }
 
-#add-button{
-    margin-left: 89%;
+#edit-button {
     font-family: arial;
     width: 123px;
     height: 31px;
-    bottom: 20px;
+    bottom: 31px;
     position: relative;
     background-color: #f58220;
     color: white;
+    left: 88.5%;
 }
 
-#save-changes{
+#save-changes {
     font-size: 17px;
     margin-top: 57px;
     font-family: arial;
@@ -123,7 +139,8 @@ h3{
     color: white;
     margin-left: 50px;
 }
-#backbttn{
+
+#backbttn {
     margin-top: 10px;
     background-color: white;
     color: black;
@@ -131,26 +148,29 @@ h3{
     width: 154px;
 
 }
-.editicon{
+
+.editicon {
     transform: scale(0.6);
     position: relative;
     right: 1px;
     top: -1px;
 }
-.proftext{
+
+.proftext {
     margin-top: -28px;
     margin-left: 131px;
     font-size: 40px;
- 
+
 }
-.iconProfile{
+
+.iconProfile {
     margin-top: 46px;
     margin-left: 80px;
     transform: scale(2.3);
 
 }
 
-.editContainer{
+.editContainer {
     height: 380px;
     margin-left: 76px;
     margin-top: 141px;
@@ -158,13 +178,13 @@ h3{
     width: 80%;
 }
 
-.texteditprof{
+.texteditprof {
     margin-left: 46px;
     font-size: 23px;
     font-weight: 400;
 }
 
-#editavatar{
+#editavatar {
     position: relative;
     background-image: url(http://i.stack.imgur.com/Dj7eP.jpg);
     width: 185px;
@@ -182,18 +202,316 @@ h3{
 .column {
     float: left;
     width: 250px;
-  }
+}
 
-  .row:after {
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
 
-  .inputfirstname{
+.inputfirstname {
     margin-top: 39px;
-  }
-  .inputlastname{
+}
+
+.inputlastname {
     margin-top: 10px;
-   
-  }
+
+}
+
+
+.emailText {
+    position: relative;
+    left: 180px;
+
+}
+
+.jobText {
+
+    position: relative;
+    left: 180px;
+    color: grey;
+
+}
+
+/* for edit button  */
+
+@media only screen and (max-width: 1285.60px) {
+    #edit-button {
+        font-family: arial;
+        width: 123px;
+        height: 31px;
+        bottom: 31px;
+        position: relative;
+        background-color: #f58220;
+        color: white;
+        left: 87%;
+    }
+
+
+}
+
+@media only screen and (max-width: 1200px) {
+    #edit-button {
+        font-family: arial;
+        width: 123px;
+        height: 31px;
+        bottom: 31px;
+        position: relative;
+        background-color: #f58220;
+        color: white;
+        left: 86.3%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 1140px) {
+    #edit-button {
+        font-family: arial;
+        width: 123px;
+        height: 31px;
+        bottom: 31px;
+        position: relative;
+        background-color: #f58220;
+        color: white;
+        left: 85.3%;
+    }
+
+
+}
+
+@media only screen and (max-width: 1044px) {
+    #edit-button {
+        font-family: arial;
+        width: 123px;
+        height: 31px;
+        bottom: 31px;
+        position: relative;
+        background-color: #f58220;
+        color: white;
+        left: 84.3%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 965px) {
+    #edit-button {
+        font-family: arial;
+        width: 123px;
+        height: 31px;
+        bottom: 31px;
+        position: relative;
+        background-color: #f58220;
+        color: white;
+        left: 83.3%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 965px) {
+    #edit-button {
+        font-family: arial;
+        width: 123px;
+        height: 31px;
+        bottom: 31px;
+        position: relative;
+        background-color: #f58220;
+        color: white;
+        left: 82%;
+    }
+
+
+}
+
+@media only screen and (max-width: 965px) {
+    #edit-button {
+        font-family: arial;
+        width: 123px;
+        height: 31px;
+        bottom: 31px;
+        position: relative;
+        background-color: #f58220;
+        color: white;
+        left: 80%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 965px) {
+    #edit-button {
+        font-family: arial;
+        width: 123px;
+        height: 31px;
+        bottom: 31px;
+        position: relative;
+        background-color: #f58220;
+        color: white;
+        left: 78%;
+    }
+
+
+}
+
+/* for header  */
+
+@media only screen and (max-width: 820px) {
+
+    .col-2 {
+        padding-left: 6%;
+
+    }
+
+    .box {
+        font-size: 15px;
+        border-radius: 4px;
+        width: 209px;
+        height: 35px;
+        border-style: unset;
+        background: #f6f6f7;
+        text-indent: 29px;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 622px) {
+
+    .col-2 {
+        padding-left: 0%;
+
+    }
+
+    .box {
+        font-size: 15px;
+        border-radius: 4px;
+        width: 162px;
+        height: 35px;
+        border-style: unset;
+        background: #f6f6f7;
+        text-indent: 29px;
+    }
+
+}
+
+@media only screen and (max-width: 527px) {
+
+
+    .col-1 {
+        padding-left: 12px;
+        margin: none;
+    }
+
+    .col-2 {
+        padding-left: 0%;
+
+    }
+
+    .box {
+        font-size: 15px;
+        border-radius: 4px;
+        width: 102px;
+        height: 35px;
+        border-style: unset;
+        background: #f6f6f7;
+        text-indent: 29px;
+    }
+
+}
+
+@media only screen and (max-width: 460px) {
+
+
+    .col-1 {
+        padding-left: 12px;
+        margin: none;
+    }
+
+    .col-2 {
+        padding-left: 0%;
+
+    }
+
+    .box {
+        font-size: 15px;
+        border-radius: 4px;
+        width: 56px;
+        height: 35px;
+        border-style: unset;
+        background: #f6f6f7;
+        text-indent: 29px;
+    }
+
+}
+
+
+
+
+
+/* profile */
+
+
+@media only screen and (max-width: 1285.60px) {
+
+
+    .emailText {
+        position: relative;
+        left: 166px;
+
+    }
+
+    .jobText {
+
+        position: relative;
+        left: 165px;
+        color: grey;
+
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+
+    .emailText {
+        position: relative;
+        left: 157px;
+
+    }
+
+    .jobText {
+
+        position: relative;
+        left: 156px;
+        color: grey;
+
+    }
+
+}
+
+@media only screen and (max-width: 910px) {
+
+
+    .emailText {
+        position: relative;
+        left: 150px;
+
+    }
+
+    .jobText {
+
+        position: relative;
+        left: 148px;
+        color: grey;
+
+    }
+
+}

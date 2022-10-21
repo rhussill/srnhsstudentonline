@@ -82,6 +82,7 @@ import { AdminAdduserComponent } from './admin-dashboard/admin-adduser/admin-add
 import { AdminEdituserComponent } from './admin-dashboard/admin-edituser/admin-edituser.component';
 import { SideNavComponent } from './dashboard/body/side-nav/side-nav.component';
 import { AdminAdmineditComponent } from './admin-dashboard/admin-edituser/admin-adminedit/admin-adminedit.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 
 
@@ -118,6 +119,7 @@ import { AdminAdmineditComponent } from './admin-dashboard/admin-edituser/admin-
     AdminEdituserComponent,
     SideNavComponent,
     AdminAdmineditComponent,
+    DeleteDialogComponent,
   ],
   imports: [
     CommonModule,

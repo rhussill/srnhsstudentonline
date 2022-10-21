@@ -10,25 +10,28 @@ import { UploadService } from 'src/app/upload-service/upload.service';
   styleUrls: ['./filter-form.component.css']
 })
 export class FilterFormComponent implements OnInit {
- 
-  addval:boolean=false;
 
-  capturekit:any;
-  sequenceType:any;
-  cancertype:any;
-  specimentypes:any;
-  dataclasses:any;
-  message:any;
-  
+  addval: boolean = false;
 
-  dataclassTypes=[
+  capturekit: any;
+  sequenceType: any;
+  cancertype: any;
+  specimentypes: any;
+  dataclasses: any;
+  message: any;
+
+  datas: any;
+  page:number = 1;
+
+
+  dataclassTypes = [
     'None',
     '.fastq',
     '.bam',
     '.bai'
   ]
 
-  specimenTypes=[
+  specimenTypes = [
     'None',
     'Blood',
     'Urine',
@@ -76,7 +79,7 @@ export class FilterFormComponent implements OnInit {
 
   captureKits = [
     'None',
-   'Agilent Sure Select Human All Exon v1 kits',
+    'Agilent Sure Select Human All Exon v1 kits',
     'Agilent SureSelect All Exon v2',
     'Agilent SureSelect Human All Exon v2',
     'Agilent Sure-Select Human All Exon v2.0',
@@ -120,58 +123,71 @@ export class FilterFormComponent implements OnInit {
     'SureSelectXT Human All Exon V5, 16',
     'SureSelectXT Human All ExonV6Capture Library (Agilent, 5190-8865)',
     'VCRome V2.1',
-   ' VCRome V2.1-PKv1',
+    ' VCRome V2.1-PKv1',
     'WO2791991 pooled probes|WO2768646 pooled probes|WO2793950 pooled probes|WO2790654 pooled probes|Nimblegen EZ Exome v3.0',
     'Unknown',
   ];
   sequenceTypes = [
-      'None',
-      'WGS',
-      'WXS'
+    'None',
+    'WGS',
+    'WXS'
   ];
- 
+
 
   imageUrl: string;
 
-  constructor( private dialogref: MatDialogRef<FilterFormComponent> ,private uploadService:UploadService ,private service:AppService ,private dialog:MatDialog) { }
+  constructor(private dialogref: MatDialogRef<FilterFormComponent>, private uploadService: UploadService, private service: AppService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.getuploadData();
   }
 
-  close(){
-   this.dialogref.close()
+  close() {
+    this.dialogref.close()
   }
 
-  addvalue(){
-   
+  getuploadData() {
+    this.service.getallUpload(this.page).subscribe(data => {
+      console.log(data.result)
+
+      this.datas = data.result
+    })
+  }
+
+  addvalue() {
+
     console.log("open")
     var sequencetypeID = document.getElementById('sequencetypeID'),
-        inputValue = ( <HTMLInputElement> document.getElementById('val')).value,
-        newOption = document.createElement('option'),
-        newOptionValue = document.createTextNode(inputValue);
+      inputValue = (<HTMLInputElement>document.getElementById('val')).value,
+      newOption = document.createElement('option'),
+      newOptionValue = document.createTextNode(inputValue);
 
-        newOption.appendChild(newOptionValue);
-        sequencetypeID.insertBefore(newOption ,sequencetypeID.lastChild);
+    newOption.appendChild(newOptionValue);
+    sequencetypeID.insertBefore(newOption, sequencetypeID.lastChild);
 
   }
 
-  upload(){
+  upload() {
 
-    const imageForm = new FormData();
-    imageForm.append('image', this.service.imgFILE);
-    console.log("imgform",imageForm)
-    this.uploadService.imageUpload(imageForm).subscribe(res => {
-      console.log("testt",res)
-      this.imageUrl = res['image'];
+    const form = new FormData();
+    form.append('file', this.service.imgFILE);
+    console.log("FILES", form)
+    this.uploadService.imageUpload(form).subscribe(res => {
+      console.log("testt", res)
+      this.imageUrl = res['file'];
       this.dialogref.close();
-      this.dialog.open(DialogboxComponent,{
-        data : {
-          message : "Successfully Uploaded"
+      this.dialog.open(DialogboxComponent, {
+        data: {
+          message: "Successfully Uploaded"
         }
+      }).afterClosed().subscribe(res => {
+        this.getuploadData();
+        console.log("getdataaaa")
+
       })
     });
   }
 
-  }
+}
 
 

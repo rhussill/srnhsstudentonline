@@ -1,49 +1,52 @@
-body{
-    background-color:#f2ede2 ;
+body {
+    background-color: #f2ede2;
     overflow: hidden;
 }
 
-#title{
+#title {
     display: inline-flex;
     align-items: center;
     width: 90px;
     height: 95%;
 }
-.logo{
+
+.logo {
     /* height: 100%;
     align-items: center;
     padding-left: 16px; */
     height: 25%;
 
- }
+}
 
- .header{
-    background-color:#f2ede2 ;
- }
- .aio{
+.header {
+    background-color: #f2ede2;
+}
+
+.aio {
     margin-left: 20px;
     height: 40px;
     cursor: pointer;
 
- }
- #save-btn{
+}
+
+#save-btn {
     display: flex;
     margin-left: 2%;
-    margin-top:20px;
-    background-color:#f58220 ;
+    margin-top: 20px;
+    background-color: #f58220;
     color: white;
- }
+}
 
 
- #login{
-    margin-top:20px;
+#login {
+    margin-top: 20px;
     margin-left: 78%;
 }
 
 /* login */
 
 
-.logincard{
+.logincard {
 
     width: 350px;
     height: 400px;
@@ -51,16 +54,16 @@ body{
     text-align: center;
     margin: 3vh;
     border-radius: 1px;
-  }
+}
 
-  /* mat-card-header{
+/* mat-card-header{
 
 
   } */
 
 
 
-  .button-style-signins{
+.button-style-signins {
     background-color: #F48120;
     color: white;
     margin: 15px;
@@ -70,18 +73,18 @@ body{
     border-radius: 10px;
 
 
-  }
+}
 
 
-  .login-form-flexs {
+.login-form-flexs {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80%;
     border-radius: none;
-  }
+}
 
-  .bg {
+.bg {
 
     /* background-image: url("src/assets/CDA.png"); */
     height: 100%;
@@ -89,45 +92,45 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 40%;
-  }
+}
 
-  .form-field-width{
+.form-field-width {
     padding: 5px;
     width: 80%;
     color: #290001;
     text-align: center;
-  }
+}
 
-  .icon-color{
+.icon-color {
     color: #F48120
-  }
+}
 
 
 
-    #snackbar {
-      visibility: hidden;
-      min-width: 250px;
-      margin-left: -125px;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      border-radius: 2px;
-      padding: 16px;
-      position: fixed;
-      z-index: 1;
-      left: 50%;
-      bottom: 30px;
-    }
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
 
 
-    #snackbar.show {
-      visibility: visible;
+#snackbar.show {
+    visibility: visible;
 
-      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-      animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    }
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
 
-    /* @-webkit-keyframes fadein {
+/* @-webkit-keyframes fadein {
       from {bottom: 0; opacity: 0;}
       to {bottom: 30px; opacity: 1;}
     }
@@ -147,111 +150,121 @@ body{
       to {bottom: 0; opacity: 0;}
     } */
 
-    .usernameeinput{
-        width: 250px;
-        height: 27px;
-        border-radius: 5px;
-    }
-    .pasworddinput{
-      width: 250px;
-      height: 27px;
-      border-radius: 5px;
+.usernameeinput {
+    width: 250px;
+    height: 27px;
+    border-radius: 5px;
+}
 
-    }
-    .textemail{
-        margin-right: 173px;
-        padding-bottom: 5px;
-        font-weight: 450;
-    }
-    .textpasss{
-        margin-right: 200px;
-        padding-bottom: 5px;
-        font-weight: 450;
-    }
-    .loginhead{
-        font-weight: 600;
-        font-family: Arial;
-        color: black;
-        font-size: large;
-        text-align: center;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        padding: 15px;
-        margin-left: 29%;
-    }
+.pasworddinput {
+    width: 250px;
+    height: 27px;
+    border-radius: 5px;
 
-    #button-style-signins {
-        background-color: #F48120;
-        color: white;
-        margin: 15px;
-        justify-content: center;
-        width: 260px;
-        height: 30px;
-        border-radius: 5px;
-        padding:none;
-        line-height: 1px;
-       margin: 1px;
-    }
-    .forg{
-      position: relative;
-      font-weight: 500;
-      margin-left: -46px;
-      padding-bottom: 20px;
-      font-size: 15px;
-      border: black;
-      top: 3px;
+}
 
-    }
-    #button-style-signin-googles{
-        padding-top: none;
-        background-color: white;
-        color: black;
-        margin: 10px;
-        justify-content: center;
-        width: 260px;
-        height: 30px;
-        border-radius: 5px;
-        padding:none;
-        line-height: 1px;
-        border: black;
-    }
-    #signup{
-       margin: 20px;
-       font-family: Arial, Helvetica, sans-serif;
-       font-size: 15px;
-       color: grey;
-    }
-    p{
-        display: inline-flex;
-        margin-block-end: 0;
-        color:#F48120;
-        cursor: pointer;
-    }
-    nav{
-        flex: 1;
-        text-align: right;
-      }
-      nav ul li{
-        list-style: none;
-        display: inline-block;
-        margin-right: -26px;
-        padding-right: 5%;
-      }
+.textemail {
+    margin-right: 173px;
+    padding-bottom: 5px;
+    font-weight: 450;
+}
 
-      .navbar{
-        width: 100%;
-        display: flex;
-        align-items: center;
-      }
-      input{
-        border-style:solid;
-        border-color:lightgrey;
-        font-family: Arial, Helvetica, sans-serif;
-        text-indent: 15px;
+.textpasss {
+    margin-right: 200px;
+    padding-bottom: 5px;
+    font-weight: 450;
+}
+
+.loginhead {
+    font-weight: 600;
+    font-family: Arial;
+    color: black;
+    font-size: large;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px;
+    margin-left: 29%;
+}
+
+#button-style-signins {
+    background-color: #F48120;
+    color: white;
+    margin: 15px;
+    justify-content: center;
+    width: 260px;
+    height: 30px;
+    border-radius: 5px;
+    padding: none;
+    line-height: 1px;
+    margin: 1px;
+}
+
+.forg {
+    position: relative;
+    font-weight: 500;
+    margin-left: -46px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    border: black;
+    top: 3px;
+
+}
+
+#button-style-signin-googles {
+    padding-top: none;
+    background-color: white;
+    color: black;
+    margin: 10px;
+    justify-content: center;
+    width: 260px;
+    height: 30px;
+    border-radius: 5px;
+    padding: none;
+    line-height: 1px;
+    border: black;
+}
+
+#signup {
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: grey;
+}
+
+p {
+    display: inline-flex;
+    margin-block-end: 0;
+    color: #F48120;
+    cursor: pointer;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: -26px;
+    padding-right: 5%;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    border-style: solid;
+    border-color: lightgrey;
+    font-family: Arial, Helvetica, sans-serif;
+    text-indent: 15px;
 
 
-      }
-      .google{
-        width: 30px;
-      }
+}
 
-
+.google {
+    width: 30px;
+}

@@ -1,71 +1,60 @@
-<h2 style="font-weight:bold;">Upload File <mat-icon id="closeicon" (click)="close()">close</mat-icon></h2> 
+<h2 style="font-weight:bold;">Upload File <mat-icon id="closeicon" (click)="close()">close</mat-icon>
+</h2>
 <mat-divider></mat-divider>
 
 <br>
 <select class="selectnewprofile">
     <option value="newprofile">New Profile</option>
 </select>
-    <br>
-    <span>Sample ID</span> <span style="margin-left: 42%;" >Capture Kit</span>
-    <br>
-    <input
-    name="email"
-    class="sampleID"
-    placeholder="Sample ID"
-    >
+<br>
+<span>Sample ID</span> <span style="margin-left: 42%;">Capture Kit</span>
+<br>
+<input name="email" class="sampleID" placeholder="Sample ID">
 
-    <!-- captureKit -->
-    <select class="selectcapturekit" [(ngModel)]="capturekit" name ="capturekit">
-        <option  value="none" *ngFor='let captureKit of captureKits' [value]="captureKit">{{captureKit}}</option>
-    </select>
-    <br>
-    <span>Regex</span> <span style="margin-left: 47%;">Speciment Type</span>
-    <br>
-    <input
-    name="email"
-    class="regex"
-    placeholder="Regex"
-    >
+<!-- captureKit -->
+<select class="selectcapturekit" [(ngModel)]="capturekit" name="capturekit">
+    <option value="none" *ngFor='let captureKit of captureKits' [value]="captureKit">{{captureKit}}</option>
+</select>
+<br>
+<span>Regex</span> <span style="margin-left: 47%;">Speciment Type</span>
+<br>
+<input name="email" class="regex" placeholder="Regex">
 
-    <!-- specimenTypes -->
-    <select class="selectcapturekit" [(ngModel)]="specimentypes" name ="specimentypes">
-        <option *ngFor='let specimenType of specimenTypes' [value]="specimenType">{{specimenType}}</option>
-    </select>
+<!-- specimenTypes -->
+<select class="selectcapturekit" [(ngModel)]="specimentypes" name="specimentypes">
+    <option *ngFor='let specimenType of specimenTypes' [value]="specimenType">{{specimenType}}</option>
+</select>
 
-    <br>
+<br>
 
-    <span>Data Class</span> <span style="margin-left: 41%;">Cancer Type</span>
-    <br>
-    
-    <select class="selectdataclass" [(ngModel)]="dataclasses" name ="dataclasses"  >
-        <option *ngFor='let dataclassType of dataclassTypes' [value]="dataclassType">{{dataclassType}}</option>
-    </select>
+<span>Data Class</span> <span style="margin-left: 41%;">Cancer Type</span>
+<br>
+
+<select class="selectdataclass" [(ngModel)]="dataclasses" name="dataclasses">
+    <option *ngFor='let dataclassType of dataclassTypes' [value]="dataclassType">{{dataclassType}}</option>
+</select>
 
 
-    <!-- cancerType -->
-    <select  [(ngModel)]="cancertype" name ="cancertype" class="selectcapturekit">
-        <option *ngFor='let cancerType of cancerTypes' [value]="cancerType">{{cancerType}}</option>
-    </select>
+<!-- cancerType -->
+<select [(ngModel)]="cancertype" name="cancertype" class="selectcapturekit">
+    <option *ngFor='let cancerType of cancerTypes' [value]="cancerType">{{cancerType}}</option>
+</select>
 
-    <br>
+<br>
 
-    <span>Sequence Type</span> <span style="margin-left: 34%;">Site</span>
-    <br>
+<span>Sequence Type</span> <span style="margin-left: 34%;">Site</span>
+<br>
 
-    <!-- sequenceType -->
-    <select [(ngModel)]="sequenceType" name ="sequenceType" class="selectsequencetype" id="sequencetypeID"> 
-        <option *ngFor='let sequenceType of sequenceTypes'  [value] ="sequenceType">{{sequenceType}}</option>
-    </select>
+<!-- sequenceType -->
+<select [(ngModel)]="sequenceType" name="sequenceType" class="selectsequencetype" id="sequencetypeID">
+    <option *ngFor='let sequenceType of sequenceTypes' [value]="sequenceType">{{sequenceType}}</option>
+</select>
 
-    <!-- <input type="text" id="val">
+<!-- <input type="text" id="val">
     <button (click)="addvalue()">test</button> -->
 
-    <input
-    name="email"
-    class="site"
-    placeholder="Site"
-    >
-    <br><br>
-    <div id='controls'>
-        <button mat-raised-button class="uploadbttn" type='button' (click)="upload()">Upload</button>  
-    </div>
+<input name="email" class="site" placeholder="Site">
+<br><br>
+<div id='controls'>
+    <button mat-raised-button class="uploadbttn" type='button' (click)="upload()">Upload</button>
+</div>

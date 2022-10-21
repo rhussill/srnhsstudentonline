@@ -1,8 +1,8 @@
-mat-form-field{
-    width:100%;
+mat-form-field {
+    width: 100%;
 }
 
-#dragndrop{
+#dragndrop {
     width: 28vw;
     height: 26vh;
     display: flex;
@@ -12,70 +12,78 @@ mat-form-field{
     border-radius: 2px;
 }
 
-mat-list{
-    width:30vw;
-}
-
-mat-icon{
-    padding: 0 8px;
-}
-
-a:hover{
-    cursor: pointer;
-}
-
-a{
-    color:cornflowerblue;
-}
-
-mat-list-item{
-    min-width: 25vw;
-}
-#td-content{
-    width:80%;
-}
-table{
+mat-list {
     width: 30vw;
 }
 
-#file_upload{
-    visibility:collapse;
+mat-icon {
+    padding: 0 8px;
 }
-.bar{
-   position: relative;
-   bottom:35px;
+
+a:hover {
+    cursor: pointer;
 }
-.filename{
+
+a {
+    color: cornflowerblue;
+}
+
+mat-list-item {
+    min-width: 25vw;
+}
+
+#td-content {
+    width: 80%;
+}
+
+table {
+    width: 30vw;
+}
+
+#file_upload {
+    visibility: collapse;
+}
+
+.bar {
+    position: relative;
+    bottom: 35px;
+}
+
+.filename {
     font-weight: bolder;
     font-size: 14px;
 }
-.time{
+
+.time {
     position: relative;
-    bottom:23px
+    bottom: 23px
 }
-.results{
+
+.results {
     border-radius: 9px;
     overflow: hidden;
     height: 162px;
     transform: none;
 }
-#controls{
+
+#controls {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-#iconfolder{
+#iconfolder {
     display: flex;
     color: darkgrey;
     position: relative;
     left: 48%;
-    bottom:5%;
+    bottom: 5%;
     transform: scale(2.5);
     justify-content: center;
     cursor: pointer;
 }
-#textupload{
+
+#textupload {
     color: black;
     width: 100%;
     position: relative;
@@ -83,7 +91,8 @@ table{
     top: 20%;
     font-weight: bold;
 }
-#something{
+
+#something {
     width: 100%;
     position: relative;
     top: 28%;
@@ -92,9 +101,252 @@ table{
     color: black;
 }
 
-#closeicon{
+#closeicon {
     top: 3px;
     position: relative;
-    left: 70%;   
+    left: 70%;
     cursor: pointer;
+}
+
+/* for responsive */
+
+@media only screen and (max-width: 1285.60px) {
+
+    #closeicon {
+        top: 3px;
+        position: relative;
+        left: 63%;
+        cursor: pointer;
+    }
+
+    #iconfolder {
+        display: flex;
+        color: darkgrey;
+        position: relative;
+        left: 55%;
+        bottom: 5%;
+        transform: scale(2.5);
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    #textupload {
+        color: black;
+        width: 100%;
+        position: relative;
+        left: 27%;
+        top: 20%;
+        font-weight: bold;
+    }
+
+    #something {
+        width: 100%;
+        position: relative;
+        top: 28%;
+        right: 35%;
+        font-size: 13px;
+        color: black;
+    }
+
+
+}
+
+@media only screen and (max-width: 1150px) {
+
+    #closeicon {
+        top: 3px;
+        position: relative;
+        left: 63%;
+        cursor: pointer;
+    }
+
+    #iconfolder {
+        display: flex;
+        color: darkgrey;
+        position: relative;
+        left: 60%;
+        bottom: 5%;
+        transform: scale(2.5);
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    #textupload {
+        color: black;
+        width: 100%;
+        position: relative;
+        left: 27%;
+        top: 20%;
+        font-weight: bold;
+    }
+
+    #something {
+        width: 100%;
+        position: relative;
+        top: 28%;
+        right: 42%;
+        font-size: 13px;
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 1248px) {
+
+    #closeicon {
+        top: 3px;
+        position: relative;
+        left: 63%;
+        cursor: pointer;
+    }
+
+    #iconfolder {
+        display: flex;
+        color: darkgrey;
+        position: relative;
+        left: 55%;
+        bottom: 5%;
+        transform: scale(2.5);
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    #textupload {
+        color: black;
+        width: 100%;
+        position: relative;
+        left: 26%;
+        top: 20%;
+        font-weight: bold;
+    }
+
+    #something {
+        width: 100%;
+        position: relative;
+        top: 28%;
+        right: 38%;
+        font-size: 13px;
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    #closeicon {
+        top: 3px;
+        position: relative;
+        left: 63%;
+        cursor: pointer;
+    }
+
+    #iconfolder {
+        display: flex;
+        color: darkgrey;
+        position: relative;
+        left: 58%;
+        bottom: 5%;
+        transform: scale(2.5);
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    #textupload {
+        color: black;
+        width: 100%;
+        position: relative;
+        left: 27%;
+        top: 20%;
+        font-weight: bold;
+    }
+
+    #something {
+        width: 100%;
+        position: relative;
+        top: 28%;
+        right: 39%;
+        font-size: 13px;
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 1098px) {
+
+    #closeicon {
+        top: 3px;
+        position: relative;
+        left: 63%;
+        cursor: pointer;
+    }
+
+    #iconfolder {
+        display: flex;
+        color: darkgrey;
+        position: relative;
+        left: 64%;
+        bottom: 5%;
+        transform: scale(2.5);
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    #textupload {
+        color: black;
+        width: 100%;
+        position: relative;
+        left: 32%;
+        top: 20%;
+        font-weight: bold;
+    }
+
+    #something {
+        width: 100%;
+        position: relative;
+        top: 28%;
+        right: 44%;
+        font-size: 13px;
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 1086.46px) {
+
+    #closeicon {
+        top: 3px;
+        position: relative;
+        left: 59%;
+        cursor: pointer;
+    }
+
+    #iconfolder {
+        display: flex;
+        color: darkgrey;
+        position: relative;
+        left: 64%;
+        bottom: 5%;
+        transform: scale(2.5);
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    #textupload {
+        color: black;
+        width: 100%;
+        position: relative;
+        left: 27%;
+        top: 20%;
+        font-weight: bold;
+    }
+
+    #something {
+        width: 100%;
+        position: relative;
+        top: 28%;
+        right: 43%;
+        font-size: 13px;
+        color: black;
+    }
+
+    mat-form-field {
+        width: 100%;
+        overflow: hidden;
+    }
 }

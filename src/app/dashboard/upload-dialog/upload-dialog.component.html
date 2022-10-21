@@ -1,48 +1,35 @@
-<h2 style="font-weight:bold;">Upload File <mat-icon id="closeicon" (click)="close()">close</mat-icon></h2> 
+<h2 style="font-weight:bold;">Upload File <mat-icon id="closeicon" (click)="close()">close</mat-icon>
+</h2>
 
- <!-- <mat-icon>upload</mat-icon>  -->
+
 <mat-divider></mat-divider>
 <br>
 <form *ngIf="uploadform">
-    <!-- <input type='file' appUpload> -->
-    <!-- <h3>Upload File</h3> -->
-    
+
     <div id='dragndrop' appUpload (onFileDropped)="uploadFile($event)" *ngIf='!has_file'>
-    
-            <mat-icon id="iconfolder"  (click)='fileUpload.click()'>folder</mat-icon>
-            
-            <span id="textupload">Drag and drop files, or Browse
+
+        <mat-icon id="iconfolder" (click)='fileUpload.click()'>folder</mat-icon>
+
+        <span id="textupload">Drag and drop files, or Browse
             <input type='file' id='file_upload' #fileUpload (change)='onFileSelected($event)'></span><br>
 
-            <p id="something">Supports:Something</p>
-        
-       
-        <!-- <span style="position: relative;top: 31%;">Drag and drop files  or <a mat-button (click)='fileUpload.click()'>Browse</a><br>
-            Supports Something<br>
-        <input type='file' id='file_upload' #fileUpload (change)='onFileSelected($event)'>
+        <p id="something">Supports:Something</p>
 
-        </span> -->
-        <!-- <span *ngIf='has_file'><mat-icon>insert_drive_file</mat-icon>{{filename}}</span> -->
     </div>
-    
+
     <table *ngIf='has_file'>
         <tbody>
             <tr>
-                <td id='td-content'><span><mat-icon style="position: relative;left: -4%;top: 4px;">insert_drive_file</mat-icon>{{filename}}</span></td>
-                <td><button mat-icon-button (click)='remove()'><mat-icon>delete</mat-icon></button></td>
+                <td id='td-content'><span>
+                        <mat-icon style="position: relative;left: -4%;top: 4px;">insert_drive_file</mat-icon>
+                        {{filename}}
+                    </span></td>
+                <td><button mat-icon-button (click)='remove()'>
+                        <mat-icon>delete</mat-icon>
+                    </button></td>
             </tr>
         </tbody>
     </table>
-
-    <!-- <div id='controls'>
-        <button mat-raised-button color='primary' type='button' (click)='submit()' *ngIf='!isUploading'>
-            <span *ngIf="has_file">Upload</span>
-        </button>
-
-        <button mat-raised-button color='primary' type='button' (click)='submit()' disabled *ngIf='isUploading'>
-            <span>Uploading...</span>
-        </button>
-    </div> -->
 
 
 </form>
@@ -50,14 +37,9 @@
 
 <div *ngIf="Loadingform" style="width:500px ; border-radius: 20px;">
 
-        <h2 class="filename">{{filename}}</h2>
-        <h5 class="time">{{value}}% - {{seconds_remaining}} seconds remaining</h5>
-          <mat-progress-bar 
-          class="bar"
-          [value]="value"
-          ></mat-progress-bar>
-
-     
-    </div>
+    <h2 class="filename">{{filename}}</h2>
+    <h5 class="time">{{value}}% - {{seconds_remaining}} seconds remaining</h5>
+    <mat-progress-bar class="bar" [value]="value"></mat-progress-bar>
 
 
+</div>

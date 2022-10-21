@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router ,public service:AppService , private dialog:MatDialog) { }
 
   ngOnInit(): void {
+   
     console.log('workimg');
   }
   home(){
