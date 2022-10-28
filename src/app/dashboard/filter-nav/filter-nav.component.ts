@@ -86,4 +86,10 @@ export class FilterNavComponent implements OnInit {
     items.opened = true;
     console.log(items);
   }
+
+  filterclick(){
+
+    this.menuClickedEvent.emit();
+    
+  }
 }

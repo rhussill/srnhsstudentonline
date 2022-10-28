@@ -14,11 +14,22 @@ export class FilterFormComponent implements OnInit {
   addval: boolean = false;
 
   capturekit: any;
-  sequenceType: any;
   cancertype: any;
-  specimentypes: any;
-  dataclasses: any;
+  specimentype: any;
+  datatype:any
+  sequencetype:any;
+  newprofile:any
+  sampleid:any;
+  regex:any;
+  site:any;
+
+
+  isLoading:boolean=false;
+
+
+  
   message: any;
+
 
   datas: any;
   page:number = 1;
@@ -187,6 +198,43 @@ export class FilterFormComponent implements OnInit {
       })
     });
   }
+
+  submit(form){
+
+    this.isLoading =true;
+    const forms = new FormData();
+    forms.append('file', this.service.imgFILE);
+    forms.append('newprofile', this.newprofile);
+    forms.append("capturekit",this.capturekit);
+    forms.append("cancertype",this.cancertype);
+    forms.append("specimentype",this.specimentype);
+    forms.append("datatype",this.datatype);
+    forms.append("sequencetype",this.sequencetype);
+    forms.append("regex",this.regex);
+    forms.append("site",this.site);
+
+      this.uploadService.imageUpload(forms).subscribe(res => {
+      console.log("testt", res)
+      this.imageUrl = res['file'];
+    
+      this.dialogref.close();
+      
+      this.dialog.open(DialogboxComponent, {
+        data: {
+          
+          message: "Successfully Uploaded"
+        }
+      }).afterClosed().subscribe(res => {
+        this.isLoading =false;
+        this.getuploadData();
+        console.log("getdataaaa")
+
+      })
+    });
+
+  }
+
+  
 
 }
 

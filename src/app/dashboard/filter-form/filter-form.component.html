@@ -1,15 +1,27 @@
+<ng-container>
+    <div id='progress' *ngIf='isLoading==true'>
+        <mat-spinner></mat-spinner>
+    </div>
+  </ng-container>
+
 <h2 style="font-weight:bold;">Upload File <mat-icon id="closeicon" (click)="close()">close</mat-icon>
 </h2>
 <mat-divider></mat-divider>
 
 <br>
-<select class="selectnewprofile">
+<!-- <select class="selectnewprofile">
     <option value="newprofile">New Profile</option>
-</select>
+</select> -->
+
+<br>
+<form (ngSubmit)="submit(sumbitForm.value)" #sumbitForm='ngForm'>
+
+<input name="newprofile" class="selectnewprofile" placeholder="New Profile +" [(ngModel)]="newprofile">
+
 <br>
 <span>Sample ID</span> <span style="margin-left: 42%;">Capture Kit</span>
 <br>
-<input name="email" class="sampleID" placeholder="Sample ID">
+<input name="sampleid" class="sampleID" placeholder="Sample ID"  [(ngModel)]="sampleid">
 
 <!-- captureKit -->
 <select class="selectcapturekit" [(ngModel)]="capturekit" name="capturekit">
@@ -18,10 +30,10 @@
 <br>
 <span>Regex</span> <span style="margin-left: 47%;">Speciment Type</span>
 <br>
-<input name="email" class="regex" placeholder="Regex">
+<input name="regex" class="regex" placeholder="Regex"  [(ngModel)]="regex">
 
 <!-- specimenTypes -->
-<select class="selectcapturekit" [(ngModel)]="specimentypes" name="specimentypes">
+<select class="selectcapturekit" [(ngModel)]="specimentype" name="specimentypes">
     <option *ngFor='let specimenType of specimenTypes' [value]="specimenType">{{specimenType}}</option>
 </select>
 
@@ -30,7 +42,7 @@
 <span>Data Class</span> <span style="margin-left: 41%;">Cancer Type</span>
 <br>
 
-<select class="selectdataclass" [(ngModel)]="dataclasses" name="dataclasses">
+<select class="selectdataclass" [(ngModel)]="datatype" name="datatype">
     <option *ngFor='let dataclassType of dataclassTypes' [value]="dataclassType">{{dataclassType}}</option>
 </select>
 
@@ -46,15 +58,17 @@
 <br>
 
 <!-- sequenceType -->
-<select [(ngModel)]="sequenceType" name="sequenceType" class="selectsequencetype" id="sequencetypeID">
+<select [(ngModel)]="sequencetype" name="sequencetype" class="selectsequencetype" id="sequencetypeID">
     <option *ngFor='let sequenceType of sequenceTypes' [value]="sequenceType">{{sequenceType}}</option>
 </select>
 
 <!-- <input type="text" id="val">
     <button (click)="addvalue()">test</button> -->
 
-<input name="email" class="site" placeholder="Site">
+<input name="site" class="site" placeholder="Site"  [(ngModel)]="site">
 <br><br>
 <div id='controls'>
-    <button mat-raised-button class="uploadbttn" type='button' (click)="upload()">Upload</button>
+    <button mat-raised-button class="uploadbttn" type='submit'>Upload</button>
 </div>
+
+</form>

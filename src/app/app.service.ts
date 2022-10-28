@@ -77,7 +77,7 @@ export class AppService {
 
 
   //user
-  getAlluploadurl = environment.apiURL + 'api/getall'
+  getAlluploadurl = environment.apiURL + 'api/s3admin'
   searchuserUrl = environment.apiURL + 'api/export'
   deleteFileuserUrl = environment.apiURL + 'api/delete'
   
@@ -121,9 +121,9 @@ export class AppService {
   }
 
 
-  getallUpload(page){
+  getallUpload(s3pageNo){
     let options =  { headers: new HttpHeaders({'Content-Type': 'application/json'})};
-    return this.http.get<any>(`${this.getAlluploadurl}/${page}`,options).
+    return this.http.get<any>(`${this.getAlluploadurl}/${s3pageNo}`,options).
     pipe(
       map(data => data),
       retry(3),

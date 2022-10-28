@@ -23,7 +23,7 @@ export class DeleteDialogComponent implements OnInit {
   }
 
   delete(){
-     this.service.deletefile({Key:this.service.filetodelete}).subscribe(data=>{
+     this.service.deletefile({FileName:this.service.filetodelete}).subscribe(data=>{
       this.dialogref.close();
       console.log("dilit",data)
     })

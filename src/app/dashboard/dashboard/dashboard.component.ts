@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
   pageSize: number = 5;
   total: number;
 
-  
+  isLoading:boolean=false;
 
   sideNavVisible: boolean = false;
 
@@ -104,9 +104,10 @@ export class DashboardComponent implements OnInit {
   getAllUploads() {
 
     this.service.getallUpload(this.page).subscribe(data => {
-      console.log("seeedataaaaaaaaaaa",data.result)
-      this.dataSource = data.result
-      this.total = data.keycount
+      console.log("seeedataaaaaaaaaaa",data[0].files)
+      console.log("hey",data)
+      this.dataSource = data[0].files
+      this.total = data[0].count
       console.log("totallllll",this.total)
     })
   }
@@ -202,9 +203,9 @@ export class DashboardComponent implements OnInit {
 
   delete(element){
    
-    console.log("delte",element.Key)
+    console.log("delte",element.FileName)
     
-    this.service.filetodelete = element.Key
+    this.service.filetodelete = element.FileName
     console.log("deletesssss",this.service.filetodelete)
     this.dialog.open(DeleteDialogComponent).afterClosed().subscribe(data=>{
       this.getAllUploads();
