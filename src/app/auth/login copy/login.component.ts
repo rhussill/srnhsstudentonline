@@ -70,12 +70,6 @@ export class adminLoginComponent implements OnInit {
     this.router.navigate(['forgotpass'])
 
   }
-  test(){
-    this.service.getpdf().subscribe(data=>{
-    
-      console.log(this.pdf)
-      
-    })
-  }
+
 
 }

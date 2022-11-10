@@ -1,3 +1,4 @@
+
     .header {
         background-color: white;
         height: 11%;
@@ -95,6 +96,17 @@
         overflow: hidden;
     }
 
+
+    #controls{
+        padding-top: 45px;
+        margin: 0;
+        display: flex;
+        width: 98.3%;
+        justify-content: space-between;
+        align-items: top;
+        
+    }
+
     #add-button {
         background-color: #f58220;
         color: white;
@@ -112,6 +124,10 @@
     .tables {
         width: 97%;
     }
+
+    tr:hover{
+        background-color: rgb(230, 230, 230);
+     }
 
     .containeredit {
         top: 63px;
@@ -170,8 +186,8 @@
 
     .filterIcon {
         position: relative;
-        left: 92.5%;
-        top: 3.6%;
+        left: 84.7%;
+        top: 4.5%;
         cursor: pointer;
     }
 
@@ -200,91 +216,44 @@
         align-items: center;
         justify-content: center;
     }
+
+    .removefil{
+        margin-bottom: 5px;
+        color: white;
+        background-color: #f58220;
+    }
+
+    .filter-bttn:hover{
+        background-color: transparent;
+    }
+    
     
 
 
-    @media only screen and (max-width: 1075.20px) {
 
-        .filterIcon {
-            position: relative;
-            left: 91%;
-            top: 3.6%;
-            cursor: pointer;
-        }
+
+    
+    @media only screen and (max-width: 544px) {
+
 
         .filterText {
             position: relative;
-            left: 94%;
+            left: 88%;
             cursor: pointer;
         }
-    }
-
-
-    @media only screen and (max-width: 940px) {
 
         .filterIcon {
             position: relative;
-            left: 90%;
-            top: 3.6%;
-            cursor: pointer;
-        }
-
-        .filterText {
-            position: relative;
-            left: 93%;
+            left: 58%;
+            top: 4.5%;
             cursor: pointer;
         }
 
 
     }
 
-    /* for filter */
+    @media only screen and (max-width: 536px) {
 
-    @media only screen and (max-width: 830px) {
-
-        .filterIcon {
-            position: relative;
-            left: 89%;
-            top: 3.6%;
-            cursor: pointer;
-        }
-
-        .filterText {
-            position: relative;
-            left: 92%;
-            cursor: pointer;
-        }
-
-
-    }
-
-    @media only screen and (max-width: 740px) {
-
-        .filterIcon {
-            position: relative;
-            left: 87%;
-            top: 3.6%;
-            cursor: pointer;
-        }
-
-        .filterText {
-            position: relative;
-            left: 91%;
-            cursor: pointer;
-        }
-
-
-    }
-
-
-    @media only screen and (max-width: 660px) {
-
-        .filterIcon {
-            position: relative;
-            left: 83%;
-            top: 3.6%;
-            cursor: pointer;
-        }
 
         .filterText {
             position: relative;
@@ -292,21 +261,31 @@
             cursor: pointer;
         }
 
+        .filterIcon {
+            position: relative;
+            left: 56%;
+            top: 4.5%;
+            cursor: pointer;
+        }
+
 
     }
 
-    @media only screen and (max-width: 540px) {
 
-        .filterIcon {
-            position: relative;
-            left: 81%;
-            top: 3.6%;
-            cursor: pointer;
-        }
+   
+    @media only screen and (max-width: 519px) {
+
 
         .filterText {
             position: relative;
             left: 87%;
+            cursor: pointer;
+        }
+
+        .filterIcon {
+            position: relative;
+            left: 54%;
+            top: 4.5%;
             cursor: pointer;
         }
 

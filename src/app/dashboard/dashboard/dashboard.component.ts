@@ -6,6 +6,8 @@ import { UploadService } from 'src/app/upload-service/upload.service';
 import { debounce } from 'lodash';
 import { FilterFormComponent } from '../filter-form/filter-form.component';
 import { DeleteDialogComponent } from 'src/app/delete-dialog/delete-dialog.component';
+import { FilterNavComponent } from '../filter-nav/filter-nav.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 
 
@@ -31,9 +33,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class DashboardComponent implements OnInit {
 
-
   hasData: any;
-
   file= [];
   edits: boolean = true;
   checks: boolean = false;
@@ -66,16 +66,18 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
-    
     this.getAllUploads();
-    this.getProfile(this.form)
-    console.log(this.getProfile(this.form))
+    // this.getProfile(this.form)
+    // console.log(this.getProfile(this.form))
 
   }
 
+  rowclick(row){
 
-  
+    console.log(row)
+    this.service.userDetail = row;
+    this.dialog.open(UserDetailComponent)
+  }
 
   applyFilter(value: string) {
 
@@ -99,17 +101,24 @@ export class DashboardComponent implements OnInit {
 
   }
 
-
-
   getAllUploads() {
+ 
+      this.service.getallUpload(this.page).subscribe(data => {
+        console.log("seeedataaaaaaaaaaa",data[0].files)
+        console.log("hey",data)
+        this.service.dataService = data[0].files
+        this.dataSource = data[0].files
+        this.total = data[0].count
+        console.log("totallllll",this.total)
+      })
+    
 
-    this.service.getallUpload(this.page).subscribe(data => {
-      console.log("seeedataaaaaaaaaaa",data[0].files)
-      console.log("hey",data)
-      this.dataSource = data[0].files
-      this.total = data[0].count
-      console.log("totallllll",this.total)
-    })
+    
+
+  }
+
+  removefilter(){
+    this.getAllUploads();
   }
 
 
@@ -232,9 +241,17 @@ export class DashboardComponent implements OnInit {
     )
   }
 
-  toggleSideNav() {
+  toggleSideNav(){
     this.sideNavVisible = !this.sideNavVisible;
+
     console.log("open")
+    // this.service.dataService = this.dataSource
+    this.dataSource = this.service.filterdata
+    // console.log("service",this.service.dataService)
+    
+    
+  
+    
 
   }
 

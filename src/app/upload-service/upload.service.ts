@@ -21,6 +21,7 @@ export class UploadService {
 
   imageUpload(form) {
     console.log('image uploading');
+    
     console.log(form)
     return this.http.post(this.uploadUrl,form);
     

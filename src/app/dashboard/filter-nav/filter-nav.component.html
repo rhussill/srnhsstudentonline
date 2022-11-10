@@ -2,11 +2,16 @@
     <mat-icon id="filter" (click)="menuClicked()">filter_list</mat-icon>
     <p id="filternavtext">Filter</p>
 
+
+    <form (ngSubmit)="submit(sumbitForm.value)" #sumbitForm='ngForm'>
+
     <div id="sampletext">Sample ID</div>
     <input 
     appearance="fill"
     placeholder="Sample ID"
     class="samplebox"
+    [(ngModel)]=" sampleid"
+    name="sampleid"
     >
     <br><br>
     <div id="sampletext">Capture Kit</div>
@@ -14,6 +19,8 @@
     appearance="fill"
     placeholder="Capture Kit"
     class="samplebox"
+    [(ngModel)]=" CaptureKit"
+    name="CaptureKit"
     >
     <br><br>
     <div id="sampletext">Regex</div>
@@ -21,6 +28,8 @@
     appearance="fill"
     placeholder="Regex"
     class="samplebox"
+    [(ngModel)]=" Regex"
+    name="Regex"
     >
     
     <mat-divider style="position:relative;top:30px;width:270px;margin-left: 10px;"></mat-divider>
@@ -31,6 +40,8 @@
     <mat-icon matSuffix class="calendaricon" (click)="print(pickerb)" #pickerb >calendar_month</mat-icon>
     <div id="sampletext">Timestamp</div>
     <input 
+    [(ngModel)]="TimeStampA"
+    name="TimeStampA"
     [matDatepicker]="pickerb"
     appearance="fill"
     class="datebox"
@@ -39,46 +50,52 @@
     <mat-datepicker #pickerbs ></mat-datepicker>
     <mat-icon matSuffix class="calendaricon1" (click)="prints(pickerbs)" #pickerbs >calendar_month</mat-icon>
     <input 
+    [(ngModel)]="TimeStampB"
+    name="TimeStampB"
     [matDatepicker]="pickerbs"
     appearance="fill"
     class="datebox1"
     >
 
     <div id="sampletext">Data Class</div>
-    <select class="selectfilter">
-        <option  *ngFor='let dataclassType of dataclassTypes' [value]="dataclassType">{{dataclassType}}</option>
+    <select class="selectfilter" [(ngModel)]="DataType" name="DataType">
+        <option  *ngFor='let DataType of dataclassTypes' [value]="DataType">{{DataType}}</option>
     </select>
     
     <br><br>
     <div id="sampletext">Specimen Type</div>
-    <select class="selectfilter">
-        <option *ngFor='let specimenType of specimenTypes' [value]="specimenType">{{specimenType}}</option>
+    <select class="selectfilter" [(ngModel)]="SpecimenType" name="SpecimenType">
+        <option *ngFor='let SpecimenType of specimenTypes' [value]="SpecimenType">{{SpecimenType}}</option>
     </select>
     
     <br><br>
     <div id="sampletext">Cancer Type</div>
-    <select class="selectfilter">
-        <option *ngFor='let cancerType of cancerTypes' [value]="cancerType">{{cancerType}}</option>
+    <select class="selectfilter" [(ngModel)]="CancerType" name="CancerType">
+        <option *ngFor='let CancerType of cancerTypes' [value]="CancerType">{{CancerType}}</option>
     </select>
     
     <br><br>
     <div id="sampletext">Sequence Type</div>
-    <select class="selectfilter">
-        <option  *ngFor='let sequenceType of sequenceTypes'  [value] ="sequenceType">{{sequenceType}}</option>
+    <select class="selectfilter" [(ngModel)]="SequenceType" name="SequenceType">
+        <option  *ngFor='let SequenceType of sequenceTypes'  [value] ="SequenceType">{{SequenceType}}</option>
     </select>
     
     <br><br>
     <div id="sampletext">Site</div>
-    <select class="selectfilter">
-        <option  value="none">None</option>
-    </select>
+    <input 
+    appearance="fill"
+    placeholder="Site"
+    class="selectfilter"
+    [(ngModel)]=" Site"
+    name="Site"
+    >    
 
 
 
-    <button id="filter-button" mat-raised-button type='button' (click)="filterclick()" >Filter</button>
-    
+    <button id="filter-button" mat-raised-button type='submit' >Filter</button>
+   </form> 
  </div>
- 
+
 
  
 

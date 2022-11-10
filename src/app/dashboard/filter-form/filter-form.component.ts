@@ -205,6 +205,7 @@ export class FilterFormComponent implements OnInit {
     const forms = new FormData();
     forms.append('file', this.service.imgFILE);
     forms.append('newprofile', this.newprofile);
+    forms.append('sampleid',this.sampleid);
     forms.append("capturekit",this.capturekit);
     forms.append("cancertype",this.cancertype);
     forms.append("specimentype",this.specimentype);

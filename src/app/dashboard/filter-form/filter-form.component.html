@@ -2,7 +2,7 @@
     <div id='progress' *ngIf='isLoading==true'>
         <mat-spinner></mat-spinner>
     </div>
-  </ng-container>
+</ng-container>
 
 <h2 style="font-weight:bold;">Upload File <mat-icon id="closeicon" (click)="close()">close</mat-icon>
 </h2>
@@ -16,59 +16,105 @@
 <br>
 <form (ngSubmit)="submit(sumbitForm.value)" #sumbitForm='ngForm'>
 
-<input name="newprofile" class="selectnewprofile" placeholder="New Profile +" [(ngModel)]="newprofile">
+    <input 
+    name="newprofile" 
+    class="selectnewprofile" 
+    placeholder="New Profile +" 
+    [(ngModel)]="newprofile"
+    required>
 
-<br>
-<span>Sample ID</span> <span style="margin-left: 42%;">Capture Kit</span>
-<br>
-<input name="sampleid" class="sampleID" placeholder="Sample ID"  [(ngModel)]="sampleid">
+    <br>
+    <span>Sample ID</span> <span style="margin-left: 42%;">Capture Kit</span>
+    <br>
+    <input 
+    name="sampleid" 
+    class="sampleID" 
+    placeholder="Sample ID" 
+    [(ngModel)]="sampleid"
+    required
+    >
 
-<!-- captureKit -->
-<select class="selectcapturekit" [(ngModel)]="capturekit" name="capturekit">
-    <option value="none" *ngFor='let captureKit of captureKits' [value]="captureKit">{{captureKit}}</option>
-</select>
-<br>
-<span>Regex</span> <span style="margin-left: 47%;">Speciment Type</span>
-<br>
-<input name="regex" class="regex" placeholder="Regex"  [(ngModel)]="regex">
+    <!-- captureKit -->
+    <select class="selectcapturekit" 
+    [(ngModel)]="capturekit" 
+    name="capturekit"
+    required
+    >
+        <option value="none" *ngFor='let captureKit of captureKits' [value]="captureKit">{{captureKit}}</option>
+    </select>
 
-<!-- specimenTypes -->
-<select class="selectcapturekit" [(ngModel)]="specimentype" name="specimentypes">
-    <option *ngFor='let specimenType of specimenTypes' [value]="specimenType">{{specimenType}}</option>
-</select>
+    <br>
 
-<br>
+    <span>Regex</span> <span style="margin-left: 47%;">Speciment Type</span>
+    <br>
+    <input 
+    name="regex" 
+    class="regex" 
+    placeholder="Regex" 
+    [(ngModel)]="regex"
+    required
+    
+    >
 
-<span>Data Class</span> <span style="margin-left: 41%;">Cancer Type</span>
-<br>
+    <!-- specimenTypes -->
+    <select class="selectcapturekit" 
+    [(ngModel)]="specimentype"
+     name="specimentypes"
+     required
+     >
+        <option *ngFor='let specimenType of specimenTypes' [value]="specimenType">{{specimenType}}</option>
+    </select>
 
-<select class="selectdataclass" [(ngModel)]="datatype" name="datatype">
-    <option *ngFor='let dataclassType of dataclassTypes' [value]="dataclassType">{{dataclassType}}</option>
-</select>
+    <br>
+
+    <span>Data Class</span> <span style="margin-left: 41%;">Cancer Type</span>
+    <br>
+
+    <select class="selectdataclass" 
+    [(ngModel)]="datatype" 
+    name="datatype"
+    required
+    >
+        <option *ngFor='let dataclassType of dataclassTypes' [value]="dataclassType">{{dataclassType}}</option>
+    </select>
 
 
-<!-- cancerType -->
-<select [(ngModel)]="cancertype" name="cancertype" class="selectcapturekit">
-    <option *ngFor='let cancerType of cancerTypes' [value]="cancerType">{{cancerType}}</option>
-</select>
+    <!-- cancerType -->
+    <select [(ngModel)]="cancertype" 
+    name="cancertype" 
+    class="selectcapturekit"
+    required
+    >
+        <option *ngFor='let cancerType of cancerTypes' [value]="cancerType">{{cancerType}}</option>
+    </select>
 
-<br>
+    <br>
 
-<span>Sequence Type</span> <span style="margin-left: 34%;">Site</span>
-<br>
+    <span>Sequence Type</span> <span style="margin-left: 34%;">Site</span>
+    <br>
 
-<!-- sequenceType -->
-<select [(ngModel)]="sequencetype" name="sequencetype" class="selectsequencetype" id="sequencetypeID">
-    <option *ngFor='let sequenceType of sequenceTypes' [value]="sequenceType">{{sequenceType}}</option>
-</select>
+    <!-- sequenceType -->
+    <select 
+    [(ngModel)]="sequencetype" 
+    name="sequencetype"
+     class="selectsequencetype" 
+     id="sequencetypeID"
+     required>
+        <option *ngFor='let sequenceType of sequenceTypes' [value]="sequenceType">{{sequenceType}}</option>
+    </select>
 
-<!-- <input type="text" id="val">
+    <!-- <input type="text" id="val">
     <button (click)="addvalue()">test</button> -->
 
-<input name="site" class="site" placeholder="Site"  [(ngModel)]="site">
-<br><br>
-<div id='controls'>
-    <button mat-raised-button class="uploadbttn" type='submit'>Upload</button>
-</div>
+    <input 
+    name="site" 
+    class="site" 
+    placeholder="Site" 
+    [(ngModel)]="site"
+    required>
+    <br><br>
+    <div id='controls'>
+        <button mat-raised-button class="uploadbttn" type='submit'  [disabled]="sumbitForm.invalid">Upload</button>
+    </div>
 
 </form>

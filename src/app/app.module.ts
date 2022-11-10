@@ -83,6 +83,7 @@ import { AdminEdituserComponent } from './admin-dashboard/admin-edituser/admin-e
 import { SideNavComponent } from './dashboard/body/side-nav/side-nav.component';
 import { AdminAdmineditComponent } from './admin-dashboard/admin-edituser/admin-adminedit/admin-adminedit.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { UserDetailComponent } from './dashboard/dashboard/user-detail/user-detail.component';
 
 
 
@@ -120,6 +121,7 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     SideNavComponent,
     AdminAdmineditComponent,
     DeleteDialogComponent,
+    UserDetailComponent,
   ],
   imports: [
     CommonModule,

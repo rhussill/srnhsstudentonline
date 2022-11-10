@@ -52,23 +52,23 @@ export class AdminDashboardComponent implements OnInit {
   // user
   pageNo: number = 1;
   pageSize: number = 5;
-  total:any;
+  total: any;
 
   // admin
   adminpageNo: number = 1;
   adminpageSize: number = 5;
-  totaladmin:any;
+  totaladmin: any;
 
 
-  
+
   constructor(private dialog: MatDialog, private service: AppService) { }
 
   ngOnInit(): void {
 
     this.applyFilter = debounce(this.applyFilter, 1000);
-    
+
     this.getAlladmin();
-    this.getAllusers();  
+    this.getAllusers();
 
   }
 
@@ -83,7 +83,7 @@ export class AdminDashboardComponent implements OnInit {
 
     this.service.getalladmin(this.adminpageNo, this.adminpageSize).subscribe(data => {
       this.totaladmin = data[0].count
-      console.log("admincountttt",this.totaladmin)
+      console.log("admincountttt", this.totaladmin)
       this.viewAlladmindata = data[0].users
       console.log("admin", data[0].users)
     })
@@ -93,7 +93,7 @@ export class AdminDashboardComponent implements OnInit {
   getAllusers() {
     this.service.getallUsers(this.pageNo, this.pageSize).subscribe(data => {
       this.total = data[0].count
-      console.log("usercount",this.total)
+      console.log("usercount", this.total)
       this.viewAlldatasource = data[0].users
       console.log("user", data[0].users)
     })
@@ -165,7 +165,7 @@ export class AdminDashboardComponent implements OnInit {
 
   }
 
- 
+
 
   adminonPageChange(event) {
     console.log(event);
@@ -174,7 +174,7 @@ export class AdminDashboardComponent implements OnInit {
     this.search();
   }
 
-  useronPageChange(events){
+  useronPageChange(events) {
     console.log("teststst")
     console.log(events);
     console.log("teststst")

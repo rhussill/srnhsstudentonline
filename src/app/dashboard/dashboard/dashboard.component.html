@@ -14,6 +14,8 @@
 
     </div>
 
+
+
     <table class="header">
       <tr>
         <td class="col-1">
@@ -59,16 +61,10 @@
 
       </table>
 
+     
 
-<!-- 
-      <div class="containeredit" *ngIf="checks">
-        <p style="margin-right:40px;">UnselectAll </p>
-        <p style="margin-right:40px;" (click)="delete(file)">Delete </p>
-        <p style="margin-right:40px;" (click)="edit(file)" *ngIf="edits">Edit </p>
-        <p style="margin-right:40px;">Cancel </p>
-      </div> -->
 
-      <ng-container *ngIf="file.length > 0">
+      <!-- <ng-container *ngIf="file.length > 0">
         <div id="send-multiple-div" class="mat-elevation-z8">
           <table >
             <td style="width:80%">
@@ -77,13 +73,30 @@
        
           </table>
         </div>
-      </ng-container>
+      </ng-container> -->
+
+      <!-- <button mat-raised-button type='button' class="removefil" (click)="removefilter()">
+        Remove Filter
+      </button>
       <mat-icon class="filterIcon" (click)="toggleSideNav()">filter_list
       </mat-icon>
       <div class="filterText" (click)="toggleSideNav()">Filter</div>
+ 
+        <button class="filter-bttn" mat-button (click)="toggleSideNav()"> <mat-icon>filter_list</mat-icon>Filter</button> -->
+      
 
 
+        <div id="controls">  
+          
+          <button mat-raised-button type='button' class="removefil" (click)="removefilter()">
+            Remove Filter
+          </button>
 
+          <button class="filter-bttn" mat-button (click)="toggleSideNav()"> 
+            <mat-icon>filter_list</mat-icon>Filter</button>
+     </div>
+     
+      
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="tables">
 
         <!-- Checkbox Column -->
@@ -117,7 +130,7 @@
 
         <ng-container matColumnDef="timestamp">
           <th mat-header-cell *matHeaderCellDef style="background-color:#d3d3d3; color: black;"> Time Stamp </th>
-          <td mat-cell *matCellDef="let element"> {{element.TimeStamp}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.TimeStamp.split(".")[0]}} </td>
         </ng-container>
 
 
@@ -131,7 +144,7 @@
         </td>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowclick(row)">
         </tr>
       </table>
 
@@ -143,3 +156,4 @@
     </div>
   </mat-drawer-content>
 </mat-drawer-container>
+

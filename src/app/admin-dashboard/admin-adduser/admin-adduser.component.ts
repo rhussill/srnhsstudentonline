@@ -69,6 +69,8 @@ export class AdminAdduserComponent implements OnInit {
           data: {
             message: "Successfully Added"
           }
+        }).afterClosed().subscribe(res=>{
+          
         })
       })
     } else {
