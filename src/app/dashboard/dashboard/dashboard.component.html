@@ -37,7 +37,7 @@
 
           <div class="usercontainer">
             <div class="usertext"></div>
-            <div class="jobtext">Jobtitle</div>
+            <div class="jobtext">Name</div>
           </div>
 
         </td>
@@ -49,11 +49,11 @@
     <div id="body">
       <table>
         <tr>
-          <td style="width:70%;" id="uploadcont">
+          <!-- <td style="width:70%;" id="uploadcont">
             <button id="add-button" mat-raised-button type='button' (click)='uploads()'>
               <mat-icon style="margin-right:4px;" matPrefix>backup</mat-icon>Upload
             </button>
-          </td>
+          </td> -->
 
 
         </tr>
@@ -86,15 +86,15 @@
       
 
 
-        <div id="controls">  
+        <!-- <div id="controls">   -->
           
-          <button mat-raised-button type='button' class="removefil" (click)="removefilter()">
+          <!-- <button mat-raised-button type='button' class="removefil" (click)="removefilter()">
             Remove Filter
-          </button>
+          </button> -->
 
-          <button class="filter-bttn" mat-button (click)="toggleSideNav()"> 
+          <!-- <button class="filter-bttn" mat-button (click)="toggleSideNav()"> 
             <mat-icon>filter_list</mat-icon>Filter</button>
-     </div>
+     </div> -->
      
       
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="tables">
@@ -111,7 +111,7 @@
 
 
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef style="width:30%;background-color:#d3d3d3; color: black;"> Name </th>
+          <th mat-header-cell *matHeaderCellDef style="width:30%;background-color:#d3d3d3; color: black;"> Activities </th>
           <td mat-cell *matCellDef="let element" class="nametable"> {{element.FileName}} </td>
         </ng-container>
 
@@ -134,14 +134,14 @@
         </ng-container>
 
 
-        <ng-container matColumnDef="action">
+        <!-- <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef style="background-color:#d3d3d3; color: black;"> Action </th>
           <td mat-cell *matCellDef="let element"> <button mat-raised-button  (click)="delete(element)">Delete</button> </td>
-        </ng-container>
+        </ng-container> -->
 
-        <td >
+        <!-- <td >
           <button mat-raised-button class = "deletebttn" (click)="delete(file)">Delete</button>
-        </td>
+        </td> -->
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowclick(row)">

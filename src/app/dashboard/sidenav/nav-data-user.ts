@@ -3,19 +3,19 @@ import { style } from "@angular/animations";
 export const navbarDatauser = [
 
     {
-        routeLink: 'dashboard',
+        routeLink: 'activities',
         icon: 'fal fa-home',
-        label: 'Dashboard' ,style:"color:#7770a5;"
+        label: 'Activities' ,style:"color:#7770a5;"
     },
     {
-        routeLink: 'science',
+        routeLink: 'subject',
         icon: 'fa fa-flask',
-        label: 'Science'
+        label: 'Subject'
     },
     {
-        routeLink: 'result',
+        routeLink: 'announcement',
         icon: 'fal fa-database',
-        label: 'Result'
+        label: 'Announcement'
     },
     {
         routeLink: 'patient',

@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit {
   edits: boolean = true;
   checks: boolean = false;
   allChecked: boolean = false
-  displayedColumns: string[] = ['select', 'name', 'status', 'profile', 'timestamp','action'];
+  displayedColumns: string[] = [ 'name', 'status', 'profile', 'timestamp',];
   dataSource: any;
   form: any
   page: number = 1;

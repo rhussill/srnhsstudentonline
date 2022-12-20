@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   viewprofile: boolean = true
   lName: any;
   fName: any;
+  email:any;
 
   constructor(private service: AppService, private router: Router) { }
 
@@ -33,6 +34,7 @@ export class ProfileComponent implements OnInit {
       this.hasData = data;
       this.fName = data.fName;
       this.lName = data.lName;
+      this.email = data.email
       console.log("tnaginamolunchna", data)
     })
   }

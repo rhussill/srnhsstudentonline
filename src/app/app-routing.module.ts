@@ -38,13 +38,13 @@ const routes : Routes = [
  
   
     {path: 'sidenav', component: SideNavComponent ,children:[
-      {path: 'dashboard', component: DashboardComponent},
+      {path: 'activities', component: DashboardComponent},
       {path: 'admin', component: AdminDashboardComponent},
       {path: 'patient', component: PatientComponent},
       {path: 'profile', component: ProfileComponent},
       {path : 'edit-profile',component:EditProfileComponent},
-      {path: 'result', component: ResultComponent},
-      {path: 'science', component: ScienceComponent},
+      {path: 'announcement', component: ResultComponent},
+      {path: 'subject', component: ScienceComponent},
       {path: 'settings', component: SettingComponent},
     ]},
 

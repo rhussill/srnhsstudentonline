@@ -30,6 +30,7 @@ export class AdminLoginComponent implements OnInit {
 
     this.service.login(form).subscribe(data => {
       this.responsedata = data;
+      console.log(this.responsedata)
 
       if (this.responsedata.token == null) {
         this.message = this.responsedata.message
