@@ -12,9 +12,9 @@
                 <mat-icon class="bttnicon">chevron_left</mat-icon>
                 </button>
        
-        <button class="logo" (click)="toggleCollapse()"> <img class="alogo" src="assets/aioncologo.png" alt="aioncologo"></button>
+        <button class="logo" (click)="toggleCollapse()"> <img class="alogo" src="../../../assets/logo.png" width="80" height="80" alt="SRNHS" ></button>
         
-        <div class="logo-text" @fadeInOut *ngIf="collapsed"><img class="textaionco" src="assets/aioncotext.png" alt="aionco"></div>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed" >Sta. Rita National HighSchool</div>
         <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
             <i class="fal fa-times close-icon"></i>
         </button>

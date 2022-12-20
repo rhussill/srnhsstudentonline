@@ -8,7 +8,7 @@ export const navbarData = [
         label: 'Admin' ,style:"color:#7770a5;"
     },
     {
-        routeLink: 'activities',
+        routeLink: 'adminactivities',
         icon: 'fal fa-home',
         label: 'Activities' ,style:"color:#7770a5;"
     },

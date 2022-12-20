@@ -21,6 +21,7 @@ import { DashboardUserComponent } from './user/dashboard-user/dashboard-user.com
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { SidecardsComponent } from './body/sidecards/sidecards.component';
 import { SideNavComponent } from './dashboard/body/side-nav/side-nav.component';
+import { AdminactivitiesComponent } from './adminactivities/adminactivities.component';
 
 
 const routes : Routes = [
@@ -46,6 +47,7 @@ const routes : Routes = [
       {path: 'announcement', component: ResultComponent},
       {path: 'subject', component: ScienceComponent},
       {path: 'settings', component: SettingComponent},
+      {path: 'adminactivities', component:AdminactivitiesComponent}
     ]},
 
     

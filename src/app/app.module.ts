@@ -42,7 +42,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatRippleModule } from '@angular/material/core';
 import { AuthModule } from './auth/auth.module';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -84,6 +84,7 @@ import { SideNavComponent } from './dashboard/body/side-nav/side-nav.component';
 import { AdminAdmineditComponent } from './admin-dashboard/admin-edituser/admin-adminedit/admin-adminedit.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { UserDetailComponent } from './dashboard/dashboard/user-detail/user-detail.component';
+import { AdminactivitiesComponent } from './adminactivities/adminactivities.component';
 
 
 
@@ -122,6 +123,7 @@ import { UserDetailComponent } from './dashboard/dashboard/user-detail/user-deta
     AdminAdmineditComponent,
     DeleteDialogComponent,
     UserDetailComponent,
+    AdminactivitiesComponent,
   ],
   imports: [
     CommonModule,
@@ -161,6 +163,7 @@ import { UserDetailComponent } from './dashboard/dashboard/user-detail/user-deta
     MatIconModule,
     MatProgressBarModule,
     MatSlideToggleModule,
+    MatGridListModule,
 
 
     
