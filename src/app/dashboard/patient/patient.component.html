@@ -1,40 +1,159 @@
 
- <!-- view grade -->
+  <ng-container>
+    <div id='progress' *ngIf='isLoading==true'>
+        <mat-spinner></mat-spinner>
+    </div>
+  </ng-container>
+  
+<mat-drawer-container hasBackdrop="false">
+  <mat-drawer #sideNav mode="over" [opened]="sideNavVisible" position="end" style="width: 300px;">
+    <app-filter-nav (menuClickedEvent)="toggleSideNav()"></app-filter-nav>
+  </mat-drawer>
+  <mat-drawer-content style="height:100vh; overflow:hidden;">
+    <div id="grey" *ngIf="sideNavVisible">
+
+    </div>
 
 
- 
-<mat-sidenav-container>
 
-    <mat-sidenav></mat-sidenav>
-    <app-sidenav></app-sidenav>
-    <mat-sidenav-content>
+    <table class="header">
+      <tr>
+        <td class="col-1">
+
+          <div class="dash"> View your Grades </div>
+          <div style="font-size:10px;color:grey"> 10 January 2023 </div>
+
+        </td>
+
+        <td class="col-2">
+          <mat-icon class="iconsearch">search</mat-icon>
+          <input type="text" class="box" apperance="fill" placeholder="Search" #search (keyup)="applyFilter(search.value)">
+        </td>
+
+        <td>
+          <mat-icon style="color:lightgrey;">notifications</mat-icon>
+        </td>
+        <td class="col-3">
+
+          <div class="usercontainer">
+            <div class="usertext"></div>
+            <div class="jobtext">Name</div>
+          </div>
+
+        </td>
+      </tr>
+    </table>
+
+
+
+    <div id="body">
+      <table>
+        <tr>
+          <!-- <td style="width:70%;" id="uploadcont">
+            <button id="add-button" mat-raised-button type='button' (click)='uploads()'>
+              <mat-icon style="margin-right:4px;" matPrefix>backup</mat-icon>Upload
+            </button>
+          </td> -->
+
+
+        </tr>
+        <br><br><br><br><br><br>
+
+      </table>
+
+     
+
+
+      <!-- <ng-container *ngIf="file.length > 0">
+        <div id="send-multiple-div" class="mat-elevation-z8">
+          <table >
+            <td style="width:80%">
+              {{file.length}} files selected. 
+            </td>
        
-        <div class="content mat-elevation-z8">
-            <table class="header">
-                <tr>
-                    <td class="col-1">
-                        <p class="dash"> Announcement </p>
-                        <p style="font-size:10px;color:grey"> 10 January 2023 </p>
-                    </td>
-            
-                  
-            
-                    <td>
-                        <mat-icon style="color:lightgrey;">notifications</mat-icon>
-                    </td>
-                    <td class="col-3">
-            
-                        <div class="usercontainer">
-                            <p class="usertext">First Name</p>
-                            <p class="jobtext">Course</p>
-                        </div>
-            
-                    </td>
-                </tr>
-            </table>
-
+          </table>
         </div>
-        
-      </mat-sidenav-content>
+      </ng-container> -->
+
+      <!-- <button mat-raised-button type='button' class="removefil" (click)="removefilter()">
+        Remove Filter
+      </button>
+      <mat-icon class="filterIcon" (click)="toggleSideNav()">filter_list
+      </mat-icon>
+      <div class="filterText" (click)="toggleSideNav()">Filter</div>
+ 
+        <button class="filter-bttn" mat-button (click)="toggleSideNav()"> <mat-icon>filter_list</mat-icon>Filter</button> -->
       
-    </mat-sidenav-container>
+
+
+        <!-- <div id="controls">   -->
+          
+          <!-- <button mat-raised-button type='button' class="removefil" (click)="removefilter()">
+            Remove Filter
+          </button> -->
+
+          <!-- <button class="filter-bttn" mat-button (click)="toggleSideNav()"> 
+            <mat-icon>filter_list</mat-icon>Filter</button>
+     </div> -->
+     
+      
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="tables">
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef style="width:5%; background-color:#d3d3d3;">
+            <mat-checkbox (change)='checkAll($event.checked)' [checked]='allChecked'></mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-checkbox (change)='check(element)' [checked]='exist(element) || allChecked'></mat-checkbox>
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef style="width:30%;background-color:#d3d3d3; color: black;"> Subjects </th>
+          <td mat-cell *matCellDef="let element" class="nametable"> Mathematics </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef style="width:20%;background-color:#d3d3d3; color: black;"> Status </th>
+          <td mat-cell *matCellDef="let element" class="nametable">Passed</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="profile">
+          <th mat-header-cell *matHeaderCellDef style="width:10%;background-color:#d3d3d3; color: black;"> Profile </th>
+          <td mat-cell *matCellDef="let element"> {{element.NewProfile}}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="timestamp">
+          <th mat-header-cell *matHeaderCellDef style="background-color:#d3d3d3; color: black;"> Time Stamp </th>
+          <td mat-cell *matCellDef="let element"> {{element.TimeStamp.split(".")[0]}} </td>
+        </ng-container>
+
+
+        <!-- <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef style="background-color:#d3d3d3; color: black;"> Action </th>
+          <td mat-cell *matCellDef="let element"> <button mat-raised-button  (click)="delete(element)">Delete</button> </td>
+        </ng-container> -->
+
+        <!-- <td >
+          <button mat-raised-button class = "deletebttn" (click)="delete(file)">Delete</button>
+        </td> -->
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowclick(row)">
+        </tr>
+      </table>
+
+      <mat-paginator id="pagination" [length]="total" [pageSize]="pageSize" [pageIndex]='page - 1'
+      (page)='onPageChange($event)' aria-label="Select page">
+  </mat-paginator>
+
+
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+

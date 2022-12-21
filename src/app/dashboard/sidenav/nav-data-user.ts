@@ -18,9 +18,9 @@ export const navbarDatauser = [
         label: 'Announcement'
     },
     {
-        routeLink: 'patient',
+        routeLink: 'grades',
         icon: 'fal fa-list-alt',
-        label: 'Patient'
+        label: 'View your Grade'
     },
     {
         routeLink: 'profile',

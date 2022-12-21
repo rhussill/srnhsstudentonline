@@ -45,9 +45,9 @@ p {
 }
 
 .logo{
-   
-   height: 50%;
+   transform:scale(.7);
    padding: none;
+   
 }
 
 img {

@@ -22,6 +22,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { SidecardsComponent } from './body/sidecards/sidecards.component';
 import { SideNavComponent } from './dashboard/body/side-nav/side-nav.component';
 import { AdminactivitiesComponent } from './adminactivities/adminactivities.component';
+import { EditGradesComponent } from './edit-grades/edit-grades.component';
 
 
 const routes : Routes = [
@@ -41,13 +42,14 @@ const routes : Routes = [
     {path: 'sidenav', component: SideNavComponent ,children:[
       {path: 'activities', component: DashboardComponent},
       {path: 'admin', component: AdminDashboardComponent},
-      {path: 'patient', component: PatientComponent},
+      {path: 'grades', component: PatientComponent},
       {path: 'profile', component: ProfileComponent},
       {path : 'edit-profile',component:EditProfileComponent},
       {path: 'announcement', component: ResultComponent},
       {path: 'subject', component: ScienceComponent},
       {path: 'settings', component: SettingComponent},
-      {path: 'adminactivities', component:AdminactivitiesComponent}
+      {path: 'adminactivities', component:AdminactivitiesComponent},
+      {path:'editgrades', component:EditGradesComponent}
     ]},
 
     

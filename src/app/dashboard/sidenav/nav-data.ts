@@ -23,9 +23,9 @@ export const navbarData = [
         label: 'Announcement'
     },
     {
-        routeLink: 'patient',
+        routeLink: 'editgrades',
         icon: 'fal fa-list-alt',
-        label: 'Patient'
+        label: 'Grades'
     },
     {
         routeLink: 'profile',

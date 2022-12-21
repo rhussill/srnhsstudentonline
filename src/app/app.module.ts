@@ -85,6 +85,9 @@ import { AdminAdmineditComponent } from './admin-dashboard/admin-edituser/admin-
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { UserDetailComponent } from './dashboard/dashboard/user-detail/user-detail.component';
 import { AdminactivitiesComponent } from './adminactivities/adminactivities.component';
+import { GradeDetailComponent } from './grade-detail/grade-detail.component';
+import { EditGradesComponent } from './edit-grades/edit-grades.component';
+import { AdmineditgradeComponent } from './admineditgrade/admineditgrade.component';
 
 
 
@@ -124,6 +127,9 @@ import { AdminactivitiesComponent } from './adminactivities/adminactivities.comp
     DeleteDialogComponent,
     UserDetailComponent,
     AdminactivitiesComponent,
+    GradeDetailComponent,
+    EditGradesComponent,
+    AdmineditgradeComponent,
   ],
   imports: [
     CommonModule,

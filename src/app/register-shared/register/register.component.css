@@ -21,9 +21,13 @@ body{
     background-color:#f2ede2 ;
  }
  .aio{
-    margin-left: 20px;
-    height: 40px;
+    /* margin-left: 20px; */
+    /* height: 40px; */
     cursor: pointer;
+    transform: scale(.2);
+    bottom: 280px;
+    right:250px;
+    position: relative;
 
  }
  #save-btn{
