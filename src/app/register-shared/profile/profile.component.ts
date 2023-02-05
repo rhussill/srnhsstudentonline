@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
 
     this.service.createprofile(form,localStorage.getItem('_id')).subscribe(data=>{
       console.log(data)
-      alert("successfully register")
+      alert("Registered Successfully")
       this.router.navigate(['home']);
     })
   }

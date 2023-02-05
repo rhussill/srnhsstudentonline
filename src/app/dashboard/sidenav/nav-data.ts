@@ -5,7 +5,7 @@ export const navbarData = [
     {
         routeLink: 'admin',
         icon: 'fal fa-user',
-        label: 'Admin' ,style:"color:#7770a5;"
+        label: 'Teacher' ,style:"color:#7770a5;"
     },
     {
         routeLink: 'adminactivities',
