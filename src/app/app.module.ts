@@ -88,6 +88,17 @@ import { AdminactivitiesComponent } from './adminactivities/adminactivities.comp
 import { GradeDetailComponent } from './grade-detail/grade-detail.component';
 import { EditGradesComponent } from './edit-grades/edit-grades.component';
 import { AdmineditgradeComponent } from './admineditgrade/admineditgrade.component';
+import { PdfViwerComponent } from './dashboard/dashboard/user-detail/pdf-viwer/pdf-viwer.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { MathComponent } from './admin-dashboard/subjects/math/math.component';
+import { EnglishComponent } from './admin-dashboard/subjects/english/english.component';
+import { ApComponent } from './admin-dashboard/subjects/ap/ap.component';
+import { SciencesubComponent } from './admin-dashboard/subjects/science/sciencesub.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+
+
+
+
 
 
 
@@ -130,6 +141,11 @@ import { AdmineditgradeComponent } from './admineditgrade/admineditgrade.compone
     GradeDetailComponent,
     EditGradesComponent,
     AdmineditgradeComponent,
+    PdfViwerComponent,
+    MathComponent,
+    EnglishComponent,
+    ApComponent,
+    SciencesubComponent
   ],
   imports: [
     CommonModule,
@@ -170,6 +186,9 @@ import { AdmineditgradeComponent } from './admineditgrade/admineditgrade.compone
     MatProgressBarModule,
     MatSlideToggleModule,
     MatGridListModule,
+    MatDatepickerModule,
+    PdfViewerModule,
+    NgxExtendedPdfViewerModule,
 
 
     

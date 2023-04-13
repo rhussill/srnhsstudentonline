@@ -3,15 +3,21 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AppService } from 'src/app/app.service';
 import { DialogboxComponent } from 'src/app/dialogbox/dialogbox.component';
 import { UploadService } from 'src/app/upload-service/upload.service';
+import { DatePipe, formatDate } from '@angular/common' ;
 
 @Component({
   selector: 'app-filter-form',
   templateUrl: './filter-form.component.html',
-  styleUrls: ['./filter-form.component.css']
+  styleUrls: ['./filter-form.component.css'],
+  providers:[DatePipe]
 })
 export class FilterFormComponent implements OnInit {
 
   addval: boolean = false;
+
+  start_date:any;
+  end_date:any;
+  instructions:any;
 
   capturekit: any;
   cancertype: any;
@@ -22,6 +28,13 @@ export class FilterFormComponent implements OnInit {
   sampleid:any;
   regex:any;
   site:any;
+
+  subject = [
+    'Math',
+    'Science',
+    'English',
+    'Araling Panlipunan'
+  ]
 
 
   isLoading:boolean=false;
@@ -203,17 +216,22 @@ export class FilterFormComponent implements OnInit {
 
     this.isLoading =true;
     const forms = new FormData();
+
+    let start_date  = this.start_date;
+    let end_date = this.end_date;
+
+    start_date = formatDate(start_date,'YYYY-MM-dd','en');
+    end_date = formatDate(end_date,'YYYY-MM-dd','en');
+    
     forms.append('file', this.service.imgFILE);
     forms.append('newprofile', this.newprofile);
-    forms.append('sampleid',this.sampleid);
-    forms.append("capturekit",this.capturekit);
-    forms.append("cancertype",this.cancertype);
-    forms.append("specimentype",this.specimentype);
-    forms.append("datatype",this.datatype);
-    forms.append("sequencetype",this.sequencetype);
-    forms.append("regex",this.regex);
-    forms.append("site",this.site);
+    forms.append('instructions',this.instructions)
+    forms.append("start_date",start_date);
+    forms.append("end_date",end_date)
 
+    console.log("start",start_date)
+    console.log("end",end_date)
+    
       this.uploadService.imageUpload(forms).subscribe(res => {
       console.log("testt", res)
       this.imageUrl = res['file'];

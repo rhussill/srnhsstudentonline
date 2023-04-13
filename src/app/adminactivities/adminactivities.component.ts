@@ -37,7 +37,7 @@ export class AdminactivitiesComponent implements OnInit {
   edits: boolean = true;
   checks: boolean = false;
   allChecked: boolean = false
-  displayedColumns: string[] = [ 'name', 'status', 'profile', 'timestamp',];
+  displayedColumns: string[] = [ 'name','instructions', 'status', 'timestamp',];
   dataSource: any;
   form: any
   page: number = 1;
@@ -74,6 +74,7 @@ export class AdminactivitiesComponent implements OnInit {
   rowclick(row){
 
     console.log(row)
+    this.service.fileName = row.FileName
     this.service.userDetail = row;
     this.dialog.open(UserDetailComponent)
   }
@@ -104,7 +105,8 @@ export class AdminactivitiesComponent implements OnInit {
  
       this.service.getallUpload(this.page).subscribe(data => {
         console.log("seeedataaaaaaaaaaa",data[0].files)
-        console.log("hey",data)
+  
+
         this.service.dataService = data[0].files
         this.dataSource = data[0].files
         this.total = data[0].count

@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  // apiURL : 'http://192.168.1.13:3001/', 
+  apiURL : 'http://192.168.1.19:3001/', 
   // apiURL : 'http://172.20.10.2:3001/',
-  apiURL : 'http://localhost:3001/',
+  // apiURL : 'http://13.229.126.192:3001/',
 
  
 };
@@ -17,5 +17,5 @@ export const environment = {
  *
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
- */
+ */   
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.

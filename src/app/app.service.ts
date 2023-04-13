@@ -66,7 +66,7 @@ export class AppService {
   deleteFileuserUrl = environment.apiURL + 'api/delete'
   
 
-  //filter
+  //filteren
   filterUrl = environment.apiURL + 'admin/searchfilter'
 
 
@@ -74,10 +74,67 @@ export class AppService {
 
   filetodelete:any;
 
+  viewFileURL = environment.apiURL + 'api/view'
+  fileName:any;
+  viewPDF:any
+ 
+  //subject
+  getActbySubjURL= environment.apiURL + 'admin/getsubject'
+  subjectOBJ:any;
+
   constructor(private http: HttpClient) { }
 
 
+  //subject
+
+    getsubject(){
+
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.get<any>(`${this.getActbySubjURL}/${localStorage.getItem('sub')}`,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  
+
+  }
+
+
+
+
   //filter
+
+
+  viewFile() {
+    this.http.get(`${this.viewFileURL}?Key=${this.fileName}`)
+      .subscribe((data) => {
+        const reader = new FileReader();
+        //  reader.readAsDataURL(data);
+        console.log(data)
+          reader.onloadend = () => {
+          this.viewPDF = reader.result as string;
+          
+        };
+      });
+    }
+
+      
+  // viewFile(){
+
+  //   let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+  //   return this.http.get<any>(`${this.viewFileURL}?Key=${this.fileName}`).
+  //   pipe(
+  //     map(data => data),
+  //     retry(3),
+  //     catchError(this.handleError)
+  //   )
+
+  
+
+  // }
+
 
     
   searchFilter(form,PageNo){

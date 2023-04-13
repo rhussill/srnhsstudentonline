@@ -23,6 +23,10 @@ import { SidecardsComponent } from './body/sidecards/sidecards.component';
 import { SideNavComponent } from './dashboard/body/side-nav/side-nav.component';
 import { AdminactivitiesComponent } from './adminactivities/adminactivities.component';
 import { EditGradesComponent } from './edit-grades/edit-grades.component';
+import { MathComponent } from './admin-dashboard/subjects/math/math.component';
+import { EnglishComponent } from './admin-dashboard/subjects/english/english.component';
+import { ApComponent } from './admin-dashboard/subjects/ap/ap.component';
+import { SciencesubComponent } from './admin-dashboard/subjects/science/sciencesub.component';
 
 
 const routes : Routes = [
@@ -49,7 +53,11 @@ const routes : Routes = [
       {path: 'subject', component: ScienceComponent},
       {path: 'settings', component: SettingComponent},
       {path: 'adminactivities', component:AdminactivitiesComponent},
-      {path:'editgrades', component:EditGradesComponent}
+      {path:'editgrades', component:EditGradesComponent},
+      {path: 'math',component:MathComponent},
+      {path: 'sciencesub',component:SciencesubComponent},
+      {path: 'english',component:EnglishComponent},
+      {path: 'ap',component:ApComponent},
     ]},
 
     
