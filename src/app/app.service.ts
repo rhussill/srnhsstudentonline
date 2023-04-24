@@ -14,6 +14,7 @@ export class AppService {
   userDetail:any;
   filterdata:any;
   dataService:any;
+  anounceData:any;
 
   ///user data
   _id:any;
@@ -82,7 +83,49 @@ export class AppService {
   getActbySubjURL= environment.apiURL + 'admin/getsubject'
   subjectOBJ:any;
 
+
+  //grade
+  getgradeURL = environment.apiURL + 'admin/getsubject'
+
+  subjectgrade = localStorage.getItem('sub')
+  filegrade:any;
+
+
+  getallAnnouncementURL = environment.apiURL + 'api/getactive'
   constructor(private http: HttpClient) { }
+
+
+  //getsubj
+
+  getgrade(form){
+    
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.get<any>(`${this.getgradeURL}/${this.subjectgrade}`,form).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+
+
+
+
+  //announcement
+
+  getallannouncement(pageNo:any){
+    
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.get<any>(`${this.getallAnnouncementURL}/${pageNo}`,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
 
 
   //subject

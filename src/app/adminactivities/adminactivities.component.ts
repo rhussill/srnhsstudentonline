@@ -76,6 +76,8 @@ export class AdminactivitiesComponent implements OnInit {
     console.log(row)
     this.service.fileName = row.FileName
     this.service.userDetail = row;
+    this.service.subjectgrade = localStorage.getItem('sub')
+    this.service.filegrade = row.FileName
     this.dialog.open(UserDetailComponent)
   }
 

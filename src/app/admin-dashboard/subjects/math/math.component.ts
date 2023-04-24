@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { AppService } from 'src/app/app.service';
+import { UserDetailComponent } from 'src/app/dashboard/dashboard/user-detail/user-detail.component';
 
 @Component({
   selector: 'app-math',
@@ -12,6 +14,7 @@ export class MathComponent implements OnInit {
   dataSource:any;
   role:boolean = true
   activityData :any = new MatTableDataSource
+  name = localStorage.getItem('fName')
 
 
   StudentsdisplayedColumns: string[] = [
@@ -31,7 +34,7 @@ export class MathComponent implements OnInit {
   pageNo:number =1;
   pageSize:number=10;
   total:any;
-  constructor(private service : AppService) { }
+  constructor(private service : AppService , private dialog :MatDialog) { }
 
   ngOnInit(): void {
     this.getMathAct();
@@ -58,5 +61,13 @@ export class MathComponent implements OnInit {
    
   }
 
+
+  rowclick(row){
+    console.log(row)
+    this.service.fileName = row.FileName
+    this.service.userDetail = row;
+    localStorage.setItem('filename',row.FileName)
+    this.dialog.open(UserDetailComponent)
+  }
 
 }

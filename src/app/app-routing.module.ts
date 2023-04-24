@@ -27,6 +27,7 @@ import { MathComponent } from './admin-dashboard/subjects/math/math.component';
 import { EnglishComponent } from './admin-dashboard/subjects/english/english.component';
 import { ApComponent } from './admin-dashboard/subjects/ap/ap.component';
 import { SciencesubComponent } from './admin-dashboard/subjects/science/sciencesub.component';
+import { ViewallAnnouncementComponent } from './dashboard/result/viewall-announcement/viewall-announcement.component';
 
 
 const routes : Routes = [
@@ -58,6 +59,7 @@ const routes : Routes = [
       {path: 'sciencesub',component:SciencesubComponent},
       {path: 'english',component:EnglishComponent},
       {path: 'ap',component:ApComponent},
+      {path : 'viewallannouncement',component:ViewallAnnouncementComponent}
     ]},
 
     

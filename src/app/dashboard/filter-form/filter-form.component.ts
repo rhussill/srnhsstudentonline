@@ -217,20 +217,16 @@ export class FilterFormComponent implements OnInit {
     this.isLoading =true;
     const forms = new FormData();
 
-    let start_date  = this.start_date;
-    let end_date = this.end_date;
 
-    start_date = formatDate(start_date,'YYYY-MM-dd','en');
-    end_date = formatDate(end_date,'YYYY-MM-dd','en');
     
     forms.append('file', this.service.imgFILE);
-    forms.append('newprofile', this.newprofile);
+    forms.append('newprofile', localStorage.getItem('sub'));
     forms.append('instructions',this.instructions)
-    forms.append("start_date",start_date);
-    forms.append("end_date",end_date)
+    forms.append("fName",localStorage.getItem('fName'));
+    forms.append("lName",localStorage.getItem('lName'));
+    forms.append("filename",localStorage.getItem('filename'));
 
-    console.log("start",start_date)
-    console.log("end",end_date)
+
     
       this.uploadService.imageUpload(forms).subscribe(res => {
       console.log("testt", res)

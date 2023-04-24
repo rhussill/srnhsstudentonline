@@ -2,11 +2,7 @@ import { style } from "@angular/animations";
 
 export const navbarDatauser = [
 
-    {
-        routeLink: 'activities',
-        icon: 'fal fa-home',
-        label: 'Activities' ,style:"color:#7770a5;"
-    },
+    
     {
         routeLink: 'subject',
         icon: 'fa fa-flask',

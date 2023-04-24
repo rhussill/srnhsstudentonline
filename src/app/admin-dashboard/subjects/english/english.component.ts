@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { AppService } from 'src/app/app.service';
+import { UserDetailComponent } from 'src/app/dashboard/dashboard/user-detail/user-detail.component';
 
 @Component({
   selector: 'app-english',
@@ -11,6 +13,7 @@ export class EnglishComponent implements OnInit {
   dataSource:any;
   role:boolean = true
   activityData:any;
+  name = localStorage.getItem('fName')
 
 
   StudentsdisplayedColumns: string[] = [
@@ -30,7 +33,7 @@ export class EnglishComponent implements OnInit {
   pageNo:number =1;
   pageSize:number=10;
   total:any;
-  constructor(private service : AppService) { }
+  constructor(private service : AppService , private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.getEnglishAct()
@@ -56,4 +59,11 @@ export class EnglishComponent implements OnInit {
    
   }
 
+  rowclick(row){
+    console.log(row)
+    this.service.fileName = row.FileName
+    this.service.userDetail = row;
+    localStorage.setItem('filename',row.FileName)
+    this.dialog.open(UserDetailComponent)
+  }
 }

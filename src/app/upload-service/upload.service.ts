@@ -12,7 +12,7 @@ import { throwError} from 'rxjs';
 })
 export class UploadService {
 
-  uploadUrl= environment.apiURL + 'api/v1/upload';
+  uploadUrl= environment.apiURL + 'api/userfile';
   fileUrl = environment.apiURL + 'api/filter'
 
   constructor(private http: HttpClient ) { }

@@ -48,8 +48,10 @@ export class LoginComponent implements OnInit {
       }else if(this.responsedata.user.roles == "User"){
         localStorage.setItem("Token",this.responsedata.token)
         localStorage.setItem("role",this.responsedata.user.roles)
-        console.log("user",this.responsedata.user.roles)
-        this.router.navigate(['sidenav/activities'])
+        console.log("user",this.responsedata.user)
+        localStorage.setItem('fName',this.responsedata.user.fName)
+        localStorage.setItem('lName',this.responsedata.user.lName)
+        this.router.navigate(['sidenav/subject'])
        
       }
       else if(this.responsedata.user.roles == "Admin" ){

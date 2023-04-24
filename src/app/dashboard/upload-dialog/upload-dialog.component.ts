@@ -59,7 +59,7 @@ export class UploadDialogComponent implements OnInit {
         window.setTimeout(() => {
           if (this.seconds_remaining == 1) {
             this.dialogref.close();
-            // this.dialog.open(FilterFormComponent)
+            this.dialog.open(FilterFormComponent)
           }
           else {
 

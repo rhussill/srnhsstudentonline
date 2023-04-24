@@ -95,6 +95,10 @@ import { EnglishComponent } from './admin-dashboard/subjects/english/english.com
 import { ApComponent } from './admin-dashboard/subjects/ap/ap.component';
 import { SciencesubComponent } from './admin-dashboard/subjects/science/sciencesub.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { ViewallAnnouncementComponent } from './dashboard/result/viewall-announcement/viewall-announcement.component';
+import { ViewAnnouncementComponent } from './dashboard/result/viewall-announcement/view-announcement/view-announcement.component';
+import {MatBadgeModule} from '@angular/material/badge';
+
 
 
 
@@ -145,7 +149,9 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     MathComponent,
     EnglishComponent,
     ApComponent,
-    SciencesubComponent
+    SciencesubComponent,
+    ViewallAnnouncementComponent,
+    ViewAnnouncementComponent
   ],
   imports: [
     CommonModule,
@@ -189,6 +195,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     MatDatepickerModule,
     PdfViewerModule,
     NgxExtendedPdfViewerModule,
+    MatBadgeModule,
 
 
     

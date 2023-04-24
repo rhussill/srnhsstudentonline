@@ -15,38 +15,11 @@
 <form (ngSubmit)="submit(sumbitForm.value)" #sumbitForm='ngForm'>
 
   <mat-form-field class="example-full-width" style="width:254px;">
-    <mat-label>Instructions</mat-label>
-    <textarea matInput placeholder="Answer the ff" name="instructions" [(ngModel)]="instructions" required></textarea>
+    <mat-label>Remarks</mat-label>
+    <textarea matInput placeholder="Example: Explantion" name="instructions" [(ngModel)]="instructions"></textarea>
   </mat-form-field>
 
   <br>
-
-  <mat-form-field appearance="fill" style="width:254px;">
-    <mat-label>Subjects</mat-label>
-    <mat-select [(ngModel)]="newprofile" name="newprofile" required>
-      <mat-option *ngFor="let subjects of subject" [value]="subjects">
-        {{subjects}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <br>
-
-  <mat-form-field appearance="fill" id="datepicker">
-    <mat-label>Date Range</mat-label>
-    <mat-date-range-input [rangePicker]="picker" >
-      <input matStartDate placeholder="Start date" name="start_date" [(ngModel)]="start_date" required>
-      <input matEndDate placeholder="End date" name="end_date" [(ngModel)]="end_date" required>
-    </mat-date-range-input>
-    <!-- <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint> -->
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-date-range-picker #picker></mat-date-range-picker>
-  </mat-form-field>
-
-
-
-  <br>
-
 
 
   <div id='controls'>

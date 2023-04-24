@@ -10,6 +10,8 @@ import { AppService } from 'src/app/app.service';
 })
 export class ScienceComponent implements OnInit {
 
+  fname = localStorage.getItem('fName')
+  lname = localStorage.getItem('lName')
   constructor(private router:Router ,private service:AppService) { }
 
   ngOnInit(): void {
