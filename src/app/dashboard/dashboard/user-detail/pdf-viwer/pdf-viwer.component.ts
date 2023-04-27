@@ -32,7 +32,7 @@ export class PdfViwerComponent implements OnInit {
   this.pdfurl  = `${this.service.viewFileURL}?Key=${this.service.fileName}`;
  
 
-  console.log(this.pdfurl)
+  console.log(this.pdfurl,'heres')
 
 
 

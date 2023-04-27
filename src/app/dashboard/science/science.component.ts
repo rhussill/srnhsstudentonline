@@ -38,4 +38,23 @@ export class ScienceComponent implements OnInit {
     localStorage.setItem('sub','Araling Panlipunan')
   }
 
+  navigateTotle(){
+    this.router.navigate(['sidenav/tle'])
+    localStorage.setItem('sub','Tle')
+  }
+
+  navigateTomapeh(){
+    this.router.navigate(['sidenav/mapeh'])
+    localStorage.setItem('sub','Mapeh')
+  }
+  navigateTofilipino(){
+    this.router.navigate(['sidenav/filipino'])
+    localStorage.setItem('sub','Filipino')
+  }
+
+
+  navigateToesp(){
+    this.router.navigate(['sidenav/esp'])
+    localStorage.setItem('sub','Esp')
+  }
 }

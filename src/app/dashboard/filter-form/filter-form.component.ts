@@ -33,7 +33,11 @@ export class FilterFormComponent implements OnInit {
     'Math',
     'Science',
     'English',
-    'Araling Panlipunan'
+    'Araling Panlipunan',
+    'Tle',
+    'Mapeh',
+    'Filipino',
+    'Esp'
   ]
 
 
@@ -221,10 +225,10 @@ export class FilterFormComponent implements OnInit {
     
     forms.append('file', this.service.imgFILE);
     forms.append('newprofile', localStorage.getItem('sub'));
-    forms.append('instructions',this.instructions)
+   
     forms.append("fName",localStorage.getItem('fName'));
     forms.append("lName",localStorage.getItem('lName'));
-    forms.append("filename",localStorage.getItem('filename'));
+  
 
 
     

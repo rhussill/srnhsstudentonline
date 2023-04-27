@@ -98,7 +98,10 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { ViewallAnnouncementComponent } from './dashboard/result/viewall-announcement/viewall-announcement.component';
 import { ViewAnnouncementComponent } from './dashboard/result/viewall-announcement/view-announcement/view-announcement.component';
 import {MatBadgeModule} from '@angular/material/badge';
-
+import { TleComponent } from './admin-dashboard/subjects/tle/tle.component';
+import { FilipinoComponent } from './admin-dashboard/subjects/filipino/filipino.component';
+import { EspComponent } from './admin-dashboard/subjects/esp/esp.component';
+import { MapehComponent } from './admin-dashboard/subjects/mapeh/mapeh.component';
 
 
 
@@ -151,7 +154,11 @@ import {MatBadgeModule} from '@angular/material/badge';
     ApComponent,
     SciencesubComponent,
     ViewallAnnouncementComponent,
-    ViewAnnouncementComponent
+    ViewAnnouncementComponent,
+    TleComponent,
+    MapehComponent,
+    FilipinoComponent,
+    EspComponent
   ],
   imports: [
     CommonModule,
