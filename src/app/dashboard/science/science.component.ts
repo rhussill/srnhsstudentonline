@@ -35,7 +35,7 @@ export class ScienceComponent implements OnInit {
   }
   navigateToAP(){
     this.router.navigate(['sidenav/ap'])
-    localStorage.setItem('sub','Araling Panlipunan')
+    localStorage.setItem('sub','AralingPanlipunan')
   }
 
   navigateTotle(){

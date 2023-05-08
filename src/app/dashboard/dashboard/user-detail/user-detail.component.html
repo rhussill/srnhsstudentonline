@@ -8,10 +8,11 @@
 
 <br>
 
-
-<!-- <h3>Grade = {{grade.grade}}</h3>
-<p>Remarks = {{grade.remarks}}</p> -->
+<div *ngIf="show">
+ <h3>Grade = {{grade.grade}}</h3>
+<p>Remarks = {{grade.remarks}}</p> 
+</div>
 <br>
 
-<button mat-raised-button (click)="submit()">Submit</button>
+<button mat-raised-button (click)="submit()" *ngIf="showSubmit">Submit</button>
 

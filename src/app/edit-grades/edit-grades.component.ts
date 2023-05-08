@@ -68,10 +68,13 @@ export class EditGradesComponent implements OnInit {
 
     this.applyFilter = debounce(this.applyFilter, 1000);
 
-    this.getAlladmin();
-    this.getAllusers();
+  
+    
 
   }
+
+
+ 
 
   addUser() {
     this.dialog.open(AdminAdduserComponent).afterClosed().subscribe(result => {

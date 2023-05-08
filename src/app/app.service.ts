@@ -80,27 +80,74 @@ export class AppService {
   viewPDF:any
  
   //subject
-  getActbySubjURL= environment.apiURL + 'admin/getsubject'
+  getActbySubjURL= environment.apiURL + 'admin/getsubjectstudent'
   subjectOBJ:any;
 
 
   //grade
   getgradeURL = environment.apiURL + 'admin/getsubject'
 
+  
+
   subjectgrade = localStorage.getItem('sub')
+
+  getstudentgradeURL = environment.apiURL +  'api/viewgradestudent'
   filegrade:any;
 
+    //download
+
+    downloadS3URL = environment.apiURL +'api/download'
 
   getallAnnouncementURL = environment.apiURL + 'api/getactive'
   constructor(private http: HttpClient) { }
 
+    //download
+
+    downloadfile() {
+      this.http.get(`${this.downloadS3URL}?fileKey=${this.userDetail.FileName}`, { responseType: 'blob' })
+        .subscribe((blob: Blob) => {
+          const downloadLink = document.createElement('a');
+          const url = URL.createObjectURL(blob);
+          downloadLink.href = url;
+          downloadLink.download = this.userDetail.FileName;
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+        });
+      }
+
+
+
+  //getgradesstudent
+
+
+  getStudentGrade(){
+
+
+    let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
+    return this.http.get<any>(`${this.getstudentgradeURL}/${localStorage.getItem('fName')}/${localStorage.getItem('lName')}`,options).
+    pipe(
+      map(data => data),
+      retry(3),
+      catchError(this.handleError)
+    )
+
+  }
+
+
+
+  
+  
+
+
+
 
   //getsubj
 
-  getgrade(form){
+  getgrade(){
     
     let options =  { headers: new HttpHeaders({'Content-Type':  'application/json'})};
-    return this.http.get<any>(`${this.getgradeURL}/${this.subjectgrade}`,form).
+    return this.http.get<any>(`${this.getgradeURL}/${this.subjectgrade}/${localStorage.getItem('fName')}/${localStorage.getItem('lName')}/${this.userDetail.FileName}`,options).
     pipe(
       map(data => data),
       retry(3),

@@ -71,6 +71,15 @@ export class PatientComponent implements OnInit {
     // this.getProfile(this.form)
     // console.log(this.getProfile(this.form))
 
+    this.viewGrade()
+
+  }
+
+
+  viewGrade(){
+    this.service.getStudentGrade().subscribe(data=>{
+      console.log(data,"grade")
+    })
   }
 
   rowclick(row){

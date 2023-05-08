@@ -225,9 +225,10 @@ export class FilterFormComponent implements OnInit {
     
     forms.append('file', this.service.imgFILE);
     forms.append('newprofile', localStorage.getItem('sub'));
-   
     forms.append("fName",localStorage.getItem('fName'));
     forms.append("lName",localStorage.getItem('lName'));
+    forms.append("filename",this.service.userDetail.FileName)
+    forms.append("remarks",this.instructions)
   
 
 

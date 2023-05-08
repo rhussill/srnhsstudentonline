@@ -12,17 +12,19 @@ import { FilterFormComponent } from '../../filter-form/filter-form.component';
 })
 export class UserDetailComponent implements OnInit {
 
-  formgrade = this.service.filegrade
+  // formgrade = this.service.filegrade
   detail:any;
 
   grade:any;
+  show:boolean = false;
+  showSubmit:boolean = true;
   constructor(private service:AppService , private dialog:MatDialog) { }
 
   ngOnInit(): void {
 
     this.detail= this.service.userDetail
     console.log(this.detail)
-    this.getgrade(this.formgrade)
+    this.getgrade()
   }
 
   view(){
@@ -38,11 +40,20 @@ export class UserDetailComponent implements OnInit {
     )
   }
 
-  getgrade(form:any){
-    this.service.getgrade(form).subscribe(data=>{
-      console.log(data['fail'])
+  getgrade(){
 
-      this.grade = data['fail']
+    
+    this.service.getgrade().subscribe(data=>{
+      console.log(data , 'gradee')
+
+      this.grade = data.result
+
+      if (this.grade == null){
+        this.show = false
+      }else{
+        this.show = true
+        this.showSubmit = false
+      }
 
    
 
